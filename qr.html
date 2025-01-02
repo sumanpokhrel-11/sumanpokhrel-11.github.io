@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="assets/css/suman.css">
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="icon" href="assets/imgs/favico.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input, select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #qrCodeContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            input, select, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bank QR Code Generator</h1>
+        <form id="qrForm" action="/generate_qr" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="bank">Select Bank:</label>
+            <select id="bank" name="bank" required>
+                <option value="ADBLNPKA">AGRICULTURAL DEVELOPMENT BANK LTD</option>
+                <option value="CTZNNPKA">CITIZENS BANK INTERNATIONAL LIMITED</option>
+                <option value="EVBLNPKA">EVEREST BANK LTD.</option>
+                <option value="GLBBNPKA">GLOBAL IME BANK LIMITED</option>
+                <option value="HIMANPKA">HIMALAYAN BANK LTD.</option>
+                <option value="KMBLNPKA">KUMARI BANK LTD</option>
+                <option value="LXBLNPKA">LAXMI SUNRISE BANK LIMITED</option>
+                <option value="MBLNNPKA">MACHHAPUCHCHHRE BANK LIMITED</option>
+                <option value="NARBNPKA">NABIL BANK LIMITED</option>
+                <option value="NEBLNPKA">NEPAL BANK LIMITED</option>
+                <option value="NINFNPKA">NEPAL INFRASTRUCTURE BANK LTD</option>
+                <option value="NIBLNPKT">NEPAL INVESTMENT MEGA BANK LTD.</option>
+                <option value="NRBLNPKA">NEPAL RASTRA BANK</option>
+                <option value="NSBINPKA">NEPAL SBI BANK LTD</option>
+                <option value="NICENPKA">NIC ASIA BANK LIMITED</option>
+                <option value="NMBBNPKA">NMB BANK LTD</option>
+                <option value="PRVUNPKA">PRABHU BANK LTD</option>
+                <option value="PCBLNPKA">PRIME COMMERCIAL BANK LTD</option>
+                <option value="RBBANPKA">RASTRIYA BANIJYA BANK LTD.</option>
+                <option value="SNMANPKA">SANIMA BANK LIMITED</option>
+                <option value="SIDDNPKA">SIDDHARTHA BANK LIMITED</option>
+                <option value="SCBLNPKA">STANDARD CHARTERED BANK NEPAL LIMITED</option>
+                <option value="SRDBNPKA">Shine Resunga Development Bank Limited</option>
+            </select>
+            
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            
+            <button type="submit">Generate QR Code</button>
+        </form>
+        
+        <div id="qrCodeContainer">
+            <!-- QR code will be displayed here -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script>
+        document.getElementById('qrForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const bank = document.getElementById('bank').value;
+            const accountNumber = document.getElementById('accountNumber').value;
+
+            const bankData = {
+                accountNumber: accountNumber,
+                accountName: name,
+                bankCode: bank
+            };
+
+            const bankDataString = JSON.stringify(bankData);
+
+            QRCode.toDataURL(bankDataString, { errorCorrectionLevel: 'L' }, function (err, url) {
+                if (err) {
+                    console.error('Error generating QR code:', err);
+                    return;
+                }
+                const qrCodeContainer = document.getElementById('qrCodeContainer');
+                qrCodeContainer.innerHTML = `<img src="${url}" alt="QR Code"><a href="${url}" download="bank_info_qr.png">Download QR Code</a>`;
+            });
+        });
+    </script>
+</body>
+</html>
