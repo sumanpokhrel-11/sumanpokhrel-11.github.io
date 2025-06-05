@@ -598,22 +598,48 @@
                 <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-4">Get In Touch</h6>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <input type="text" class="form-control" id="userName" name="name"
+                                placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Password" required>
+                            <input type="email" class="form-control" id="userEmail" name="email"
+                                aria-describedby="emailHelp" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="contact-message" id cols="30" rows="5" class="form-control"
-                                placeholder="Message"></textarea>
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" cols="30" rows="5" class="form-control"
+                                placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block rounded w-lg">Send
                             Message</button>
                     </form>
+                    <script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:11pksuman@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Optional: Show success message
+    alert('Thank you for your message! Your email client should open now.');
+    
+    // Reset form
+    this.reset();
+});
+</script>
                 </div>
                 <div class="contact-infos">
                     <div class="item">
@@ -627,7 +653,7 @@
                         <i class="ti-mobile"></i>
                         <div>
                             <h5>Phone Number</h5>
-                            <p>(977) 456-0000</p>
+                            <p>(977) 9869925491</p>
                         </div>
                     </div>
                     <div class="item">
