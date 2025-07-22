@@ -58,6 +58,41 @@
             text-align: center;
             margin-top: 20px;
         }
+         .qr-info {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+        .qr-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .qr-info p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        .qr-info strong {
+            color: #333;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background: linear-gradient(45deg, #218838, #1e7e34) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4) !important;
+        }
         @media (max-width: 600px) {
             .container {
                 padding: 15px;
@@ -113,13 +148,17 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script>
         document.getElementById('qrForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const bank = document.getElementById('bank').value;
             const accountNumber = document.getElementById('accountNumber').value;
+
+            // Get the bank name from the selected option
+            const bankSelect = document.getElementById('bank');
+            const bankName = bankSelect.options[bankSelect.selectedIndex].text;
 
             const bankData = {
                 accountNumber: accountNumber,
@@ -129,13 +168,146 @@
 
             const bankDataString = JSON.stringify(bankData);
 
-            QRCode.toDataURL(bankDataString, { errorCorrectionLevel: 'L' }, function (err, url) {
+            QRCode.toDataURL(bankDataString, { 
+                errorCorrectionLevel: 'L',
+                width: 300,
+                margin: 2
+            }, function (err, qrUrl) {
                 if (err) {
                     console.error('Error generating QR code:', err);
                     return;
                 }
-                const qrCodeContainer = document.getElementById('qrCodeContainer');
-                qrCodeContainer.innerHTML = `<img src="${url}" alt="QR Code"><a href="${url}" download="bank_info_qr.png">Download QR Code</a>`;
+                
+                // Create a canvas to combine QR code and text
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Set canvas size (increased for better layout)
+                canvas.width = 450;
+                canvas.height = 650;
+                
+                // Create gradient background
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#f8f9fa');
+                gradient.addColorStop(1, '#e9ecef');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Add border
+                ctx.strokeStyle = '#dee2e6';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+                
+                // Load QR code image
+                const qrImage = new Image();
+                qrImage.onload = function() {
+                    // Add shadow for QR code
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 5;
+                    
+                    // Draw white background for QR code
+                    const qrSize = 280;
+                    const qrX = (canvas.width - qrSize) / 2;
+                    const qrY = 40;
+                    
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(qrX - 10, qrY - 10, qrSize + 20, qrSize + 20);
+                    
+                    // Reset shadow
+                    ctx.shadowColor = 'transparent';
+                    ctx.shadowBlur = 0;
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 0;
+                    
+                    // Draw QR code
+                    ctx.drawImage(qrImage, qrX, qrY, qrSize, qrSize);
+                    
+                    // Add decorative header
+                    const headerY = qrY + qrSize + 50;
+                    
+                    // Header background
+                    ctx.fillStyle = '#007bff';
+                    ctx.fillRect(30, headerY - 35, canvas.width - 60, 50);
+                    
+                    // Header text
+                    ctx.fillStyle = '#ffffff';
+                    ctx.textAlign = 'center';
+                    ctx.font = 'bold 22px Arial';
+                    ctx.fillText('ACCOUNT INFORMATION', canvas.width / 2, headerY - 10);
+                    
+                    // Account details section
+                    const detailsY = headerY + 40;
+                    const lineHeight = 35;
+                    
+                    // Details background
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(30, detailsY - 10, canvas.width - 60, 150);
+                    
+                    // Add border to details section
+                    ctx.strokeStyle = '#dee2e6';
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(30, detailsY - 10, canvas.width - 60, 150);
+                    
+                    // Draw account details with icons-like styling
+                    ctx.textAlign = 'left';
+                    ctx.font = 'bold 16px Arial';
+                    ctx.fillStyle = '#007bff';
+                    
+                    // Labels
+                    ctx.fillText('👤 Account Holder:', 50, detailsY + 20);
+                    ctx.fillText('Bank Name:', 50, detailsY + 20 + lineHeight);
+                    ctx.fillText('Account Number:', 50, detailsY + 20 + lineHeight * 2);
+                    // ctx.fillText('🔑 Bank Code:', 50, detailsY + 20 + lineHeight * 3);
+                    
+                    // Values
+                    ctx.font = '16px Arial';
+                    ctx.fillStyle = '#333333';
+                    
+                    // Truncate long bank names if needed
+                    let displayBankName = bankName;
+                    if (bankName.length > 25) {
+                        displayBankName = bankName.substring(0, 22) + '...';
+                    }
+                    
+                    ctx.fillText(name, 50, detailsY + 40);
+                    ctx.fillText(displayBankName, 50, detailsY + 40 + lineHeight);
+                    ctx.fillText(accountNumber, 50, detailsY + 40 + lineHeight * 2);
+                    // ctx.fillText(bank, 50, detailsY + 40 + lineHeight * 3);
+                    
+                    // Add footer
+                    ctx.textAlign = 'center';
+                    ctx.font = '12px Arial';
+                    ctx.fillStyle = '#6c757d';
+                    ctx.fillText('Scan QR code for quick payment', canvas.width / 2, canvas.height - 30);
+                    
+                    // Add timestamp
+                    const now = new Date();
+                    const timestamp = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+                    ctx.fillText(`Generated on: ${timestamp}`, canvas.width / 2, canvas.height - 15);
+                    
+                    // Convert canvas to image URL
+                    const finalImageUrl = canvas.toDataURL('image/png');
+                    
+                    // Display the result with enhanced styling
+                    const qrCodeContainer = document.getElementById('qrCodeContainer');
+                    qrCodeContainer.innerHTML = `
+                        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 20px 0;">
+                            <img src="${finalImageUrl}" alt="QR Code with Account Info" 
+                                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                            <div style="margin-top: 20px;">
+                                <a href="${finalImageUrl}" 
+                                   download="bank_qr_${name.replace(/\s+/g, '_')}_${accountNumber}.png" 
+                                   class="download-btn" 
+                                   style="background: linear-gradient(45deg, #28a745, #20c997); padding: 12px 24px; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 3px 15px rgba(40, 167, 69, 0.3); transition: all 0.3s ease;">
+                                   📥 Download QR Code
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                };
+                qrImage.src = qrUrl;
             });
         });
     </script>
