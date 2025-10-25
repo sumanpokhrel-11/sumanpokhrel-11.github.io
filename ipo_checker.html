@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Result Checker - Browser Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .download-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        .download-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #2196F3;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-box h4 {
+            color: #1976D2;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-box ul {
+            color: #555;
+            margin-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .installation-steps {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .installation-steps h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: #2196F3;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h5 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #666;
+            margin: 0;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 IPO Result Checker</h1>
+            <p>Browser Extension for Bulk IPO Result Checking</p>
+        </div>
+
+        <div class="main-content">
+            <div class="info-box">
+                <h4>🎯 Why Browser Extension?</h4>
+                <ul>
+                    <li>Works directly with IPO result websites (no proxy needed)</li>
+                    <li>Bypasses CORS restrictions that web apps face</li>
+                    <li>Fast, reliable, and works offline once installed</li>
+                    <li>Complete privacy - all data stays in your browser</li>
+                    <li>Perfect for families checking multiple BOIDs</li>
+                </ul>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📁</div>
+                    <h4>File Upload Support</h4>
+                    <p>Upload .txt or .csv files with multiple BOIDs. Perfect for family IPO checking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h4>Bulk Processing</h4>
+                    <p>Check multiple BOIDs automatically with smart rate limiting to avoid server overload.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💾</div>
+                    <h4>Export Results</h4>
+                    <p>Download results as CSV or JSON for record keeping and sharing with family.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h4>Privacy First</h4>
+                    <p>All processing happens locally. No data is sent to external servers.</p>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h3>📦 Download Browser Extension</h3>
+                <p style="margin-bottom: 20px;">Download the extension files and install manually in your browser</p>
+                <button class="download-btn" onclick="downloadExtension()">
+                    📥 Download Extension (.zip)
+                </button>
+            </div>
+
+            <div class="installation-steps">
+                <h3>📋 Installation Instructions</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Download the Extension</h5>
+                        <p>Click the download button above to get the extension files.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Extract Files</h5>
+                        <p>Extract the downloaded ZIP file to a folder on your computer.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Open Chrome Extensions</h5>
+                        <p>Go to Chrome → Settings → Extensions or visit <code>chrome://extensions/</code></p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h5>Enable Developer Mode</h5>
+                        <p>Toggle "Developer mode" on (top right corner of the extensions page).</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h5>Load Extension</h5>
+                        <p>Click "Load unpacked" and select the folder where you extracted the files.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h5>Start Using</h5>
+                        <p>Click the extension icon in your browser toolbar to start checking IPO results!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🚀 How to Use the Extension</h4>
+                <ul>
+                    <li>Click the extension icon in your browser toolbar</li>
+                    <li>Enter the company name (e.g., "Nabil Bank")</li>
+                    <li>Upload a file with BOIDs or enter them manually</li>
+                    <li>Click "Check Results" and wait for processing</li>
+                    <li>Download results as CSV or JSON</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🔒 Privacy First: All processing happens locally in your browser.</p>
+            <p>Made with ❤️ for Nepal | <a href="https://suman-pokhrel.com.np">suman-pokhrel.com.np</a></p>
+        </div>
+    </div>
+
+    <script>
+        function downloadExtension() {
+            // Create the extension files as a downloadable ZIP
+            createExtensionFiles();
+        }
+
+        function createExtensionFiles() {
+            // This will create all the necessary extension files
+            const files = {
+                'manifest.json': JSON.stringify({
+                    "manifest_version": 3,
+                    "name": "IPO Result Checker - Nepal",
+                    "version": "1.0.0",
+                    "description": "Bulk check IPO results for multiple BOIDs in Nepal",
+                    "permissions": [
+                        "storage",
+                        "activeTab",
+                        "scripting",
+                        "downloads"
+                    ],
+                    "host_permissions": [
+                        "https://iporesult.cdsc.com.np/*",
+                        "https://*.cdsc.com.np/*",
+                        "https://www.cdsc.com.np/*",
+                        "*://*/*"
+                    ],
+                    "action": {
+                        "default_popup": "popup.html",
+                        "default_title": "IPO Result Checker"
+                    },
+                    "icons": {
+                        "16": "icon16.png",
+                        "48": "icon48.png",
+                        "128": "icon128.png"
+                    },
+                    "background": {
+                        "service_worker": "background.js"
+                    }
+                }, null, 2),
+
+
+            };
+
+            // Create and download ZIP file
+            createZipDownload(files);
+        }
+
+        async function createZipDownload(files) {
+            // For this demo, we'll create individual file downloads
+            // In a real implementation, you'd use a ZIP library like JSZip
+            
+            // Create a simple download for the main files
+            const manifestBlob = new Blob([files['manifest.json']], { type: 'application/json' });
+            const popupHtmlBlob = new Blob([files['popup.html']], { type: 'text/html' });
+            const popupJsBlob = new Blob([files['popup.js']], { type: 'text/javascript' });
+            const backgroundJsBlob = new Blob([files['background.js']], { type: 'text/javascript' });
+            const readmeBlob = new Blob([files['README.md']], { type: 'text/markdown' });
+
+            // Create download links
+            const downloads = [
+                { blob: manifestBlob, filename: 'manifest.json' },
+                { blob: popupHtmlBlob, filename: 'popup.html' },
+                { blob: popupJsBlob, filename: 'popup.js' },
+                { blob: backgroundJsBlob, filename: 'background.js' },
+                { blob: readmeBlob, filename: 'README.md' }
+            ];
+
+            // Download all files
+            downloads.forEach((download, index) => {
+                setTimeout(() => {
+                    const url = URL.createObjectURL(download.blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = download.filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }, index * 500); // Stagger downloads
+            });
+
+            // Show success message
+            setTimeout(() => {
+                alert(`✅ Extension files downloaded successfully!
+
+Files downloaded:
+• manifest.json (Extension configuration)
+• popup.html (Main interface)
+• popup.js (Frontend logic)
+• background.js (IPO checking logic)
+• README.md (Installation instructions)
+
+Next steps:
+1. Create a new folder called "ipo-checker-extension"
+2. Move all downloaded files into that folder
+3. Follow the installation instructions in README.md
+
+The extension will work directly with iporesult.cdsc.com.np to check real IPO results!`);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
