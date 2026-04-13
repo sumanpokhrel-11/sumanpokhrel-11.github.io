@@ -315,60 +315,177 @@
     #result-section {
       display: none;
       animation: fadeUp .4s ease;
+      padding-bottom: 120px; /* space for sticky footer/buttons */
     }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .result-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: #fff;
+      color: #000;
       border-radius: var(--radius);
-      padding: 28px;
-      text-align: center;
       box-shadow: var(--shadow);
+      max-width: 380px;
+      margin: 0 auto;
+      overflow: hidden;
     }
-    .result-card h2 {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 20px;
+    .qr-header {
+      background: #2d83f3;
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
-    .qr-output img {
-      border-radius: 10px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.5);
-      margin: 0 auto 20px;
+    .qr-body {
+      padding: 16px;
     }
-    .account-pills {
+    .qr-branding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .brand-logo {
+      height: 16px;
+      width: auto;
+    }
+    #qr-code-container {
+      padding: 12px;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+    }
+    #qr-code-container canvas {
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 4px;
+    }
+    .account-details {
+      border: 1px solid #eee;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .detail-item {
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+    }
+    .detail-item:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+    .detail-item .label {
+      font-weight: 600;
+      font-size: 11px;
+      color: #555;
+      text-transform: uppercase;
+    }
+    .detail-item .value {
+      font-weight: 600;
+      color: #000;
+      word-break: break-all;
+    }
+    .qr-footer {
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .action-buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .action-buttons .pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 8px;
     }
-    .pill {
+    .action-buttons .pill {
       background: var(--surface2);
       border: 1px solid var(--border);
       border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 13px;
+      padding: 6px 12px;
+      font-size: 12px;
       color: var(--muted);
+      white-space: nowrap;
     }
-    .pill strong { color: var(--text); }
+
     .btn-download {
+      width: 100%;
+      max-width: 400px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       background: linear-gradient(135deg, var(--accent2), #1a7fc1);
       color: #fff;
-      padding: 12px 28px;
+      padding: 12px 24px;
+      border: none;
       border-radius: var(--radius-sm);
       font-weight: 700;
       font-size: 15px;
+      cursor: pointer;
       transition: transform .15s, box-shadow .15s;
       box-shadow: 0 4px 16px rgba(88,166,255,.3);
     }
     .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(88,166,255,.45); text-decoration: none; }
+
+    .ad-sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #111;
+      color: #888;
+      padding: 8px;
+      font-size: 12px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      z-index: 1001;
+      display: none; /* Initially hidden, shown via JS if needed */
+    }
+    .close-ad {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 18px;
+      cursor: pointer;
+    }
 
     /* ─── POST-RESULT AD (best CTR position) ─── */
     .ad-post-result {
@@ -548,32 +665,25 @@
     /* Footer */
     .page-footer {
       border-top: 1px solid var(--border);
-      padding: 28px 0 0;
-      margin-top: 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
+      padding: 24px 0;
+      text-align: center;
       font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
     }
-    .page-footer a { color: var(--muted); }
-    .page-footer a:hover { color: var(--text); }
 
-    /* ─── MOBILE ─── */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 600px) {
-      .tool-card { padding: 20px 16px; }
-      .result-card { padding: 20px 16px; }
-      .hero { padding: 28px 0 20px; }
-      .hero-stats { gap: 14px; }
+      .tool-card { padding: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .ad-box { display: none; } /* Hide box ad on mobile */
     }
   </style>
 </head>
 <body>
 
-<div class="page-wrap">
-
+<main class="page-wrap">
   <!-- BREADCRUMB -->
   <nav class="site-header" aria-label="Breadcrumb">
     <a href="https://suman-pokhrel.com.np/">Home</a>
@@ -593,13 +703,16 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-badge">✦ 100% Free · No Login</div>
-    <h1>Bank QR Code Generator<br /><em>Nepal</em></h1>
-    <p>Generate a printable payment QR code for any Nepali bank account — instantly, in your browser. Works for all 23 major commercial banks.</p>
+    <div class="hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.414 2.929a.5.5 0 01.707 0l4.243 4.243a.5.5 0 010 .707l-11.5 11.5a.5.5 0 01-.354.146H3.5a.5.5 0 01-.5-.5v-6a.5.5 0 01.146-.354l11.5-11.5a.5.5 0 01.354-.146zm-1.5 1.5L4.5 14.843V18.5h3.657L18.571 8.086 14.914 4.43z" fill="currentColor"></path></svg>
+      NO SIGNUP REQUIRED
+    </div>
+    <h1>Nepal Bank <em>QR Generator</em></h1>
+    <p>Instantly create a shareable QR code for your Nepali bank account. Free, fast, and secure. Works with all major banks.</p>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-dot"></div>23 Banks Supported</div>
-      <div class="stat"><div class="stat-dot"></div>No Data Stored</div>
-      <div class="stat"><div class="stat-dot"></div>Downloadable PNG</div>
+      <div class="stat"><span class="stat-dot"></span> 23+ Banks Supported</div>
+      <div class="stat"><span class="stat-dot"></span> 100% Free & Private</div>
+      <div class="stat"><span class="stat-dot"></span> High-Quality PNG</div>
     </div>
   </header>
 
@@ -609,79 +722,102 @@
       <form id="qrForm" novalidate>
         <div class="form-grid">
 
-          <div class="form-group">
-            <label for="name">Account Holder Name</label>
-            <input type="text" id="name" name="name" placeholder="e.g. Ram Bahadur Shrestha" autocomplete="name" required />
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="account-name">Account Holder's Full Name</label>
+            <input type="text" id="account-name" placeholder="e.g., Suman Pokhrel" required />
           </div>
-
           <div class="form-group">
-            <label for="bank">Select Bank</label>
+            <label for="bank-select">Select Your Bank</label>
             <div class="select-wrap">
-              <select id="bank" name="bank" required>
-                <option value="" disabled selected>— Choose your bank —</option>
-                <option value="ADBLNPKA">Agricultural Development Bank (ADBL)</option>
-                <option value="CTZNNPKA">Citizens Bank International</option>
-                <option value="EVBLNPKA">Everest Bank</option>
-                <option value="GLBBNPKA">Global IME Bank</option>
-                <option value="HIMANPKA">Himalayan Bank</option>
-                <option value="KMBLNPKA">Kumari Bank</option>
-                <option value="LXBLNPKA">Laxmi Sunrise Bank</option>
-                <option value="MBLNNPKA">Machhapuchchhre Bank</option>
-                <option value="NARBNPKA">Nabil Bank</option>
-                <option value="NEBLNPKA">Nepal Bank Limited</option>
-                <option value="NINFNPKA">Nepal Infrastructure Bank</option>
-                <option value="NIBLNPKT">Nepal Investment Mega Bank</option>
-                <option value="NRBLNPKA">Nepal Rastra Bank</option>
-                <option value="NSBINPKA">Nepal SBI Bank</option>
-                <option value="BOALNPKA">NIC Asia Bank</option>
-                <option value="NMBBNPKA">NMB Bank</option>
-                <option value="PRVUNPKA">Prabhu Bank</option>
-                <option value="PCBLNPKA">Prime Commercial Bank</option>
-                <option value="RBBANPKA">Rastriya Banijya Bank</option>
-                <option value="SNMANPKA">Sanima Bank</option>
-                <option value="SIDDNPKA">Siddhartha Bank</option>
-                <option value="SCBLNPKA">Standard Chartered Bank Nepal</option>
-                <option value="SRDBNPKA">Shine Resunga Development Bank</option>
-              </select>
+              <select id="bank-select" required></select>
             </div>
           </div>
-
           <div class="form-group">
-            <label for="accountNumber">Account Number</label>
-            <input type="text" id="accountNumber" name="accountNumber" placeholder="e.g. 0012345678901" inputmode="numeric" required />
+            <label for="account-number">Account Number</label>
+            <input type="text" id="account-number" placeholder="Enter your account number" required />
           </div>
 
-          <button type="submit" class="btn-generate" id="generateBtn">
-            <span id="btnText">⚡ Generate QR Code</span>
-            <div class="spinner" id="spinner"></div>
-          </button>
-
         </div>
+        <button id="generate-btn" class="btn-generate">
+          <span class="btn-text">Generate QR Code</span>
+          <span class="spinner"></span>
+        </button>
       </form>
     </div>
 
     <!-- ╔══ RESULT SECTION ══╗ -->
-    <section id="result-section" aria-live="polite">
-
-      <!-- ╔══ AD SLOT 2: Post-result (300×250) – HIGHEST CTR position ══╗ -->
-      <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:24px;">
-        <div class="ad-box" style="min-width:300px; flex:1;">
-          <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
-          <span>Advertisement · 300×250</span>
+    <section id="result-section">
+      <div class="result-card" id="qr-card">
+        <div class="qr-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.562 19.312l-6.093-6.094a1.5 1.5 0 010-2.121l.707-.707a1.5 1.5 0 012.121 0L10 13.938l7.688-7.688a1.5 1.5 0 012.121 0l.707.707a1.5 1.5 0 010 2.121L12.812 19.312a2.5 2.5 0 01-3.25 0z" fill="#fff"></path></svg>
+          Your QR Code is Ready
         </div>
-        <div class="result-card" style="flex:1; min-width:280px;">
-          <h2>✅ Your QR Code is Ready</h2>
-          <div class="qr-output" id="qrOutput"></div>
-          <div class="account-pills" id="accountPills"></div>
-          <a id="downloadBtn" href="#" download class="btn-download">
-            📥 Download QR PNG
-          </a>
+        <div class="qr-body">
+          <div class="qr-branding">
+            <img src="https://nepalpayment.com/assets/images/nepal-payment-logo.svg" alt="Nepal Payment" class="brand-logo">
+            <span>NEPAL BANK PAYMENT QR</span>
+          </div>
+          <div id="qr-code-container">
+            <canvas id="qr-canvas"></canvas>
+          </div>
+          <div class="account-details">
+            <div class="detail-item">
+              <span class="label">ACCOUNT HOLDER</span>
+              <span class="value" id="info-name"></span>
+            </div>
+            <div class="detail-item">
+              <span class="label">BANK</span>
+              <span class="value" id="info-bank"></span>
+            </div>
+            <div class="detail-item">
+              <span class="label">ACCOUNT NUMBER</span>
+              <span class="value" id="info-acc"></span>
+            </div>
+            <div class="detail-item" id="swift-code-item" style="display: none;">
+              <span class="label">SWIFT CODE</span>
+              <span class="value" id="info-swift"></span>
+            </div>
+          </div>
+          <div class="qr-footer">
+            Scan to pay with any bank or wallet in Nepal
+          </div>
         </div>
       </div>
-      <!-- ╚═════════════════════════════════════════════════════════════════╝ -->
 
+      <div class="action-buttons">
+        <div class="pills">
+          <div class="pill" id="pill-name"></div>
+          <div class="pill" id="pill-bank"></div>
+          <div class="pill" id="pill-acc"></div>
+        </div>
+        <button id="download-btn" class="btn-download">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15l5-5h-4V4h-2v6H7l5 5zM21 14a1 1 0 011 1v4a1 1 0 01-1 1H3a1 1 0 01-1-1v-4a1 1 0 011-1h1V9a3 3 0 013-3h10a3 3 0 013 3v5h1zM5 14h14V9a1 1 0 00-1-1H6a1 1 0 00-1 1v5z" fill="currentColor"></path></svg>
+          Download QR PNG
+        </button>
+      </div>
+
+      <div class="ad-sticky-footer">
+        Ad · Sticky Footer
+        <button class="close-ad">×</button>
+      </div>
     </section>
-    <!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+    <!-- ╔══ AD SLOT 2: Post-result (300×250) – HIGHEST CTR position ══╗ -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:24px;">
+      <div class="ad-box" style="min-width:300px; flex:1;">
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
+        <span>Advertisement · 300×250</span>
+      </div>
+      <div class="result-card" style="flex:1; min-width:280px;">
+        <h2>✅ Your QR Code is Ready</h2>
+        <div class="qr-output" id="qrOutput"></div>
+        <div class="account-pills" id="accountPills"></div>
+        <a id="downloadBtn" href="#" download class="btn-download">
+          📥 Download QR PNG
+        </a>
+      </div>
+    </div>
+    <!-- ╚═════════════════════════════════════════════════════════════════╝ -->
 
     <!-- ╔══ AD SLOT 3: Post-tool (responsive) ══╗ -->
     <div class="ad-post-result" aria-label="Advertisement">
@@ -906,9 +1042,9 @@ document.getElementById('qrForm').addEventListener('submit', function (e) {
   const bankName   = bankSelect.options[bankSelect.selectedIndex].text;
 
   // Show loading state
-  const btn     = document.getElementById('generateBtn');
-  const btnText = document.getElementById('btnText');
-  const spinner = document.getElementById('spinner');
+  const btn     = document.getElementById('generate-btn');
+  const btnText = btn.querySelector('.btn-text');
+  const spinner = btn.querySelector('.spinner');
   btn.disabled  = true;
   btnText.style.display = 'none';
   spinner.style.display = 'block';
@@ -1002,7 +1138,7 @@ document.getElementById('qrForm').addEventListener('submit', function (e) {
         `<img src="${finalUrl}" width="280" alt="Bank QR Code for ${name} – ${bankName}" />`;
       document.getElementById('accountPills').innerHTML = pills;
 
-      const dlBtn = document.getElementById('downloadBtn');
+      const dlBtn = document.getElementById('download-btn');
       dlBtn.href     = finalUrl;
       dlBtn.download = `bank_qr_${name.replace(/\s+/g, '_')}.png`;
 
