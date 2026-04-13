@@ -945,7 +945,7 @@ function adToBs(adDate) {
     if (rem < row[m]) { bsM = m + 1; break; }
     rem -= row[m];
   }
-  return { y: bsY, m: bsM, d: rem + 1 };
+  return { y: bsY, m: bsM, d: rem };
 }
 
 /* ── FORMAT ── */
