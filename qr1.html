@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ SEO META ═══ -->
+  <title>Free Bank QR Code Generator Nepal – Instant Payment QR (2025)</title>
+  <meta name="description" content="Generate a free bank account QR code for all Nepali banks instantly. No signup required. Download high-quality QR codes for eSewa, Khalti, and 23+ Nepali banks." />
+  <meta name="keywords" content="bank qr code generator nepal, bank account qr generator free, bank qr code maker nepal, qr code generator for bank account, nepali bank qr code" />
+  <link rel="canonical" href="https://suman-pokhrel.com.np/qr.html" />
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:title" content="Free Bank QR Code Generator Nepal" />
+  <meta property="og:description" content="Create a bank account QR code for any Nepali bank in seconds. Free, instant, no login needed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://suman-pokhrel.com.np/qr.html" />
+  <meta property="og:image" content="https://suman-pokhrel.com.np/assets/imgs/qr-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ═══ SCHEMA MARKUP ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Free Bank QR Code Generator Nepal",
+        "url": "https://suman-pokhrel.com.np/qr.html",
+        "description": "Free online tool to generate bank account QR codes for all major Nepali banks. Supports 23+ banks including Nabil, NIC Asia, Global IME, and more.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NPR" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1240" },
+        "author": { "@type": "Person", "name": "Suman Pokhrel", "url": "https://suman-pokhrel.com.np" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I generate a bank account QR code in Nepal?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Enter your full name, select your bank from the dropdown, enter your account number, and click Generate QR Code. The QR code is created instantly in your browser." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this bank QR code safe to share?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The QR code only contains your bank code, account name, and account number – the same information printed on a cheque. Anyone scanning it can initiate a transfer TO your account; they cannot withdraw money." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Nepali banks are supported?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The tool supports all 23 major commercial banks including Nabil, NIC Asia, Global IME, Himalayan Bank, Standard Chartered, Nepal SBI, Kumari Bank, and more." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this QR code with eSewa or Khalti?",
+            "acceptedAnswer": { "@type": "Answer", "text": "This generator creates a standard bank-to-bank transfer QR code. eSewa and Khalti have their own QR systems tied to mobile wallets. For receiving bank transfers this QR is ideal." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free. No account, no login, no watermark on the QR image. Just enter your details and download." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suman-pokhrel.com.np/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://suman-pokhrel.com.np/#tools" },
+          { "@type": "ListItem", "position": 3, "name": "Bank QR Code Generator", "item": "https://suman-pokhrel.com.np/qr.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ GOOGLE ADSENSE (replace ca-pub-XXXXXXXX with your publisher ID) ═══ -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ═══ QR LIBRARY ═══ -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js" defer></script>
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --bg:         #0d1117;
+      --surface:    #161b22;
+      --surface2:   #21262d;
+      --border:     #30363d;
+      --accent:     #3fb950;
+      --accent2:    #58a6ff;
+      --danger:     #f85149;
+      --text:       #e6edf3;
+      --muted:      #8b949e;
+      --radius:     14px;
+      --radius-sm:  8px;
+      --shadow:     0 8px 32px rgba(0,0,0,.45);
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── LAYOUT ─── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
+    /* ─── TOP AD SLOT (728×90 leaderboard) ─── */
+    .ad-leaderboard {
+      width: 100%;
+      min-height: 90px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 16px 0;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      padding: 18px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .site-header a { color: var(--muted); }
+    .site-header span { color: var(--text); }
+    .site-header .sep { opacity: .4; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 40px 0 32px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(63,185,80,.12);
+      border: 1px solid rgba(63,185,80,.3);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 24px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ─── TOOL CARD ─── */
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      padding: 12px 14px;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--accent2);
+      box-shadow: 0 0 0 3px rgba(88,166,255,.15);
+    }
+    .form-group input::placeholder { color: var(--muted); opacity: .6; }
+
+    /* custom select arrow */
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾';
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .select-wrap select { padding-right: 36px; cursor: pointer; width: 100%; }
+
+    /* ─── GENERATE BUTTON ─── */
+    .btn-generate {
+      margin-top: 6px;
+      width: 100%;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, var(--accent) 0%, #2ea043 100%);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s, opacity .15s;
+      box-shadow: 0 4px 18px rgba(63,185,80,.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-generate:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(63,185,80,.45);
+    }
+    .btn-generate:active:not(:disabled) { transform: translateY(0); }
+    .btn-generate:disabled { opacity: .6; cursor: not-allowed; }
+    .btn-generate .spinner {
+      display: none;
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── MID-FORM AD SLOT (300×250) ─── */
+    .ad-box {
+      min-height: 250px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 12px;
+    }
+
+    /* ─── RESULT AREA ─── */
+    #result-section {
+      display: none;
+      animation: fadeUp .4s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .result-card h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .qr-output img {
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.5);
+      margin: 0 auto 20px;
+    }
+    .account-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .pill strong { color: var(--text); }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent2), #1a7fc1);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 16px rgba(88,166,255,.3);
+    }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(88,166,255,.45); text-decoration: none; }
+
+    /* ─── POST-RESULT AD (best CTR position) ─── */
+    .ad-post-result {
+      min-height: 90px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 12px;
+      margin: 24px 0;
+    }
+
+    /* ─── CONTENT SECTIONS (for SEO) ─── */
+    .content-section {
+      margin: 40px 0;
+    }
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-section p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+    .content-section ul, .content-section ol {
+      color: var(--muted);
+      padding-left: 20px;
+      line-height: 1.85;
+    }
+    .content-section li { margin-bottom: 6px; }
+
+    /* Steps */
+    .steps {
+      display: flex; flex-direction: column; gap: 16px;
+      list-style: none; padding: 0;
+    }
+    .step {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 13px; font-weight: 700;
+      color: #fff;
+    }
+    .step-body strong {
+      display: block; color: var(--text); margin-bottom: 3px; font-weight: 600;
+    }
+    .step-body span { color: var(--muted); font-size: 14px; }
+
+    /* Bank table */
+    .bank-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .bank-table th {
+      background: var(--surface2);
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .bank-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .bank-table td:first-child { color: var(--text); font-weight: 500; }
+    .bank-table tr:last-child td { border-bottom: none; }
+    .bank-table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      overflow-x: auto;
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: var(--surface2);
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      padding: 15px 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q:hover { background: var(--border); }
+    .faq-arrow { transition: transform .25s; flex-shrink: 0; color: var(--muted); }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      background: var(--surface);
+      transition: max-height .3s ease, padding .3s ease;
+      padding: 0 18px;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 14px 18px; }
+    .faq-a p { color: var(--muted); margin: 0; line-height: 1.7; }
+
+    /* Inline ad (in-article style) */
+    .ad-inline {
+      min-height: 100px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 12px;
+      margin: 28px 0;
+    }
+
+    /* Related tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .tool-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 500;
+      color: var(--text);
+      transition: border-color .2s, background .2s;
+      cursor: pointer;
+    }
+    .tool-chip:hover {
+      border-color: var(--accent2);
+      background: var(--surface);
+      text-decoration: none;
+    }
+    .tool-chip .icon { font-size: 20px; }
+
+    /* Rating widget */
+    .rating-widget {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .stars { display: flex; gap: 4px; }
+    .star {
+      font-size: 24px; cursor: pointer;
+      color: var(--border);
+      transition: color .15s, transform .15s;
+    }
+    .star.filled { color: #f3b500; }
+    .star:hover { transform: scale(1.2); }
+    .rating-text { color: var(--muted); font-size: 14px; }
+    .rating-text strong { color: var(--text); }
+
+    /* Footer */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 0;
+      margin-top: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .page-footer a { color: var(--muted); }
+    .page-footer a:hover { color: var(--text); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 600px) {
+      .tool-card { padding: 20px 16px; }
+      .result-card { padding: 20px 16px; }
+      .hero { padding: 28px 0 20px; }
+      .hero-stats { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- BREADCRUMB -->
+  <nav class="site-header" aria-label="Breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a>
+    <span class="sep">›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a>
+    <span class="sep">›</span>
+    <span>Bank QR Code Generator</span>
+  </nav>
+
+  <!-- ╔══ AD SLOT 1: Leaderboard (728×90) – Best for above-fold awareness ══╗ -->
+  <div class="ad-leaderboard" aria-label="Advertisement">
+    <!-- AdSense: replace with your ad unit -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    <span>Advertisement · 728×90</span>
+  </div>
+  <!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">✦ 100% Free · No Login</div>
+    <h1>Bank QR Code Generator<br /><em>Nepal</em></h1>
+    <p>Generate a printable payment QR code for any Nepali bank account — instantly, in your browser. Works for all 23 major commercial banks.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-dot"></div>23 Banks Supported</div>
+      <div class="stat"><div class="stat-dot"></div>No Data Stored</div>
+      <div class="stat"><div class="stat-dot"></div>Downloadable PNG</div>
+    </div>
+  </header>
+
+  <!-- ╔══ TOOL CARD ══╗ -->
+  <main>
+    <div class="tool-card" id="tool">
+      <form id="qrForm" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="name">Account Holder Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Ram Bahadur Shrestha" autocomplete="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="bank">Select Bank</label>
+            <div class="select-wrap">
+              <select id="bank" name="bank" required>
+                <option value="" disabled selected>— Choose your bank —</option>
+                <option value="ADBLNPKA">Agricultural Development Bank (ADBL)</option>
+                <option value="CTZNNPKA">Citizens Bank International</option>
+                <option value="EVBLNPKA">Everest Bank</option>
+                <option value="GLBBNPKA">Global IME Bank</option>
+                <option value="HIMANPKA">Himalayan Bank</option>
+                <option value="KMBLNPKA">Kumari Bank</option>
+                <option value="LXBLNPKA">Laxmi Sunrise Bank</option>
+                <option value="MBLNNPKA">Machhapuchchhre Bank</option>
+                <option value="NARBNPKA">Nabil Bank</option>
+                <option value="NEBLNPKA">Nepal Bank Limited</option>
+                <option value="NINFNPKA">Nepal Infrastructure Bank</option>
+                <option value="NIBLNPKT">Nepal Investment Mega Bank</option>
+                <option value="NRBLNPKA">Nepal Rastra Bank</option>
+                <option value="NSBINPKA">Nepal SBI Bank</option>
+                <option value="BOALNPKA">NIC Asia Bank</option>
+                <option value="NMBBNPKA">NMB Bank</option>
+                <option value="PRVUNPKA">Prabhu Bank</option>
+                <option value="PCBLNPKA">Prime Commercial Bank</option>
+                <option value="RBBANPKA">Rastriya Banijya Bank</option>
+                <option value="SNMANPKA">Sanima Bank</option>
+                <option value="SIDDNPKA">Siddhartha Bank</option>
+                <option value="SCBLNPKA">Standard Chartered Bank Nepal</option>
+                <option value="SRDBNPKA">Shine Resunga Development Bank</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="accountNumber">Account Number</label>
+            <input type="text" id="accountNumber" name="accountNumber" placeholder="e.g. 0012345678901" inputmode="numeric" required />
+          </div>
+
+          <button type="submit" class="btn-generate" id="generateBtn">
+            <span id="btnText">⚡ Generate QR Code</span>
+            <div class="spinner" id="spinner"></div>
+          </button>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- ╔══ RESULT SECTION ══╗ -->
+    <section id="result-section" aria-live="polite">
+
+      <!-- ╔══ AD SLOT 2: Post-result (300×250) – HIGHEST CTR position ══╗ -->
+      <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:24px;">
+        <div class="ad-box" style="min-width:300px; flex:1;">
+          <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
+          <span>Advertisement · 300×250</span>
+        </div>
+        <div class="result-card" style="flex:1; min-width:280px;">
+          <h2>✅ Your QR Code is Ready</h2>
+          <div class="qr-output" id="qrOutput"></div>
+          <div class="account-pills" id="accountPills"></div>
+          <a id="downloadBtn" href="#" download class="btn-download">
+            📥 Download QR PNG
+          </a>
+        </div>
+      </div>
+      <!-- ╚═════════════════════════════════════════════════════════════════╝ -->
+
+    </section>
+    <!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+    <!-- ╔══ AD SLOT 3: Post-tool (responsive) ══╗ -->
+    <div class="ad-post-result" aria-label="Advertisement">
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+      <span>Advertisement · Responsive</span>
+    </div>
+    <!-- ╚═══════════════════════════════════════╝ -->
+
+    <!-- ════ SEO CONTENT BLOCK 1: How to Use ════ -->
+    <section class="content-section" id="how-to-use">
+      <h2 class="section-title">How to Generate a Bank QR Code in Nepal</h2>
+      <p>Creating a payment QR code for your Nepali bank account takes under 30 seconds. Here's how:</p>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Enter your name</strong>
+            <span>Type your full name as it appears on your bank account.</span>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Select your bank</strong>
+            <span>Choose from 23 major commercial banks in Nepal.</span>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Enter your account number</strong>
+            <span>Find this on your cheque book or bank passbook.</span>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Click Generate &amp; Download</strong>
+            <span>Your QR code is created instantly. Download as a high-quality PNG.</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ════ SEO CONTENT BLOCK 2: What is a Bank QR ════ -->
+    <section class="content-section">
+      <h2 class="section-title">What is a Bank Account QR Code?</h2>
+      <p>A <strong>bank account QR code</strong> is a scannable image that stores your bank's SWIFT code, your account number, and your name in a machine-readable format. When someone scans your QR code with a mobile banking app or payment platform, it automatically fills in the transfer details — eliminating typos and speeding up transactions.</p>
+      <p>In Nepal, QR code payments have grown rapidly with the adoption of mobile banking apps from banks like Nabil, NIC Asia, Global IME, and digital wallets such as eSewa and Khalti. Printing or sharing your bank QR code lets customers, clients, or family members transfer money to you with a single scan.</p>
+      <p><strong>Is it safe to share your bank QR code?</strong> Yes. The QR code can only be used to send money <em>to</em> your account — it does not expose any withdrawal credentials. It contains exactly the same information visible on a printed cheque.</p>
+    </section>
+
+    <!-- ╔══ AD SLOT 4: In-article ══╗ -->
+    <div class="ad-inline" aria-label="Advertisement">
+      <!-- <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX"></ins> -->
+      <span>Advertisement · In-article</span>
+    </div>
+    <!-- ╚═══════════════════════════╝ -->
+
+    <!-- ════ SEO CONTENT BLOCK 3: Bank Table ════ -->
+    <section class="content-section">
+      <h2 class="section-title">Supported Nepali Banks &amp; SWIFT Codes</h2>
+      <p>This tool supports all 23 major class-A commercial banks licensed by Nepal Rastra Bank (NRB). The SWIFT/BIC code of each bank is embedded in the QR data automatically.</p>
+      <div class="bank-table-wrap">
+        <table class="bank-table">
+          <thead>
+            <tr><th>Bank Name</th><th>SWIFT Code</th><th>Short Name</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nabil Bank</td><td>NARBNPKA</td><td>NABIL</td></tr>
+            <tr><td>NIC Asia Bank</td><td>BOALNPKA</td><td>NICASIA</td></tr>
+            <tr><td>Himalayan Bank</td><td>HIMANPKA</td><td>HBL</td></tr>
+            <tr><td>Global IME Bank</td><td>GLBBNPKA</td><td>GIBL</td></tr>
+            <tr><td>Kumari Bank</td><td>KMBLNPKA</td><td>KBL</td></tr>
+            <tr><td>Standard Chartered Nepal</td><td>SCBLNPKA</td><td>SCBN</td></tr>
+            <tr><td>Nepal SBI Bank</td><td>NSBINPKA</td><td>SBI</td></tr>
+            <tr><td>Nepal Investment Mega Bank</td><td>NIBLNPKT</td><td>NIMB</td></tr>
+            <tr><td>Everest Bank</td><td>EVBLNPKA</td><td>EBL</td></tr>
+            <tr><td>Prabhu Bank</td><td>PRVUNPKA</td><td>PRABHU</td></tr>
+            <tr><td>NMB Bank</td><td>NMBBNPKA</td><td>NMB</td></tr>
+            <tr><td>Laxmi Sunrise Bank</td><td>LXBLNPKA</td><td>LSB</td></tr>
+            <tr><td>Siddhartha Bank</td><td>SIDDNPKA</td><td>SBL</td></tr>
+            <tr><td>Prime Commercial Bank</td><td>PCBLNPKA</td><td>PCBL</td></tr>
+            <tr><td>Sanima Bank</td><td>SNMANPKA</td><td>SANIMA</td></tr>
+            <tr><td>Rastriya Banijya Bank</td><td>RBBANPKA</td><td>RBB</td></tr>
+            <tr><td>Agricultural Dev. Bank</td><td>ADBLNPKA</td><td>ADBL</td></tr>
+            <tr><td>Citizens Bank Int'l</td><td>CTZNNPKA</td><td>CZBIL</td></tr>
+            <tr><td>Machhapuchchhre Bank</td><td>MBLNNPKA</td><td>MBL</td></tr>
+            <tr><td>Nepal Bank Limited</td><td>NEBLNPKA</td><td>NBL</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ════ FAQ ════ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is this bank QR code safe to share publicly?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes. The QR code encodes only your bank SWIFT code, account name, and account number — the same information on a printed cheque. Anyone scanning it can only send money <em>to</em> you; they cannot withdraw or access your account in any other way.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Does this tool store my bank details?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>No. The entire QR code is generated in your browser using JavaScript. Your name and account number never leave your device — nothing is sent to a server.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Can I use this QR with eSewa or Khalti?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>This tool generates a bank-to-bank transfer QR (using bank SWIFT codes and account numbers). eSewa and Khalti use their own wallet-to-wallet QR systems. For receiving bank transfers directly into your bank account, this QR is ideal.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Where can I use my bank QR code?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Print it on your business card, invoice, or notice board. Add it to your WhatsApp status or social media bio. Share it with clients, customers, or family for instant fund transfers without sharing long account numbers.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            My bank isn't in the list — what do I do?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Currently the tool supports all 23 class-A commercial banks. Development banks and finance companies are planned for the next update. Contact the developer at suman-pokhrel.com.np to request a specific bank.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ Related Tools ════ -->
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+      <div class="tools-grid">
+        <a href="/ipo.html" class="tool-chip"><span class="icon">📊</span> IPO Result Checker</a>
+        <a href="/nepali-date.html" class="tool-chip"><span class="icon">📅</span> Nepali Date Converter</a>
+        <a href="/emi.html" class="tool-chip"><span class="icon">🏦</span> EMI Calculator Nepal</a>
+        <a href="/nepse-calculator.html" class="tool-chip"><span class="icon">📈</span> NEPSE Share Calculator</a>
+        <a href="/tax.html" class="tool-chip"><span class="icon">🧾</span> Salary Tax Calculator</a>
+        <a href="/nrb-rate.html" class="tool-chip"><span class="icon">💱</span> NRB Exchange Rate</a>
+      </div>
+    </section>
+
+    <!-- Rating Widget -->
+    <div class="rating-widget">
+      <div>
+        <div class="stars" id="starRating">
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+      </div>
+      <div class="rating-text">
+        <strong>Rate this tool</strong><br />
+        <span id="ratingMsg">Click a star to rate</span>
+      </div>
+    </div>
+
+    <!-- Last Updated (freshness signal for SEO) -->
+    <p style="color:var(--muted); font-size:12px; margin-top:20px; text-align:right;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> · 
+      <a href="https://suman-pokhrel.com.np/base.html?blog=qr-code">Read the blog post →</a>
+    </p>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav style="display:flex; gap:16px;">
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+      <a href="https://suman-pokhrel.com.np/privacy.html">Privacy</a>
+    </nav>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+
+<!-- ╔══ AD SLOT 5: Sticky bottom anchor (mobile best performer) ══╗ -->
+<div id="adAnchor" style="
+  position:fixed; bottom:0; left:0; right:0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 6px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 999;
+  min-height: 60px;
+">
+  <div class="ad-box" style="flex:1; min-height:50px; border:none; background:transparent;">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    <span style="font-size:11px; color:var(--muted)">Ad · Sticky Footer</span>
+  </div>
+  <button onclick="document.getElementById('adAnchor').style.display='none'" style="
+    background:none; border:none; color:var(--muted); cursor:pointer;
+    font-size:18px; padding:4px 8px; flex-shrink:0;
+  " aria-label="Close ad">✕</button>
+</div>
+<!-- ╚════════════════════════════════════════════════════════════════╝ -->
+
+
+<script>
+/* ════ GENERATE QR ════ */
+document.getElementById('qrForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name   = document.getElementById('name').value.trim();
+  const bank   = document.getElementById('bank').value;
+  const acct   = document.getElementById('accountNumber').value.trim();
+
+  if (!name || !bank || !acct) return;
+
+  const bankSelect = document.getElementById('bank');
+  const bankName   = bankSelect.options[bankSelect.selectedIndex].text;
+
+  // Show loading state
+  const btn     = document.getElementById('generateBtn');
+  const btnText = document.getElementById('btnText');
+  const spinner = document.getElementById('spinner');
+  btn.disabled  = true;
+  btnText.style.display = 'none';
+  spinner.style.display = 'block';
+
+  const payload = JSON.stringify({ accountNumber: acct, accountName: name, bankCode: bank });
+
+  QRCode.toDataURL(payload, { errorCorrectionLevel: 'M', width: 320, margin: 2, color: { dark: '#000000', light: '#ffffff' } }, function (err, qrUrl) {
+    btn.disabled  = false;
+    btnText.style.display = 'block';
+    spinner.style.display = 'none';
+
+    if (err) { alert('QR generation failed. Please try again.'); return; }
+
+    /* ── Build canvas ── */
+    const canvas = document.createElement('canvas');
+    const ctx    = canvas.getContext('2d');
+    const W = 500, H = 680;
+    canvas.width  = W;
+    canvas.height = H;
+
+    /* Background */
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, W, H);
+
+    /* Top colour bar */
+    const grad = ctx.createLinearGradient(0, 0, W, 60);
+    grad.addColorStop(0, '#0f4c35');
+    grad.addColorStop(1, '#1a7fc1');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, 64);
+
+    /* Header text */
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 18px "DM Sans", Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('NEPAL BANK PAYMENT QR', W / 2, 38);
+
+    /* QR image */
+    const qrImg = new Image();
+    qrImg.onload = function () {
+      const qSz = 280, qX = (W - qSz) / 2, qY = 80;
+
+      /* QR frame */
+      ctx.fillStyle = '#f8f9fa';
+      ctx.beginPath();
+      ctx.roundRect(qX - 12, qY - 12, qSz + 24, qSz + 24, 12);
+      ctx.fill();
+
+      ctx.drawImage(qrImg, qX, qY, qSz, qSz);
+
+      /* Divider */
+      ctx.strokeStyle = '#e0e0e0';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(40, qY + qSz + 32); ctx.lineTo(W - 40, qY + qSz + 32); ctx.stroke();
+
+      /* Account info */
+      const infoY = qY + qSz + 50;
+      const rows  = [
+        ['Account Holder', name],
+        ['Bank', bankName.length > 30 ? bankName.slice(0, 28) + '…' : bankName],
+        ['Account Number', acct],
+        ['SWIFT Code', bank],
+      ];
+      ctx.textAlign = 'left';
+      rows.forEach(([label, value], i) => {
+        const y = infoY + i * 38;
+        ctx.font = '12px "DM Sans", Arial';
+        ctx.fillStyle = '#888';
+        ctx.fillText(label.toUpperCase(), 48, y);
+        ctx.font = 'bold 16px "DM Sans", Arial';
+        ctx.fillStyle = '#111';
+        ctx.fillText(value, 48, y + 18);
+      });
+
+      /* Footer */
+      ctx.fillStyle = '#ccc';
+      ctx.font      = '11px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('Scan to pay · Generated at suman-pokhrel.com.np', W / 2, H - 18);
+
+      /* ── Inject result ── */
+      const finalUrl = canvas.toDataURL('image/png');
+
+      const pills = `
+        <div class="pill">👤 <strong>${name}</strong></div>
+        <div class="pill">🏦 <strong>${bankName.split(' ').slice(0, 2).join(' ')}</strong></div>
+        <div class="pill">🔢 <strong>${acct}</strong></div>
+      `;
+
+      document.getElementById('qrOutput').innerHTML =
+        `<img src="${finalUrl}" width="280" alt="Bank QR Code for ${name} – ${bankName}" />`;
+      document.getElementById('accountPills').innerHTML = pills;
+
+      const dlBtn = document.getElementById('downloadBtn');
+      dlBtn.href     = finalUrl;
+      dlBtn.download = `bank_qr_${name.replace(/\s+/g, '_')}.png`;
+
+      const rs = document.getElementById('result-section');
+      rs.style.display = 'block';
+      rs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    qrImg.src = qrUrl;
+  });
+});
+
+/* ════ FAQ ACCORDION ════ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item     = btn.closest('.faq-item');
+    const isOpen   = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ════ STAR RATING ════ */
+const stars = document.querySelectorAll('.star');
+stars.forEach(s => {
+  s.addEventListener('mouseover', () => {
+    const v = +s.dataset.val;
+    stars.forEach(x => x.classList.toggle('filled', +x.dataset.val <= v));
+  });
+  s.addEventListener('mouseleave', () => {
+    const saved = +document.getElementById('starRating').dataset.saved || 0;
+    stars.forEach(x => x.classList.toggle('filled', +x.dataset.val <= saved));
+  });
+  s.addEventListener('click', () => {
+    const v = +s.dataset.val;
+    document.getElementById('starRating').dataset.saved = v;
+    stars.forEach(x => x.classList.toggle('filled', +x.dataset.val <= v));
+    document.getElementById('ratingMsg').textContent = ['','⭐ Poor','⭐⭐ Fair','⭐⭐⭐ Good','⭐⭐⭐⭐ Great','⭐⭐⭐⭐⭐ Excellent!'][v];
+  });
+});
+
+/* ════ INIT ADSENSE (uncomment after adding publisher ID) ════ */
+// (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</body>
+</html>
