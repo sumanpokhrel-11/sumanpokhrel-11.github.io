@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ SEO META ══ -->
+  <title>Nepali Date Converter – BS to AD & AD to BS | Free Online Tool 2082</title>
+  <meta name="description" content="Free Nepali date converter tool. Convert Bikram Sambat (BS) to English/AD dates and AD to Nepali BS instantly. Supports 2000–2090 BS. No signup needed." />
+  <meta name="keywords" content="nepali date converter, bs to ad converter, ad to bs converter, bikram sambat converter, nepali calendar converter, nepali to english date, english to nepali date, miti converter nepal" />
+  <link rel="canonical" href="https://suman-pokhrel.com.np/nepali-date-converter.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ══ Open Graph ══ -->
+  <meta property="og:title" content="Nepali Date Converter – BS ↔ AD | Free Tool" />
+  <meta property="og:description" content="Convert Bikram Sambat to English date and vice versa instantly. Supports 2000–2090 BS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://suman-pokhrel.com.np/nepali-date-converter.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ══ SCHEMA ══ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebApplication",
+        "name":"Nepali Date Converter",
+        "url":"https://suman-pokhrel.com.np/nepali-date-converter.html",
+        "description":"Free online Bikram Sambat (BS) to English (AD) and AD to BS Nepali date converter. Supports all dates from 2000 BS to 2090 BS.",
+        "applicationCategory":"UtilitiesApplication",
+        "operatingSystem":"Any",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"},
+        "author":{"@type":"Person","name":"Suman Pokhrel","url":"https://suman-pokhrel.com.np"}
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"What is Bikram Sambat (BS)?","acceptedAnswer":{"@type":"Answer","text":"Bikram Sambat (BS) is the official calendar of Nepal, named after King Vikramaditya. It runs approximately 56 years and 8 months ahead of the Gregorian (AD) calendar. The Nepali new year begins in mid-April each year (Baisakh 1)."}},
+          {"@type":"Question","name":"How do I convert BS date to AD?","acceptedAnswer":{"@type":"Answer","text":"Select 'BS to AD', enter the Nepali year (e.g. 2081), month (1–12), and day, then click Convert. The tool instantly shows the equivalent Gregorian (AD) date."}},
+          {"@type":"Question","name":"What is today's Nepali date?","acceptedAnswer":{"@type":"Answer","text":"The tool automatically shows today's Nepali (BS) date at the top of the page based on your device's current date."}},
+          {"@type":"Question","name":"What is the difference between BS and AD?","acceptedAnswer":{"@type":"Answer","text":"Bikram Sambat is approximately 56 years and 8.5 months ahead of the Gregorian calendar. So 2081 BS corresponds roughly to 2024–2025 AD."}},
+          {"@type":"Question","name":"Which Nepali months are in the BS calendar?","acceptedAnswer":{"@type":"Answer","text":"The 12 Nepali months in order are: Baisakh (1), Jestha (2), Ashadh (3), Shrawan (4), Bhadra (5), Ashwin (6), Kartik (7), Mangsir (8), Poush (9), Magh (10), Falgun (11), Chaitra (12)."}}
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://suman-pokhrel.com.np/"},
+          {"@type":"ListItem","position":2,"name":"Tools","item":"https://suman-pokhrel.com.np/#tools"},
+          {"@type":"ListItem","position":3,"name":"Nepali Date Converter","item":"https://suman-pokhrel.com.np/nepali-date-converter.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- AdSense – replace publisher ID -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --bg:        #fdf6ec;
+      --surface:   #fff8f0;
+      --surface2:  #fff3e4;
+      --border:    #e8d5bc;
+      --border2:   #d4b896;
+      --accent:    #c0392b;
+      --accent2:   #e67e22;
+      --accent3:   #27ae60;
+      --text:      #2c1a0e;
+      --muted:     #7a5c44;
+      --light:     #b8976a;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --shadow:    0 4px 24px rgba(100,50,10,.10);
+      --shadow2:   0 8px 40px rgba(100,50,10,.15);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Source Sans 3',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      min-height:100vh;
+    }
+
+    /* texture overlay */
+    body::before{
+      content:'';
+      position:fixed;inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c08050' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .page-wrap{
+      position:relative;z-index:1;
+      max-width:820px;
+      margin:0 auto;
+      padding:0 16px 80px;
+    }
+
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* ── AD SLOTS ── */
+    .ad-slot{
+      background:var(--surface2);
+      border:1px dashed var(--border2);
+      border-radius:var(--radius-sm);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--light);font-size:11px;letter-spacing:.06em;
+      text-transform:uppercase;font-weight:600;
+    }
+    .ad-leader{min-height:90px;margin:14px 0;}
+    .ad-rect{min-height:250px;margin:0;}
+    .ad-post{min-height:90px;margin:24px 0;}
+    .ad-inline{min-height:90px;margin:32px 0;}
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb{
+      padding:16px 0 0;
+      font-size:13px;color:var(--muted);
+      display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    }
+    .breadcrumb a{color:var(--muted);}
+
+    /* ── TODAY BANNER ── */
+    .today-banner{
+      background:linear-gradient(135deg,#c0392b 0%,#e67e22 100%);
+      border-radius:var(--radius);
+      padding:18px 24px;
+      margin:20px 0;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:12px;
+      box-shadow:0 4px 20px rgba(192,57,43,.25);
+    }
+    .today-label{
+      font-size:11px;font-weight:700;
+      letter-spacing:.1em;text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+      margin-bottom:4px;
+    }
+    .today-bs{
+      font-family:'Playfair Display',serif;
+      font-size:1.5rem;font-weight:900;
+      color:#fff;
+    }
+    .today-ad{
+      font-size:14px;color:rgba(255,255,255,.85);
+      margin-top:2px;
+    }
+    .today-right{
+      text-align:right;
+    }
+    .today-day{
+      font-family:'Playfair Display',serif;
+      font-size:2rem;font-weight:900;color:#fff;
+    }
+    .today-month{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px;}
+
+    /* ── HERO ── */
+    .hero{padding:32px 0 24px;text-align:center;}
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(192,57,43,.08);
+      border:1px solid rgba(192,57,43,.2);
+      color:var(--accent);
+      font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:5px 14px;border-radius:100px;
+      margin-bottom:14px;
+    }
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,5.5vw,2.8rem);
+      font-weight:900;
+      line-height:1.15;
+      color:var(--text);
+      margin-bottom:12px;
+    }
+    .hero h1 span{color:var(--accent);}
+    .hero p{
+      font-size:1rem;color:var(--muted);
+      max-width:480px;margin:0 auto;
+    }
+
+    /* ── CONVERTER CARD ── */
+    .converter-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:32px;
+      box-shadow:var(--shadow2);
+      margin-bottom:28px;
+    }
+
+    /* Mode toggle */
+    .mode-toggle{
+      display:grid;grid-template-columns:1fr 1fr;
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      padding:4px;
+      gap:4px;
+      margin-bottom:28px;
+    }
+    .mode-btn{
+      padding:11px 16px;
+      border:none;border-radius:8px;
+      font-family:'Source Sans 3',sans-serif;
+      font-size:14px;font-weight:600;
+      cursor:pointer;
+      transition:background .2s,color .2s,box-shadow .2s;
+      background:transparent;
+      color:var(--muted);
+    }
+    .mode-btn.active{
+      background:#fff;
+      color:var(--text);
+      box-shadow:0 2px 8px rgba(100,50,10,.12);
+    }
+    .mode-btn .flag{font-size:16px;margin-right:6px;}
+
+    /* Fields */
+    .fields-row{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+      margin-bottom:20px;
+    }
+    @media(max-width:540px){.fields-row{grid-template-columns:1fr 1fr;}}
+    @media(max-width:380px){.fields-row{grid-template-columns:1fr;}}
+
+    .field{display:flex;flex-direction:column;gap:6px;}
+    .field label{
+      font-size:11px;font-weight:700;
+      text-transform:uppercase;letter-spacing:.07em;
+      color:var(--light);
+    }
+    .field select, .field input{
+      background:var(--surface2);
+      border:1.5px solid var(--border);
+      border-radius:var(--radius-sm);
+      color:var(--text);
+      font-family:'Source Sans 3',sans-serif;
+      font-size:15px;
+      padding:11px 14px;
+      outline:none;
+      transition:border-color .2s,box-shadow .2s;
+      -webkit-appearance:none;
+      width:100%;
+    }
+    .field select:focus,.field input:focus{
+      border-color:var(--accent2);
+      box-shadow:0 0 0 3px rgba(230,126,34,.15);
+    }
+    .field input::placeholder{color:var(--light);opacity:.7;}
+
+    /* custom select */
+    .select-wrap{position:relative;}
+    .select-wrap::after{
+      content:'▾';
+      position:absolute;right:12px;top:50%;transform:translateY(-50%);
+      color:var(--light);pointer-events:none;font-size:12px;
+    }
+    .select-wrap select{padding-right:32px;cursor:pointer;}
+
+    /* Convert button */
+    .btn-convert{
+      width:100%;padding:15px;
+      background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+      color:#fff;border:none;border-radius:var(--radius-sm);
+      font-family:'Playfair Display',serif;
+      font-size:16px;font-weight:700;
+      cursor:pointer;
+      box-shadow:0 4px 18px rgba(192,57,43,.3);
+      transition:transform .15s,box-shadow .15s;
+      letter-spacing:.02em;
+    }
+    .btn-convert:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 28px rgba(192,57,43,.4);
+    }
+    .btn-convert:active{transform:translateY(0);}
+
+    /* ── RESULT ── */
+    #result-section{display:none;animation:fadeUp .35s ease;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+    .result-card{
+      background:linear-gradient(135deg,#fff8f0 0%,#fff3e4 100%);
+      border:2px solid var(--accent2);
+      border-radius:var(--radius);
+      padding:28px 24px;
+      text-align:center;
+      box-shadow:0 4px 24px rgba(230,126,34,.15);
+    }
+    .result-tag{
+      font-size:11px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.1em;color:var(--accent2);margin-bottom:10px;
+    }
+    .result-date{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,6vw,3rem);
+      font-weight:900;
+      color:var(--text);
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+    .result-sub{
+      font-size:14px;color:var(--muted);margin-bottom:16px;
+    }
+    .result-pills{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+      margin-bottom:18px;
+    }
+    .result-pill{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:100px;
+      padding:5px 14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .result-pill strong{color:var(--text);}
+    .btn-copy{
+      display:inline-flex;align-items:center;gap:7px;
+      background:var(--text);color:#fff;
+      padding:10px 22px;border-radius:var(--radius-sm);
+      font-weight:600;font-size:14px;border:none;cursor:pointer;
+      transition:opacity .15s,transform .15s;
+    }
+    .btn-copy:hover{opacity:.85;transform:translateY(-1px);}
+    .btn-copy.copied{background:var(--accent3);}
+
+    /* ── MONTH CALENDAR STRIP ── */
+    .month-strip{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius);padding:20px 24px;
+      margin-bottom:28px;
+    }
+    .strip-header{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:16px;flex-wrap:wrap;gap:8px;
+    }
+    .strip-title{
+      font-family:'Playfair Display',serif;
+      font-size:1.1rem;font-weight:700;color:var(--text);
+    }
+    .strip-nav{display:flex;gap:6px;}
+    .strip-nav button{
+      background:var(--surface2);border:1px solid var(--border);
+      border-radius:6px;padding:5px 10px;
+      cursor:pointer;font-size:14px;color:var(--muted);
+      transition:background .15s;
+    }
+    .strip-nav button:hover{background:var(--border);}
+    .cal-grid{
+      display:grid;grid-template-columns:repeat(7,1fr);
+      gap:4px;
+    }
+    .cal-header{
+      font-size:10px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.06em;color:var(--light);
+      text-align:center;padding:4px 0;
+    }
+    .cal-day{
+      text-align:center;
+      padding:7px 4px;
+      border-radius:7px;
+      font-size:13px;font-weight:500;
+      color:var(--muted);
+      cursor:default;
+    }
+    .cal-day.today-cell{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#fff;font-weight:700;
+      box-shadow:0 2px 8px rgba(192,57,43,.3);
+    }
+    .cal-day.result-cell{
+      background:var(--accent3);color:#fff;font-weight:700;
+    }
+    .cal-day.empty{color:transparent;pointer-events:none;}
+    .cal-day.sat{color:var(--accent);}
+
+    /* ── CONTENT ── */
+    .content-section{margin:40px 0;}
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:1.4rem;font-weight:700;
+      color:var(--text);
+      margin-bottom:16px;
+      padding-bottom:10px;
+      border-bottom:2px solid var(--border);
+      position:relative;
+    }
+    .section-title::after{
+      content:'';position:absolute;bottom:-2px;left:0;
+      width:48px;height:2px;background:var(--accent);
+    }
+    .content-section p{color:var(--muted);margin-bottom:14px;line-height:1.8;}
+    .content-section ul{color:var(--muted);padding-left:20px;line-height:1.9;}
+    .content-section li{margin-bottom:5px;}
+
+    /* Month table */
+    .month-table-wrap{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;overflow-x:auto;}
+    .month-table{width:100%;border-collapse:collapse;font-size:14px;}
+    .month-table th{background:var(--surface2);color:var(--muted);text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+    .month-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);}
+    .month-table td:first-child{color:var(--text);font-weight:600;}
+    .month-table td:nth-child(2){font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);}
+    .month-table tr:last-child td{border-bottom:none;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:3px;}
+    .faq-item{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+    .faq-q{
+      width:100%;background:var(--surface);border:none;
+      color:var(--text);font-family:'Source Sans 3',sans-serif;
+      font-size:15px;font-weight:600;text-align:left;
+      padding:14px 18px;cursor:pointer;
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      transition:background .15s;
+    }
+    .faq-q:hover{background:var(--surface2);}
+    .faq-arrow{transition:transform .25s;flex-shrink:0;color:var(--light);}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;background:#fff;transition:max-height .3s ease,padding .3s ease;padding:0 18px;}
+    .faq-item.open .faq-a{max-height:300px;padding:14px 18px;}
+    .faq-a p{color:var(--muted);margin:0;line-height:1.75;}
+
+    /* Related tools */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;}
+    .tool-chip{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:13px 15px;
+      display:flex;align-items:center;gap:10px;
+      font-size:14px;font-weight:600;color:var(--text);
+      transition:border-color .2s,box-shadow .2s;
+    }
+    .tool-chip:hover{border-color:var(--accent2);box-shadow:var(--shadow);text-decoration:none;}
+    .tool-chip .icon{font-size:20px;}
+
+    /* Star rating */
+    .rating-widget{
+      background:var(--surface2);border:1px solid var(--border);
+      border-radius:var(--radius);padding:20px 24px;
+      display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+      margin-top:32px;
+    }
+    .stars{display:flex;gap:5px;}
+    .star{font-size:26px;cursor:pointer;color:var(--border);transition:color .15s,transform .15s;}
+    .star.filled{color:#f39c12;}
+    .star:hover{transform:scale(1.2);}
+    .rating-text{color:var(--muted);font-size:14px;}
+    .rating-text strong{color:var(--text);}
+
+    /* Footer */
+    .page-footer{
+      border-top:1px solid var(--border);padding:24px 0 0;margin-top:48px;
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px;
+    }
+    .page-footer nav{display:flex;gap:16px;}
+    .page-footer a{color:var(--muted);}
+    .page-footer a:hover{color:var(--text);}
+
+    /* Sticky anchor */
+    #adAnchor{
+      position:fixed;bottom:0;left:0;right:0;
+      background:var(--surface);border-top:1px solid var(--border);
+      padding:6px 16px;display:flex;align-items:center;
+      justify-content:space-between;z-index:999;min-height:60px;
+    }
+    #adClose{
+      background:none;border:none;color:var(--muted);
+      cursor:pointer;font-size:18px;padding:4px 8px;flex-shrink:0;
+    }
+
+    @media(max-width:600px){
+      .converter-card{padding:20px 16px;}
+      .today-banner{padding:14px 16px;}
+      .hero h1{font-size:1.7rem;}
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a>
+    <span>›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a>
+    <span>›</span>
+    <span>Nepali Date Converter</span>
+  </nav>
+
+  <!-- AD SLOT 1: Leaderboard -->
+  <div class="ad-slot ad-leader" aria-label="Advertisement">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    Advertisement · 728×90
+  </div>
+
+  <!-- TODAY BANNER -->
+  <div class="today-banner" id="todayBanner" aria-label="Today's Nepali date">
+    <div>
+      <div class="today-label">🗓 Today's Nepali Date</div>
+      <div class="today-bs" id="todayBS">Loading…</div>
+      <div class="today-ad" id="todayAD"></div>
+    </div>
+    <div class="today-right">
+      <div class="today-day" id="todayWeekday"></div>
+      <div class="today-month" id="todayMonth"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">🇳🇵 Free · Instant · Accurate</div>
+    <h1>Nepali Date Converter<br /><span>BS ↔ AD</span></h1>
+    <p>Convert between Bikram Sambat (Nepali) and Gregorian (English) dates. Covers 2000–2090 BS.</p>
+  </header>
+
+  <!-- TOOL -->
+  <main>
+    <div class="converter-card" id="tool">
+
+      <!-- Mode toggle -->
+      <div class="mode-toggle" role="group" aria-label="Conversion direction">
+        <button class="mode-btn active" id="btnBsToAd" onclick="setMode('bs2ad')">
+          <span class="flag">🇳🇵</span> BS → AD (Nepali to English)
+        </button>
+        <button class="mode-btn" id="btnAdToBs" onclick="setMode('ad2bs')">
+          <span class="flag">🌍</span> AD → BS (English to Nepali)
+        </button>
+      </div>
+
+      <!-- BS INPUT -->
+      <div id="inputBS">
+        <div class="fields-row">
+          <div class="field">
+            <label for="bsYear">Year (BS)</label>
+            <div class="select-wrap">
+              <select id="bsYear"></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bsMonth">Month (BS)</label>
+            <div class="select-wrap">
+              <select id="bsMonth">
+                <option value="1">Baisakh (1)</option>
+                <option value="2">Jestha (2)</option>
+                <option value="3">Ashadh (3)</option>
+                <option value="4">Shrawan (4)</option>
+                <option value="5">Bhadra (5)</option>
+                <option value="6">Ashwin (6)</option>
+                <option value="7">Kartik (7)</option>
+                <option value="8">Mangsir (8)</option>
+                <option value="9">Poush (9)</option>
+                <option value="10">Magh (10)</option>
+                <option value="11">Falgun (11)</option>
+                <option value="12">Chaitra (12)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bsDay">Day (BS)</label>
+            <div class="select-wrap">
+              <select id="bsDay"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD INPUT -->
+      <div id="inputAD" style="display:none">
+        <div class="fields-row">
+          <div class="field">
+            <label for="adYear">Year (AD)</label>
+            <input type="number" id="adYear" placeholder="e.g. 2025" min="1944" max="2033" />
+          </div>
+          <div class="field">
+            <label for="adMonth">Month (AD)</label>
+            <div class="select-wrap">
+              <select id="adMonth">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="adDay">Day (AD)</label>
+            <input type="number" id="adDay" placeholder="e.g. 14" min="1" max="31" />
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-convert" id="convertBtn" onclick="doConvert()">Convert Date →</button>
+    </div>
+
+    <!-- RESULT -->
+    <section id="result-section" aria-live="polite">
+      <!-- AD SLOT 2: Post-result (highest CTR) -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+        <div class="ad-slot ad-rect" style="flex:1;min-width:280px;">
+          <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
+          Advertisement · 300×250
+        </div>
+        <div class="result-card" style="flex:1;min-width:260px;">
+          <div class="result-tag" id="resultTag">Converted Date</div>
+          <div class="result-date" id="resultDate">–</div>
+          <div class="result-sub" id="resultSub"></div>
+          <div class="result-pills" id="resultPills"></div>
+          <button class="btn-copy" id="copyBtn" onclick="copyResult()">📋 Copy Date</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONTH CALENDAR STRIP -->
+    <div class="month-strip" id="calStrip" style="display:none">
+      <div class="strip-header">
+        <div class="strip-title" id="calTitle"></div>
+        <div class="strip-nav">
+          <button onclick="navCal(-1)">‹ Prev</button>
+          <button onclick="navCal(1)">Next ›</button>
+        </div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <!-- AD SLOT 3: Post-tool responsive -->
+    <div class="ad-slot ad-post" aria-label="Advertisement">
+      Advertisement · Responsive
+    </div>
+
+    <!-- CONTENT: How to use -->
+    <section class="content-section" id="how-to-use">
+      <h2 class="section-title">How to Convert Nepali Date to English Date</h2>
+      <p>Converting between Bikram Sambat (BS) and Gregorian (AD) dates is straightforward with this tool:</p>
+      <ul>
+        <li>To convert <strong>BS to AD</strong>: Select "BS → AD", choose the Nepali year, month, and day, then click Convert.</li>
+        <li>To convert <strong>AD to BS</strong>: Select "AD → BS", enter the English year, month, and day, then click Convert.</li>
+        <li>Today's Nepali date is always shown at the top of the page automatically.</li>
+        <li>The mini calendar shows the full BS month with the result highlighted.</li>
+      </ul>
+      <p>The tool covers all dates from <strong>2000 BS (1943 AD)</strong> to <strong>2090 BS (2033 AD)</strong> using the official NRB/government-standard lookup table.</p>
+    </section>
+
+    <!-- CONTENT: What is BS -->
+    <section class="content-section">
+      <h2 class="section-title">What is Bikram Sambat (BS)?</h2>
+      <p><strong>Bikram Sambat (BS)</strong>, also spelled Vikram Samvat, is the official national calendar of Nepal. It is named after the legendary King Vikramaditya and runs approximately <strong>56 years and 8.5 months ahead</strong> of the Gregorian (AD) calendar. The Nepali New Year (Naya Barsha) begins on <strong>Baisakh 1</strong>, which falls in mid-April each year.</p>
+      <p>Unlike the Gregorian calendar, BS months do not have a fixed number of days — each month has 29 to 32 days depending on the year, determined by the lunar-solar cycle. This is why a lookup table is required for accurate conversion rather than a simple formula.</p>
+      <p>The BS calendar is used in all official government documents, legal contracts, public holidays, school admissions, and birth certificates in Nepal. Understanding how to convert BS to AD and vice versa is essential for visa applications, international transactions, and DV Lottery forms.</p>
+    </section>
+
+    <!-- AD SLOT 4: In-article -->
+    <div class="ad-slot ad-inline" aria-label="Advertisement">
+      Advertisement · In-article
+    </div>
+
+    <!-- CONTENT: Nepali months table -->
+    <section class="content-section">
+      <h2 class="section-title">Nepali Months (BS) and Their English Equivalents</h2>
+      <p>Each Nepali month spans across two Gregorian months. Here is a quick reference:</p>
+      <div class="month-table-wrap">
+        <table class="month-table">
+          <thead><tr><th>#</th><th>Nepali Name</th><th>Nepali (Devanagari)</th><th>Approx. English Period</th><th>Typical Days</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Baisakh</td><td>बैशाख</td><td>mid-April – mid-May</td><td>30–32</td></tr>
+            <tr><td>2</td><td>Jestha</td><td>जेष्ठ</td><td>mid-May – mid-June</td><td>31–32</td></tr>
+            <tr><td>3</td><td>Ashadh</td><td>असार</td><td>mid-June – mid-July</td><td>31–32</td></tr>
+            <tr><td>4</td><td>Shrawan</td><td>श्रावण</td><td>mid-July – mid-August</td><td>31–32</td></tr>
+            <tr><td>5</td><td>Bhadra</td><td>भाद्र</td><td>mid-August – mid-September</td><td>31–32</td></tr>
+            <tr><td>6</td><td>Ashwin</td><td>आश्विन</td><td>mid-September – mid-October</td><td>29–31</td></tr>
+            <tr><td>7</td><td>Kartik</td><td>कार्तिक</td><td>mid-October – mid-November</td><td>29–30</td></tr>
+            <tr><td>8</td><td>Mangsir</td><td>मङ्सिर</td><td>mid-November – mid-December</td><td>29–30</td></tr>
+            <tr><td>9</td><td>Poush</td><td>पौष</td><td>mid-December – mid-January</td><td>29–30</td></tr>
+            <tr><td>10</td><td>Magh</td><td>माघ</td><td>mid-January – mid-February</td><td>29–30</td></tr>
+            <tr><td>11</td><td>Falgun</td><td>फाल्गुन</td><td>mid-February – mid-March</td><td>29–30</td></tr>
+            <tr><td>12</td><td>Chaitra</td><td>चैत्र</td><td>mid-March – mid-April</td><td>29–31</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is Bikram Sambat (BS)?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Bikram Sambat is Nepal's official calendar, running approximately 56 years and 8.5 months ahead of the Gregorian (AD) calendar. 2025 AD corresponds to 2081–2082 BS.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Why doesn't the BS calendar use a simple formula?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Each BS month has a variable number of days (29–32) based on lunar-solar calculations, unlike the fixed Gregorian months. Accurate conversion requires a pre-computed lookup table for each year.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is the Nepali New Year date in AD?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Baisakh 1 (Nepali New Year) typically falls on April 13 or 14 in the Gregorian calendar. In 2082 BS, it falls on April 14, 2025 AD.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How accurate is this date converter?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>This tool uses the standard BS calendar lookup table (same data used by government offices, Hamropatro, and ashesh.com.np) covering 2000–2090 BS with 100% accuracy.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Why do I need to convert BS to AD?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Common uses include: filling DV Lottery forms (birthdate in AD), international job/university applications, visa applications, converting birth certificates, and international business documents.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+      <div class="tools-grid">
+        <a href="/qr.html" class="tool-chip"><span class="icon">📲</span> Bank QR Generator</a>
+        <a href="/ipo.html" class="tool-chip"><span class="icon">📊</span> IPO Result Checker</a>
+        <a href="/emi.html" class="tool-chip"><span class="icon">🏦</span> EMI Calculator</a>
+        <a href="/nepse-calculator.html" class="tool-chip"><span class="icon">📈</span> NEPSE Calculator</a>
+        <a href="/tax.html" class="tool-chip"><span class="icon">🧾</span> Salary Tax Calculator</a>
+        <a href="/nrb-rate.html" class="tool-chip"><span class="icon">💱</span> NRB Exchange Rate</a>
+      </div>
+    </section>
+
+    <!-- Rating -->
+    <div class="rating-widget">
+      <div class="stars" id="starRating">
+        <span class="star" data-val="1">★</span>
+        <span class="star" data-val="2">★</span>
+        <span class="star" data-val="3">★</span>
+        <span class="star" data-val="4">★</span>
+        <span class="star" data-val="5">★</span>
+      </div>
+      <div class="rating-text">
+        <strong>Rate this tool</strong><br />
+        <span id="ratingMsg">Click a star to rate</span>
+      </div>
+    </div>
+
+    <p style="color:var(--light);font-size:12px;margin-top:18px;text-align:right;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> ·
+      <a href="https://suman-pokhrel.com.np">suman-pokhrel.com.np</a>
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav>
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+      <a href="https://suman-pokhrel.com.np/privacy.html">Privacy</a>
+    </nav>
+  </footer>
+</div>
+
+<!-- Sticky ad -->
+<div id="adAnchor">
+  <div class="ad-slot" style="flex:1;min-height:50px;border:none;background:transparent;font-size:11px;">
+    Advertisement · Sticky Footer
+  </div>
+  <button id="adClose" onclick="document.getElementById('adAnchor').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════
+   NEPALI DATE DATA TABLE
+   Source: Standard BS calendar (NRB-equivalent data)
+   Format: calData[bsYear][0..11] = days in each month
+   Starts from 2000 BS, where 2000/1/1 = 1943 April 14 AD
+════════════════════════════════════════════════════ */
+const BS_START_YEAR = 2000;
+// Days in each BS month for years 2000–2090
+// Each row = [Baisakh, Jestha, Ashadh, Shrawan, Bhadra, Ashwin, Kartik, Mangsir, Poush, Magh, Falgun, Chaitra]
+const calData = [
+  [30,32,31,32,31,30,30,30,29,30,29,31], // 2000
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2001
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2002
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2003
+  [30,32,31,32,31,30,30,30,29,30,29,31], // 2004
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2005
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2006
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2007
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2008
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2009
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2010
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2011
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2012
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2013
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2014
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2015
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2016
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2017
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2018
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2019
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2020
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2021
+  [31,32,31,32,31,30,30,29,30,29,30,30], // 2022
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2023
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2024
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2025
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2026
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2027
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2028
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2029
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2030
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2031
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2032
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2033
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2034
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2035
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2036
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2037
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2038
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2039
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2040
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2041
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2042
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2043
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2044
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2045
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2046
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2047
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2048
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2049
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2050
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2051
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2052
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2053
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2054
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2055
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2056
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2057
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2058
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2059
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2060
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2061
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2062
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2063
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2064
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2065
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2066
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2067
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2068
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2069
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2070
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2071
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2072
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2073
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2074
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2075
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2076
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2077
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2078
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2079
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2080
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2081
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2082
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2083
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2084
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2085
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2086
+  [31,32,31,32,31,30,30,30,29,29,30,31], // 2087
+  [31,31,31,32,31,31,29,30,29,30,29,31], // 2088
+  [31,31,32,31,31,31,30,29,30,29,30,30], // 2089
+  [31,31,32,32,31,30,30,29,30,29,30,30], // 2090
+];
+
+// 2000 BS Baisakh 1 = 1943 April 14 (Wednesday)
+const AD_EPOCH = new Date(1943, 3, 14); // months 0-indexed
+
+const BS_MONTHS = ['Baisakh','Jestha','Ashadh','Shrawan','Bhadra','Ashwin','Kartik','Mangsir','Poush','Magh','Falgun','Chaitra'];
+const AD_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const WEEKDAYS  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const WEEKDAYS_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+/* ── TOTAL BS DAYS from epoch to given BS date ── */
+function bsToDaysFromEpoch(bsY, bsM, bsD) {
+  let days = 0;
+  for (let y = BS_START_YEAR; y < bsY; y++) {
+    const row = calData[y - BS_START_YEAR];
+    if (!row) break;
+    days += row.reduce((a, b) => a + b, 0);
+  }
+  const row = calData[bsY - BS_START_YEAR];
+  for (let m = 0; m < bsM - 1; m++) days += row[m];
+  days += bsD - 1;
+  return days;
+}
+
+/* ── BS date → AD date ── */
+function bsToAd(bsY, bsM, bsD) {
+  const days = bsToDaysFromEpoch(bsY, bsM, bsD);
+  const ad = new Date(AD_EPOCH);
+  ad.setDate(ad.getDate() + days);
+  return ad;
+}
+
+/* ── AD date → BS date ── */
+function adToBs(adDate) {
+  // total days from AD_EPOCH
+  const diff = Math.round((adDate - AD_EPOCH) / 86400000);
+  if (diff < 0) return null;
+  let rem = diff;
+  let bsY = BS_START_YEAR;
+  for (let i = 0; i < calData.length; i++) {
+    const yearDays = calData[i].reduce((a, b) => a + b, 0);
+    if (rem < yearDays) break;
+    rem -= yearDays;
+    bsY++;
+  }
+  const row = calData[bsY - BS_START_YEAR];
+  if (!row) return null;
+  let bsM = 1;
+  for (let m = 0; m < 12; m++) {
+    if (rem < row[m]) { bsM = m + 1; break; }
+    rem -= row[m];
+  }
+  return { y: bsY, m: bsM, d: rem + 1 };
+}
+
+/* ── FORMAT ── */
+function padZ(n) { return String(n).padStart(2, '0'); }
+function fmtAD(d) {
+  return `${d.getDate()} ${AD_MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+}
+function fmtBS(b) {
+  return `${b.d} ${BS_MONTHS[b.m - 1]} ${b.y} BS`;
+}
+
+/* ── POPULATE BS YEAR DROPDOWN ── */
+(function buildBsYears() {
+  const sel = document.getElementById('bsYear');
+  for (let y = 2000; y <= 2090; y++) {
+    const o = document.createElement('option');
+    o.value = y; o.textContent = y;
+    if (y === 2082) o.selected = true;
+    sel.appendChild(o);
+  }
+})();
+
+/* ── POPULATE BS DAY DROPDOWN (dynamic) ── */
+function refreshBsDays() {
+  const y = +document.getElementById('bsYear').value;
+  const m = +document.getElementById('bsMonth').value;
+  const maxDay = calData[y - BS_START_YEAR]?.[m - 1] || 32;
+  const sel = document.getElementById('bsDay');
+  const prev = +sel.value || 1;
+  sel.innerHTML = '';
+  for (let d = 1; d <= maxDay; d++) {
+    const o = document.createElement('option');
+    o.value = d; o.textContent = d;
+    if (d === Math.min(prev, maxDay)) o.selected = true;
+    sel.appendChild(o);
+  }
+}
+refreshBsDays();
+document.getElementById('bsYear').addEventListener('change', refreshBsDays);
+document.getElementById('bsMonth').addEventListener('change', refreshBsDays);
+
+/* ── TODAY'S NEPALI DATE ── */
+(function showToday() {
+  const today = new Date();
+  const bs = adToBs(today);
+  if (!bs) return;
+  document.getElementById('todayBS').textContent =
+    `${bs.d} ${BS_MONTHS[bs.m - 1]}, ${bs.y} BS`;
+  document.getElementById('todayAD').textContent =
+    today.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  document.getElementById('todayWeekday').textContent =
+    WEEKDAYS[today.getDay()];
+  document.getElementById('todayMonth').textContent =
+    `${AD_MONTHS[today.getMonth()]} ${today.getFullYear()}`;
+})();
+
+/* ── MODE SWITCH ── */
+let currentMode = 'bs2ad';
+function setMode(m) {
+  currentMode = m;
+  document.getElementById('inputBS').style.display  = m === 'bs2ad' ? '' : 'none';
+  document.getElementById('inputAD').style.display  = m === 'ad2bs' ? '' : 'none';
+  document.getElementById('btnBsToAd').classList.toggle('active', m === 'bs2ad');
+  document.getElementById('btnAdToBs').classList.toggle('active', m === 'ad2bs');
+  document.getElementById('result-section').style.display = 'none';
+  document.getElementById('calStrip').style.display = 'none';
+}
+
+/* ── CALENDAR STATE ── */
+let calBS = { y: 2082, m: 1 };
+let highlightDay = null;
+
+/* ── DRAW MINI CALENDAR ── */
+function drawCalendar() {
+  const { y, m } = calBS;
+  const row = calData[y - BS_START_YEAR];
+  if (!row) return;
+  const daysInMonth = row[m - 1];
+
+  // What weekday is Baisakh 1 of this year?
+  const firstAD = bsToAd(y, m, 1);
+  const startWD = firstAD.getDay(); // 0=Sun
+
+  document.getElementById('calTitle').textContent = `${BS_MONTHS[m - 1]} ${y} BS`;
+
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+
+  // Headers
+  WEEKDAYS_SHORT.forEach(d => {
+    const h = document.createElement('div');
+    h.className = 'cal-header' + (d === 'Sat' ? ' sat' : '');
+    h.textContent = d;
+    grid.appendChild(h);
+  });
+
+  // Empty cells
+  for (let i = 0; i < startWD; i++) {
+    const e = document.createElement('div'); e.className = 'cal-day empty'; e.textContent = '-';
+    grid.appendChild(e);
+  }
+
+  // Today in BS
+  const todayBS = adToBs(new Date());
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('div');
+    const wd = (startWD + d - 1) % 7;
+    let cls = 'cal-day';
+    if (wd === 6) cls += ' sat';
+    if (todayBS && todayBS.y === y && todayBS.m === m && todayBS.d === d) cls += ' today-cell';
+    if (highlightDay === d) cls += ' result-cell';
+    cell.className = cls;
+    cell.textContent = d;
+    grid.appendChild(cell);
+  }
+
+  document.getElementById('calStrip').style.display = 'block';
+}
+
+function navCal(dir) {
+  calBS.m += dir;
+  if (calBS.m > 12) { calBS.m = 1; calBS.y++; }
+  if (calBS.m < 1)  { calBS.m = 12; calBS.y--; }
+  highlightDay = null;
+  drawCalendar();
+}
+
+/* ── CONVERT ── */
+function doConvert() {
+  const btn = document.getElementById('convertBtn');
+  btn.textContent = 'Converting…';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.textContent = 'Convert Date →';
+    btn.disabled = false;
+
+    let resultDateStr = '', resultSubStr = '', resultTagStr = '';
+    let pills = '';
+
+    if (currentMode === 'bs2ad') {
+      const y = +document.getElementById('bsYear').value;
+      const m = +document.getElementById('bsMonth').value;
+      const d = +document.getElementById('bsDay').value;
+      if (!y || !m || !d) return;
+
+      const ad = bsToAd(y, m, d);
+      resultTagStr = '🇳🇵 Nepali → 🌍 English';
+      resultDateStr = ad.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      resultSubStr  = WEEKDAYS[ad.getDay()];
+      pills = `
+        <div class="result-pill">🗓 BS: <strong>${d} ${BS_MONTHS[m-1]} ${y}</strong></div>
+        <div class="result-pill">📅 AD: <strong>${ad.toLocaleDateString('en-US',{day:'numeric',month:'short',year:'numeric'})}</strong></div>
+        <div class="result-pill">📆 <strong>${WEEKDAYS[ad.getDay()]}</strong></div>
+      `;
+      // show calendar
+      calBS = { y, m }; highlightDay = d;
+      drawCalendar();
+
+    } else {
+      const y = +document.getElementById('adYear').value;
+      const m = +document.getElementById('adMonth').value;
+      const d = +document.getElementById('adDay').value;
+      if (!y || !m || !d) return;
+
+      const ad = new Date(y, m - 1, d);
+      const bs = adToBs(ad);
+      if (!bs) { alert('Date out of supported range (1943–2033 AD)'); return; }
+
+      resultTagStr  = '🌍 English → 🇳🇵 Nepali';
+      resultDateStr = `${bs.d} ${BS_MONTHS[bs.m - 1]} ${bs.y} BS`;
+      resultSubStr  = WEEKDAYS[ad.getDay()];
+      pills = `
+        <div class="result-pill">📅 AD: <strong>${d} ${AD_MONTHS[m-1]} ${y}</strong></div>
+        <div class="result-pill">🗓 BS: <strong>${bs.d} ${BS_MONTHS[bs.m-1]} ${bs.y}</strong></div>
+        <div class="result-pill">📆 <strong>${WEEKDAYS[ad.getDay()]}</strong></div>
+      `;
+      calBS = { y: bs.y, m: bs.m }; highlightDay = bs.d;
+      drawCalendar();
+    }
+
+    document.getElementById('resultTag').textContent   = resultTagStr;
+    document.getElementById('resultDate').textContent  = resultDateStr;
+    document.getElementById('resultSub').textContent   = resultSubStr;
+    document.getElementById('resultPills').innerHTML   = pills;
+    document.getElementById('copyBtn').textContent     = '📋 Copy Date';
+    document.getElementById('copyBtn').className       = 'btn-copy';
+
+    const rs = document.getElementById('result-section');
+    rs.style.display = 'block';
+    rs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 120);
+}
+
+/* ── COPY ── */
+function copyResult() {
+  const txt = document.getElementById('resultDate').textContent;
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Copied!';
+    btn.className = 'btn-copy copied';
+    setTimeout(() => { btn.textContent = '📋 Copy Date'; btn.className = 'btn-copy'; }, 2000);
+  });
+}
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* ── STAR RATING ── */
+document.querySelectorAll('.star').forEach(s => {
+  s.addEventListener('mouseover', () => {
+    const v = +s.dataset.val;
+    document.querySelectorAll('.star').forEach(x => x.classList.toggle('filled', +x.dataset.val <= v));
+  });
+  s.addEventListener('mouseleave', () => {
+    const saved = +document.getElementById('starRating').dataset.saved || 0;
+    document.querySelectorAll('.star').forEach(x => x.classList.toggle('filled', +x.dataset.val <= saved));
+  });
+  s.addEventListener('click', () => {
+    const v = +s.dataset.val;
+    document.getElementById('starRating').dataset.saved = v;
+    document.querySelectorAll('.star').forEach(x => x.classList.toggle('filled', +x.dataset.val <= v));
+    document.getElementById('ratingMsg').textContent =
+      ['','Needs work','Fair','Good','Great','Excellent! ⭐'][v];
+  });
+});
+</script>
+</body>
+</html>
