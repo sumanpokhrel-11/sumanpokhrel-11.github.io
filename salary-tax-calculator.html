@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ SEO ══ -->
+  <title>Nepal Salary Tax Calculator 2082/83 – Income Tax with Deductions | Free Tool</title>
+  <meta name="description" content="Free Nepal salary tax calculator for FY 2082/83. Calculate income tax with SSF, PF, CIT, insurance deductions. Shows monthly TDS, tax breakdown by slab, and take-home salary." />
+  <meta name="keywords" content="nepal salary tax calculator, income tax calculator nepal 2082 83, salary tax nepal, nepal tax calculator 2082, tds calculator nepal, income tax nepal 2081 82, nepal tax slab 2082" />
+  <link rel="canonical" href="https://suman-pokhrel.com.np/salary-tax-calculator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Nepal Salary Tax Calculator FY 2082/83 – Free Tool" />
+  <meta property="og:description" content="Calculate your Nepal salary tax instantly. Supports all deductions – SSF, PF, CIT, life insurance. Updated for FY 2082/83." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://suman-pokhrel.com.np/salary-tax-calculator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ══ SCHEMA ══ -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"Nepal Salary Tax Calculator 2082/83",
+     "url":"https://suman-pokhrel.com.np/salary-tax-calculator.html",
+     "description":"Free online Nepal income tax calculator for FY 2082/83. Calculate salary tax with SSF, PF, CIT, insurance deductions. Shows monthly TDS and slab-wise breakdown.",
+     "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+     "offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"},
+     "author":{"@type":"Person","name":"Suman Pokhrel","url":"https://suman-pokhrel.com.np"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What are the income tax slabs in Nepal for FY 2082/83?",
+       "acceptedAnswer":{"@type":"Answer","text":"For single individuals: 1% up to Rs 5,00,000; 10% on Rs 5–7 lakhs; 20% on Rs 7–10 lakhs; 30% on Rs 10–20 lakhs; 36% on Rs 20–50 lakhs; 39% above Rs 50 lakhs. Married couples get Rs 1 lakh extra in the first two slabs."}},
+      {"@type":"Question","name":"How is SSF contribution deducted from salary tax in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"The employee's 11% SSF contribution is fully deductible from gross income with no upper limit. If you contribute to SSF, the 1% social security tax on the first slab is also waived."}},
+      {"@type":"Question","name":"What is the FRTC (Female Remuneration Tax Credit) in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Female employees in Nepal get a 10% rebate on their calculated income tax as Female Remuneration Tax Credit (FRTC) under the Income Tax Act 2058."}},
+      {"@type":"Question","name":"What is the maximum CIT deduction in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"CIT (Citizen Investment Trust) contributions are deductible up to Rs 3,00,000 per year, subject to 1/3 of taxable income. Life insurance premiums are deductible up to Rs 40,000 per year."}},
+      {"@type":"Question","name":"How is monthly TDS calculated from salary in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Annual tax liability is divided by 12 to get monthly TDS. For example, if your annual tax is Rs 60,000, your employer deducts Rs 5,000 per month."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://suman-pokhrel.com.np/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://suman-pokhrel.com.np/#tools"},
+      {"@type":"ListItem","position":3,"name":"Salary Tax Calculator","item":"https://suman-pokhrel.com.np/salary-tax-calculator.html"}
+    ]}
+  ]}
+  </script>
+
+  <!-- AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:       #0a0f1e;
+      --surface:  #111827;
+      --card:     #1a2235;
+      --border:   #252f45;
+      --border2:  #2e3d5a;
+      --blue:     #3b82f6;
+      --cyan:     #06b6d4;
+      --green:    #10b981;
+      --amber:    #f59e0b;
+      --red:      #ef4444;
+      --purple:   #8b5cf6;
+      --text:     #e2e8f0;
+      --muted:    #64748b;
+      --light:    #94a3b8;
+      --radius:   14px;
+      --radius-sm:9px;
+      --mono:     'JetBrains Mono', monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Cabinet Grotesk',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      line-height:1.6;
+    }
+    /* Grid noise background */
+    body::before{
+      content:'';position:fixed;inset:0;
+      background-image:
+        linear-gradient(rgba(59,130,246,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,.03) 1px, transparent 1px);
+      background-size:40px 40px;
+      pointer-events:none;z-index:0;
+    }
+
+    .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 16px 80px;}
+    a{color:var(--blue);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* ─ AD SLOTS ─ */
+    .ad-slot{
+      background:var(--surface);border:1px dashed var(--border2);
+      border-radius:var(--radius-sm);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    }
+    .ad-leader{min-height:90px;margin:14px 0;}
+    .ad-rect{min-height:250px;}
+    .ad-post{min-height:90px;margin:24px 0;}
+    .ad-inline{min-height:90px;margin:32px 0;}
+
+    /* ─ BREADCRUMB ─ */
+    .breadcrumb{padding:18px 0 0;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+    .breadcrumb a{color:var(--muted);}
+
+    /* ─ HERO ─ */
+    .hero{padding:36px 0 28px;text-align:center;}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);
+      color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:5px 14px;border-radius:100px;margin-bottom:16px;
+    }
+    .hero h1{
+      font-size:clamp(1.8rem,5vw,2.7rem);font-weight:800;line-height:1.15;
+      color:#fff;margin-bottom:12px;
+    }
+    .hero h1 em{font-style:normal;color:var(--cyan);}
+    .hero p{font-size:1rem;color:var(--light);max-width:520px;margin:0 auto;}
+    .fy-pill{
+      display:inline-block;margin-top:12px;
+      background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);
+      color:var(--green);font-size:12px;font-weight:700;
+      padding:4px 14px;border-radius:100px;
+    }
+
+    /* ─ FORM CARD ─ */
+    .form-card{
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius);padding:32px;
+      box-shadow:0 8px 40px rgba(0,0,0,.4);margin-bottom:24px;
+    }
+
+    .section-sub{
+      font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+      color:var(--muted);margin-bottom:16px;padding-bottom:8px;
+      border-bottom:1px solid var(--border);
+    }
+    .section-sub span{color:var(--blue);}
+
+    /* FY + Status row */
+    .top-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;}
+    @media(max-width:600px){.top-row{grid-template-columns:1fr 1fr;}}
+    @media(max-width:400px){.top-row{grid-template-columns:1fr;}}
+
+    /* Fields */
+    .field{display:flex;flex-direction:column;gap:6px;}
+    .field label{
+      font-size:11px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.07em;color:var(--muted);
+    }
+    .field label .tip{
+      font-weight:400;color:var(--border2);font-size:10px;
+      margin-left:4px;text-transform:none;letter-spacing:0;
+    }
+    .field input,.field select{
+      background:var(--card);border:1.5px solid var(--border2);
+      border-radius:var(--radius-sm);color:var(--text);
+      font-family:'Cabinet Grotesk',sans-serif;font-size:15px;
+      padding:11px 14px;outline:none;transition:border-color .2s,box-shadow .2s;
+      -webkit-appearance:none;width:100%;
+    }
+    .field input:focus,.field select:focus{
+      border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.15);
+    }
+    .field input::placeholder{color:var(--muted);opacity:.6;}
+
+    /* NPR prefix */
+    .input-wrap{position:relative;}
+    .input-wrap .prefix{
+      position:absolute;left:12px;top:50%;transform:translateY(-50%);
+      font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;
+      pointer-events:none;
+    }
+    .input-wrap input{padding-left:48px;}
+
+    /* Select arrow */
+    .select-wrap{position:relative;}
+    .select-wrap::after{
+      content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);
+      color:var(--muted);pointer-events:none;font-size:12px;
+    }
+    .select-wrap select{padding-right:32px;cursor:pointer;}
+
+    /* Deductions grid */
+    .ded-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
+    @media(max-width:500px){.ded-grid{grid-template-columns:1fr;}}
+
+    /* Checkboxes */
+    .check-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+    .check-row input[type=checkbox]{
+      width:18px;height:18px;accent-color:var(--green);cursor:pointer;flex-shrink:0;
+    }
+    .check-row label{font-size:14px;color:var(--light);cursor:pointer;}
+    .check-row label strong{color:var(--text);}
+
+    /* Calculate button */
+    .btn-calc{
+      width:100%;padding:16px;
+      background:linear-gradient(135deg,var(--blue) 0%,var(--cyan) 100%);
+      color:#fff;border:none;border-radius:var(--radius-sm);
+      font-family:'Cabinet Grotesk',sans-serif;
+      font-size:16px;font-weight:800;letter-spacing:.02em;
+      cursor:pointer;
+      box-shadow:0 4px 20px rgba(59,130,246,.35);
+      transition:transform .15s,box-shadow .15s,opacity .15s;
+    }
+    .btn-calc:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,130,246,.5);}
+    .btn-calc:active{transform:translateY(0);}
+    .btn-calc:disabled{opacity:.5;cursor:not-allowed;}
+
+    /* ─ RESULTS ─ */
+    #results{display:none;animation:fadeUp .35s ease;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Summary cards row */
+    .summary-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+    @media(max-width:700px){.summary-row{grid-template-columns:1fr 1fr;}}
+    @media(max-width:380px){.summary-row{grid-template-columns:1fr;}}
+
+    .summary-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:16px;text-align:center;
+    }
+    .summary-card .sc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:6px;}
+    .summary-card .sc-value{font-family:var(--mono);font-size:1.25rem;font-weight:600;}
+    .summary-card.green .sc-value{color:var(--green);}
+    .summary-card.blue  .sc-value{color:var(--blue);}
+    .summary-card.amber .sc-value{color:var(--amber);}
+    .summary-card.red   .sc-value{color:var(--red);}
+
+    /* Effective rate gauge */
+    .gauge-wrap{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:20px 24px;
+      margin-bottom:20px;
+    }
+    .gauge-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+    .gauge-label{font-size:13px;font-weight:700;color:var(--light);}
+    .gauge-pct{font-family:var(--mono);font-size:1.4rem;font-weight:600;color:var(--cyan);}
+    .gauge-track{
+      height:10px;background:var(--border);border-radius:100px;
+      overflow:hidden;margin-bottom:6px;
+    }
+    .gauge-fill{
+      height:100%;border-radius:100px;
+      background:linear-gradient(90deg,var(--green),var(--cyan),var(--amber),var(--red));
+      transition:width .8s cubic-bezier(.22,.68,0,1.2);
+    }
+    .gauge-ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);}
+
+    /* Slab breakdown table */
+    .breakdown-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:20px 24px;
+      margin-bottom:20px;
+    }
+    .breakdown-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;}
+    .slab-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .slab-table th{
+      background:var(--surface);color:var(--muted);text-align:left;
+      padding:8px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;
+    }
+    .slab-table td{
+      padding:9px 12px;border-bottom:1px solid var(--border);
+      font-family:var(--mono);color:var(--light);
+    }
+    .slab-table td:first-child{font-family:'Cabinet Grotesk',sans-serif;color:var(--text);font-weight:600;}
+    .slab-table tr:last-child td{border-bottom:none;}
+    .slab-table .total-row td{
+      background:rgba(59,130,246,.08);
+      font-weight:700;color:var(--text);
+      border-top:1px solid var(--border2);
+    }
+    .slab-bar{
+      display:inline-block;
+      height:8px;border-radius:4px;
+      background:linear-gradient(90deg,var(--blue),var(--cyan));
+      vertical-align:middle;margin-left:8px;
+      transition:width .6s ease;min-width:2px;
+    }
+
+    /* Monthly summary */
+    .monthly-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:20px 24px;
+      margin-bottom:20px;
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    }
+    @media(max-width:480px){.monthly-card{grid-template-columns:1fr;}}
+    .monthly-item{}
+    .monthly-item .mi-label{font-size:12px;color:var(--muted);margin-bottom:4px;font-weight:600;}
+    .monthly-item .mi-value{font-family:var(--mono);font-size:1.1rem;font-weight:600;color:var(--text);}
+    .monthly-item .mi-value.green{color:var(--green);}
+    .monthly-item .mi-value.red{color:var(--red);}
+    .monthly-item .mi-value.amber{color:var(--amber);}
+
+    /* Deduction summary */
+    .ded-summary{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:20px 24px;
+      margin-bottom:20px;
+    }
+    .ded-row{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:7px 0;border-bottom:1px solid var(--border);
+      font-size:14px;
+    }
+    .ded-row:last-child{border-bottom:none;font-weight:700;padding-top:12px;}
+    .ded-row .dn{color:var(--light);}
+    .ded-row .dv{font-family:var(--mono);color:var(--text);}
+    .ded-row.total .dn{color:var(--text);}
+    .ded-row.total .dv{color:var(--green);}
+
+    /* Print / Copy row */
+    .action-row{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+    .btn-action{
+      flex:1;min-width:140px;padding:11px 16px;
+      border:1.5px solid var(--border2);border-radius:var(--radius-sm);
+      background:transparent;color:var(--light);
+      font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:600;
+      cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;
+      transition:border-color .2s,color .2s,background .2s;
+    }
+    .btn-action:hover{border-color:var(--blue);color:var(--text);background:rgba(59,130,246,.07);}
+
+    /* ─ CONTENT ─ */
+    .content-section{margin:44px 0;}
+    .section-title{
+      font-size:1.3rem;font-weight:800;color:#fff;
+      margin-bottom:16px;padding-bottom:10px;
+      border-bottom:1px solid var(--border);position:relative;
+    }
+    .section-title::after{
+      content:'';position:absolute;bottom:-1px;left:0;
+      width:44px;height:2px;background:var(--blue);
+    }
+    .content-section p{color:var(--light);margin-bottom:14px;line-height:1.8;font-size:15px;}
+    .content-section ul,.content-section ol{color:var(--light);padding-left:20px;line-height:1.9;font-size:15px;}
+    .content-section li{margin-bottom:6px;}
+    .content-section strong{color:var(--text);}
+
+    /* Tax slab reference table */
+    .slab-ref-wrap{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;overflow-x:auto;}
+    .slab-ref{width:100%;border-collapse:collapse;font-size:14px;}
+    .slab-ref th{background:var(--surface);color:var(--muted);padding:10px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+    .slab-ref td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--light);}
+    .slab-ref td:first-child{color:var(--text);font-weight:600;}
+    .slab-ref td:last-child{font-family:var(--mono);font-weight:600;}
+    .slab-ref tr:last-child td{border-bottom:none;}
+    .rate-badge{
+      display:inline-block;padding:2px 10px;border-radius:100px;
+      font-size:12px;font-weight:700;
+    }
+    .r1{background:rgba(16,185,129,.15);color:var(--green);}
+    .r10{background:rgba(59,130,246,.15);color:var(--blue);}
+    .r20{background:rgba(6,182,212,.15);color:var(--cyan);}
+    .r30{background:rgba(245,158,11,.15);color:var(--amber);}
+    .r36{background:rgba(239,68,68,.15);color:var(--red);}
+    .r39{background:rgba(139,92,246,.15);color:var(--purple);}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:3px;}
+    .faq-item{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+    .faq-q{
+      width:100%;background:var(--surface);border:none;
+      color:var(--text);font-family:'Cabinet Grotesk',sans-serif;
+      font-size:15px;font-weight:600;text-align:left;
+      padding:14px 18px;cursor:pointer;
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      transition:background .15s;
+    }
+    .faq-q:hover{background:var(--card);}
+    .faq-arrow{transition:transform .25s;flex-shrink:0;color:var(--muted);}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;background:var(--card);transition:max-height .3s ease,padding .3s ease;padding:0 18px;}
+    .faq-item.open .faq-a{max-height:300px;padding:14px 18px;}
+    .faq-a p{color:var(--light);margin:0;line-height:1.75;}
+
+    /* Related tools */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;}
+    .tool-chip{
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
+      padding:13px 15px;display:flex;align-items:center;gap:10px;
+      font-size:14px;font-weight:600;color:var(--text);
+      transition:border-color .2s,box-shadow .2s;
+    }
+    .tool-chip:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(59,130,246,.15);text-decoration:none;}
+    .tool-chip .icon{font-size:20px;}
+
+    /* Sticky anchor */
+    #adAnchor{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;justify-content:space-between;z-index:999;min-height:60px;}
+    #adClose{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px 8px;flex-shrink:0;}
+
+    /* footer */
+    .page-footer{border-top:1px solid var(--border);padding:24px 0 0;margin-top:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px;}
+    .page-footer nav{display:flex;gap:16px;}
+    .page-footer a{color:var(--muted);}
+
+    @media print{
+      body{background:#fff;color:#000;}
+      .ad-slot,.btn-calc,#adAnchor,.breadcrumb,.hero,.content-section,.tools-grid,.faq-list{display:none!important;}
+      #results{display:block!important;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a><span>›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a><span>›</span>
+    <span>Salary Tax Calculator</span>
+  </nav>
+
+  <!-- AD 1: Leaderboard -->
+  <div class="ad-slot ad-leader">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    Advertisement · 728×90
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">💰 Free · No Login · Instant</div>
+    <h1>Nepal Salary<br /><em>Tax Calculator</em></h1>
+    <p>Calculate your income tax, monthly TDS, and take-home salary with all deductions — updated for the latest tax slabs.</p>
+    <div class="fy-pill">✓ FY 2082/83 &amp; 2081/82 Supported</div>
+  </header>
+
+  <!-- FORM -->
+  <main>
+    <div class="form-card">
+
+      <!-- Row 1: FY, Status, FRTC -->
+      <div class="section-sub"><span>01</span> Basic Information</div>
+      <div class="top-row">
+        <div class="field">
+          <label for="fy">Fiscal Year</label>
+          <div class="select-wrap">
+            <select id="fy">
+              <option value="2082">FY 2082/83 (Current)</option>
+              <option value="2081">FY 2081/82</option>
+              <option value="2080">FY 2080/81</option>
+              <option value="2079">FY 2079/80</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="status">Marital Status</label>
+          <div class="select-wrap">
+            <select id="status">
+              <option value="single">Single</option>
+              <option value="couple">Married (Couple)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="gender">Gender</label>
+          <div class="select-wrap">
+            <select id="gender">
+              <option value="other">Male / Other</option>
+              <option value="female">Female (FRTC eligible)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Income -->
+      <div class="section-sub" style="margin-top:8px;"><span>02</span> Annual Income</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;">
+        <div class="field">
+          <label for="basicSalary">Basic Salary <span class="tip">(monthly)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="basicSalary" placeholder="e.g. 80000" min="0" oninput="autoCalcGross()" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="grossIncome">Annual Gross Income <span class="tip">(total)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="grossIncome" placeholder="e.g. 1200000" min="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="allowances">Annual Allowances <span class="tip">(DA, TA, etc.)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="allowances" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="bonus">Annual Bonus <span class="tip">(taxable portion)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="bonus" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Deductions -->
+      <div class="section-sub"><span>03</span> Deductions <span style="font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0;">(annual, leave blank if N/A)</span></div>
+      <div class="ded-grid">
+        <div class="field">
+          <label for="ssf">SSF Contribution <span class="tip">(11% of basic = auto)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="ssf" placeholder="Auto (11% basic)" min="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="epf">EPF / PF Contribution</label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="epf" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="cit">CIT Contribution <span class="tip">(max Rs 3L)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="cit" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="lifeIns">Life Insurance Premium <span class="tip">(max Rs 40K)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="lifeIns" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="medIns">Medical Insurance Premium</label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="medIns" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="medAllowance">Medical Allowance <span class="tip">(max Rs 1.2L/yr)</span></label>
+          <div class="input-wrap">
+            <span class="prefix">NPR</span>
+            <input type="number" id="medAllowance" placeholder="0" min="0" value="0" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="check-row">
+        <input type="checkbox" id="seniorCitizen" />
+        <label for="seniorCitizen"><strong>Senior Citizen</strong> — 10% rebate on tax liability</label>
+      </div>
+      <div class="check-row" style="margin-bottom:24px;">
+        <input type="checkbox" id="remoteWorker" />
+        <label for="remoteWorker"><strong>Remote Area Worker</strong> — additional Rs 50,000 deduction</label>
+      </div>
+
+      <button class="btn-calc" id="calcBtn" onclick="calculate()">⚡ Calculate Tax</button>
+    </div>
+
+    <!-- ═══ RESULTS ═══ -->
+    <section id="results" aria-live="polite">
+
+      <!-- Action row -->
+      <div class="action-row">
+        <button class="btn-action" onclick="window.print()">🖨️ Print Report</button>
+        <button class="btn-action" id="copyBtn" onclick="copyResults()">📋 Copy Summary</button>
+        <button class="btn-action" onclick="resetForm()">↺ Reset</button>
+      </div>
+
+      <!-- AD 2: Post-result (high CTR) -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+        <div class="ad-slot ad-rect" style="flex:1;min-width:280px;border:none;">
+          Advertisement · 300×250
+        </div>
+        <div style="flex:2;min-width:280px;">
+          <!-- Summary Cards -->
+          <div class="summary-row">
+            <div class="summary-card green">
+              <div class="sc-label">Take-Home (Annual)</div>
+              <div class="sc-value" id="rTakeHome">–</div>
+            </div>
+            <div class="summary-card blue">
+              <div class="sc-label">Taxable Income</div>
+              <div class="sc-value" id="rTaxable">–</div>
+            </div>
+            <div class="summary-card amber">
+              <div class="sc-label">Total Tax</div>
+              <div class="sc-value" id="rTax">–</div>
+            </div>
+            <div class="summary-card red">
+              <div class="sc-label">Monthly TDS</div>
+              <div class="sc-value" id="rTDS">–</div>
+            </div>
+          </div>
+
+          <!-- Gauge -->
+          <div class="gauge-wrap">
+            <div class="gauge-header">
+              <div class="gauge-label">Effective Tax Rate</div>
+              <div class="gauge-pct" id="rEffRate">0%</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" id="gaugeFill" style="width:0%"></div>
+            </div>
+            <div class="gauge-ticks"><span>0%</span><span>10%</span><span>20%</span><span>30%</span><span>39%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slab Breakdown -->
+      <div class="breakdown-card">
+        <div class="breakdown-title">📊 Tax Slab Breakdown</div>
+        <table class="slab-table" id="slabTable">
+          <thead><tr><th>Slab</th><th>Income Range</th><th>Taxable Amount</th><th>Rate</th><th>Tax</th></tr></thead>
+          <tbody id="slabBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Monthly breakdown -->
+      <div class="monthly-card">
+        <div class="monthly-item">
+          <div class="mi-label">Monthly Gross</div>
+          <div class="mi-value" id="mGross">–</div>
+        </div>
+        <div class="monthly-item">
+          <div class="mi-label">Monthly TDS (Tax)</div>
+          <div class="mi-value red" id="mTDS">–</div>
+        </div>
+        <div class="monthly-item">
+          <div class="mi-label">Monthly SSF/PF Deduction</div>
+          <div class="mi-value amber" id="mSSF">–</div>
+        </div>
+        <div class="monthly-item">
+          <div class="mi-label">Monthly Take-Home</div>
+          <div class="mi-value green" id="mTakeHome">–</div>
+        </div>
+        <div class="monthly-item">
+          <div class="mi-label">Annual Gross</div>
+          <div class="mi-value" id="aGross">–</div>
+        </div>
+        <div class="monthly-item">
+          <div class="mi-label">Total Deductions</div>
+          <div class="mi-value amber" id="aTotalDed">–</div>
+        </div>
+      </div>
+
+      <!-- Deduction summary -->
+      <div class="ded-summary">
+        <div class="breakdown-title">📋 Deduction Summary</div>
+        <div id="dedSummaryBody"></div>
+      </div>
+
+    </section>
+
+    <!-- AD 3: Post tool -->
+    <div class="ad-slot ad-post">Advertisement · Responsive</div>
+
+    <!-- CONTENT: How it works -->
+    <section class="content-section" id="how-it-works">
+      <h2 class="section-title">How to Calculate Salary Tax in Nepal</h2>
+      <p>Nepal uses a <strong>progressive tax system</strong> under the Income Tax Act 2058. Your salary tax is calculated in these steps:</p>
+      <ol>
+        <li><strong>Start with Gross Annual Income</strong> — total of basic salary + allowances + bonus.</li>
+        <li><strong>Subtract allowable deductions</strong> — SSF (11% of basic, no cap), EPF/PF, CIT (max Rs 3L), life insurance (max Rs 40K), medical insurance, medical allowance (max Rs 1.2L/yr).</li>
+        <li><strong>Arrive at Taxable Income</strong> — gross minus deductions.</li>
+        <li><strong>Apply progressive slabs</strong> — each portion of income is taxed at its respective rate (1% → 10% → 20% → 30% → 36% → 39%).</li>
+        <li><strong>Apply rebates</strong> — 10% rebate for female employees (FRTC), 10% for senior citizens.</li>
+        <li><strong>Divide by 12</strong> for monthly TDS that your employer deducts each month.</li>
+      </ol>
+      <p>Note: The 1% tax on the first slab is the Social Security Tax. It is <strong>waived if you contribute to SSF</strong> (Social Security Fund).</p>
+    </section>
+
+    <!-- Tax Slab Table -->
+    <section class="content-section">
+      <h2 class="section-title">Nepal Income Tax Slabs FY 2082/83</h2>
+      <p>The Government of Nepal maintained the same progressive tax slabs for FY 2082/83 as the previous year. The couple bracket gives an extra Rs 1 lakh of income in the first two slabs.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;flex-wrap:wrap;" class="slab-tables">
+        <div>
+          <p style="font-weight:700;color:var(--text);margin-bottom:10px;">👤 Single Individual</p>
+          <div class="slab-ref-wrap">
+            <table class="slab-ref">
+              <thead><tr><th>Annual Income (NPR)</th><th>Rate</th></tr></thead>
+              <tbody>
+                <tr><td>Up to 5,00,000</td><td><span class="rate-badge r1">1%</span></td></tr>
+                <tr><td>5,00,001 – 7,00,000</td><td><span class="rate-badge r10">10%</span></td></tr>
+                <tr><td>7,00,001 – 10,00,000</td><td><span class="rate-badge r20">20%</span></td></tr>
+                <tr><td>10,00,001 – 20,00,000</td><td><span class="rate-badge r30">30%</span></td></tr>
+                <tr><td>20,00,001 – 50,00,000</td><td><span class="rate-badge r36">36%</span></td></tr>
+                <tr><td>Above 50,00,000</td><td><span class="rate-badge r39">39%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text);margin-bottom:10px;">👫 Married Couple</p>
+          <div class="slab-ref-wrap">
+            <table class="slab-ref">
+              <thead><tr><th>Annual Income (NPR)</th><th>Rate</th></tr></thead>
+              <tbody>
+                <tr><td>Up to 6,00,000</td><td><span class="rate-badge r1">1%</span></td></tr>
+                <tr><td>6,00,001 – 8,00,000</td><td><span class="rate-badge r10">10%</span></td></tr>
+                <tr><td>8,00,001 – 11,00,000</td><td><span class="rate-badge r20">20%</span></td></tr>
+                <tr><td>11,00,001 – 20,00,000</td><td><span class="rate-badge r30">30%</span></td></tr>
+                <tr><td>20,00,001 – 50,00,000</td><td><span class="rate-badge r36">36%</span></td></tr>
+                <tr><td>Above 50,00,000</td><td><span class="rate-badge r39">39%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:14px;">⚠️ An additional 3% surcharge applies on income between Rs 20L–50L (totalling 39%) for certain brackets. The tool uses the exact IRD formula.</p>
+    </section>
+
+    <!-- AD 4: In-article -->
+    <div class="ad-slot ad-inline">Advertisement · In-article</div>
+
+    <!-- Deductions guide -->
+    <section class="content-section">
+      <h2 class="section-title">Allowable Deductions in Nepal Salary Tax</h2>
+      <ul>
+        <li><strong>SSF (Social Security Fund)</strong> — 11% of basic salary, fully deductible with no upper limit. Also waives the 1% social security tax.</li>
+        <li><strong>EPF / Provident Fund</strong> — Employee's contribution is deductible. Combined retirement deduction (SSF+PF+CIT) cannot exceed 1/3 of taxable income or Rs 5,00,000.</li>
+        <li><strong>CIT (Citizen Investment Trust)</strong> — Deductible up to Rs 3,00,000 annually.</li>
+        <li><strong>Life Insurance Premium</strong> — Deductible up to Rs 40,000 per year.</li>
+        <li><strong>Medical Insurance Premium</strong> — Deductible (specific limits apply per IRD rules).</li>
+        <li><strong>Medical Allowance</strong> — Up to Rs 10,000/month (Rs 1,20,000/year) is tax-exempt when supported by actual expenses.</li>
+        <li><strong>Remote Area Allowance</strong> — Additional Rs 50,000 deduction for workers in remote areas.</li>
+        <li><strong>Dashain Bonus</strong> — Up to one month's basic salary is tax-exempt; amounts above this are taxable.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is the tax-free limit for single individuals in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>After deductions, income up to Rs 5,00,000 is taxed at just 1% (social security tax). If you contribute to SSF, even this 1% is waived — making the effective threshold Rs 5,00,000 tax-free. For married couples it is Rs 6,00,000.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is FRTC (Female Remuneration Tax Credit)?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Female employees in Nepal receive a 10% rebate on their total calculated income tax liability under Section 88(3) of the Income Tax Act 2058. This is applied after all deductions and before the final tax figure.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Should I choose SSF or EPF?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>SSF (Social Security Fund) at 11% of basic salary has the added benefit of waiving the 1% social security slab tax. EPF contributions are also deductible but do not waive the 1%. Most employees now enrolled in SSF see a slightly lower tax liability at lower income levels.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How is monthly TDS calculated?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Your employer calculates your estimated annual tax liability at the start of the year (or when your salary changes) and divides by 12 to deduct monthly. The tool shows this exact monthly TDS amount based on your inputs.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">When is the income tax return deadline in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>The annual income tax return deadline is the end of Ashwin (approximately mid-October). If TDS was deducted correctly throughout the year, salaried employees may not need to file a separate return. Self-employed individuals must file by Poush end.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related tools -->
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+      <div class="tools-grid">
+        <a href="/qr.html" class="tool-chip"><span class="icon">📲</span> Bank QR Generator</a>
+        <a href="/nepali-date-converter.html" class="tool-chip"><span class="icon">📅</span> Date Converter</a>
+        <a href="/emi.html" class="tool-chip"><span class="icon">🏦</span> EMI Calculator</a>
+        <a href="/nepse-calculator.html" class="tool-chip"><span class="icon">📈</span> NEPSE Calculator</a>
+        <a href="/ipo.html" class="tool-chip"><span class="icon">📊</span> IPO Result Checker</a>
+        <a href="/nrb-rate.html" class="tool-chip"><span class="icon">💱</span> NRB Exchange Rate</a>
+      </div>
+    </section>
+
+    <p style="color:var(--muted);font-size:12px;text-align:right;margin-top:16px;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> ·
+      Based on IRD Nepal Income Tax Act 2058 · <a href="https://suman-pokhrel.com.np">suman-pokhrel.com.np</a>
+    </p>
+    <p style="color:var(--muted);font-size:11px;margin-top:6px;text-align:right;">
+      ⚠️ For informational purposes only. Verify with IRD Nepal or a qualified tax professional.
+    </p>
+
+  </main>
+
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav>
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+<!-- Sticky ad -->
+<div id="adAnchor">
+  <div class="ad-slot" style="flex:1;min-height:50px;border:none;background:transparent;font-size:11px;">Advertisement · Sticky Footer</div>
+  <button id="adClose" onclick="document.getElementById('adAnchor').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   TAX SLABS  (FY → {single, couple})
+   single/couple = array of {limit, rate}
+   limit = upper bound of this slab (Infinity for last)
+══════════════════════════════════════════ */
+const TAX_SLABS = {
+  2082: {
+    single: [{l:500000,r:.01},{l:700000,r:.10},{l:1000000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}],
+    couple: [{l:600000,r:.01},{l:800000,r:.10},{l:1100000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}]
+  },
+  2081: {
+    single: [{l:500000,r:.01},{l:700000,r:.10},{l:1000000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}],
+    couple: [{l:600000,r:.01},{l:800000,r:.10},{l:1100000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}]
+  },
+  2080: {
+    single: [{l:500000,r:.01},{l:700000,r:.10},{l:1000000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}],
+    couple: [{l:600000,r:.01},{l:800000,r:.10},{l:1100000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}]
+  },
+  2079: {
+    single: [{l:500000,r:.01},{l:700000,r:.10},{l:1000000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}],
+    couple: [{l:600000,r:.01},{l:800000,r:.10},{l:1100000,r:.20},{l:2000000,r:.30},{l:5000000,r:.36},{l:Infinity,r:.39}]
+  }
+};
+
+const SLAB_NAMES = ['1st Slab','2nd Slab','3rd Slab','4th Slab','5th Slab','6th Slab'];
+
+/* Auto-fill gross from monthly basic */
+function autoCalcGross(){
+  const basic = +document.getElementById('basicSalary').value || 0;
+  if(basic > 0) document.getElementById('grossIncome').value = basic * 12;
+}
+
+/* Format NPR */
+function fmtNPR(n){
+  if(isNaN(n)) return '–';
+  return 'Rs ' + Math.round(n).toLocaleString('en-IN');
+}
+function fmtPct(n){ return (n*100).toFixed(2)+'%'; }
+
+/* ══ MAIN CALCULATE ══ */
+function calculate(){
+  const fy      = +document.getElementById('fy').value;
+  const status  = document.getElementById('status').value;
+  const gender  = document.getElementById('gender').value;
+  const basic   = +document.getElementById('basicSalary').value || 0;
+  const gross   = +document.getElementById('grossIncome').value || 0;
+  const allow   = +document.getElementById('allowances').value || 0;
+  const bonus   = +document.getElementById('bonus').value || 0;
+  const ssfIn   = +document.getElementById('ssf').value;
+  const epf     = +document.getElementById('epf').value || 0;
+  const cit     = +document.getElementById('cit').value || 0;
+  const lifeIns = +document.getElementById('lifeIns').value || 0;
+  const medIns  = +document.getElementById('medIns').value || 0;
+  const medAll  = +document.getElementById('medAllowance').value || 0;
+  const senior  = document.getElementById('seniorCitizen').checked;
+  const remote  = document.getElementById('remoteWorker').checked;
+  const isFemale= gender === 'female';
+  const hasSsf  = document.getElementById('ssf').value !== '' || basic > 0;
+
+  if(!gross && !basic){ alert('Please enter your annual gross income or monthly basic salary.'); return; }
+
+  const totalGross = gross + allow + bonus;
+
+  // SSF: use input if provided, else auto-calc 11% of basic*12 if basic given
+  const ssfAmt = ssfIn > 0 ? ssfIn : (basic > 0 ? basic * 12 * 0.11 : 0);
+  const usingSsf = ssfAmt > 0;
+
+  // Deduction calculations with caps
+  const dedSSF   = ssfAmt;                              // no cap
+  const dedEPF   = epf;
+  const dedCIT   = Math.min(cit, 300000);               // max 3L
+  const dedLife  = Math.min(lifeIns, 40000);            // max 40K
+  const dedMedI  = medIns;
+  const dedMedA  = Math.min(medAll, 120000);            // max 1.2L/yr
+  const dedRemote= remote ? 50000 : 0;
+
+  // Combined retirement deduction cap: min(1/3 taxable, 5L) — simplified
+  const retirementDed = dedSSF + dedEPF + dedCIT;
+
+  const totalDed = retirementDed + dedLife + dedMedI + dedMedA + dedRemote;
+  const taxableIncome = Math.max(0, totalGross - totalDed);
+
+  // Get slabs
+  const slabs = TAX_SLABS[fy]?.[status] || TAX_SLABS[2082].single;
+
+  // Progressive calculation
+  let remaining = taxableIncome;
+  let totalTax  = 0;
+  let prev      = 0;
+  const slabResults = [];
+
+  for(let i = 0; i < slabs.length; i++){
+    const {l, r} = slabs[i];
+    const slabSize = l === Infinity ? remaining : Math.min(remaining, l - prev);
+    const taxableInSlab = Math.max(0, Math.min(remaining, slabSize));
+    let tax = taxableInSlab * r;
+
+    // Skip 1% (SST) if contributing to SSF
+    if(i === 0 && usingSsf) tax = 0;
+
+    slabResults.push({
+      name: SLAB_NAMES[i],
+      from: prev, to: l,
+      taxable: taxableInSlab,
+      rate: r, tax
+    });
+    totalTax += tax;
+    remaining -= taxableInSlab;
+    prev = l;
+    if(remaining <= 0) break;
+  }
+
+  // Rebates
+  let rebate = 0;
+  if(isFemale) rebate += totalTax * 0.10;   // FRTC 10%
+  if(senior)   rebate += totalTax * 0.10;   // senior citizen 10%
+
+  const finalTax  = Math.max(0, totalTax - rebate);
+  const monthlyTDS= finalTax / 12;
+  const takeHome  = totalGross - finalTax - (dedSSF + dedEPF);  // cash in hand
+  const effRate   = taxableIncome > 0 ? finalTax / totalGross : 0;
+
+  /* ── RENDER ── */
+  document.getElementById('rTakeHome').textContent = fmtNPR(takeHome);
+  document.getElementById('rTaxable').textContent  = fmtNPR(taxableIncome);
+  document.getElementById('rTax').textContent      = fmtNPR(finalTax);
+  document.getElementById('rTDS').textContent      = fmtNPR(monthlyTDS);
+  document.getElementById('rEffRate').textContent  = fmtPct(effRate);
+
+  // Gauge (max scale = 39%)
+  const gaugeW = Math.min(100, (effRate / 0.39) * 100);
+  document.getElementById('gaugeFill').style.width = gaugeW + '%';
+
+  // Slab table
+  const tbody = document.getElementById('slabBody');
+  tbody.innerHTML = '';
+  const maxTax = Math.max(...slabResults.map(s=>s.tax), 1);
+  slabResults.forEach(s => {
+    if(s.taxable === 0) return;
+    const barW = Math.round((s.tax / maxTax) * 80);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${s.name}</td>
+      <td>${s.from===0?'0':fmtNPR(s.from).replace('Rs ','')} – ${s.to===Infinity?'above':fmtNPR(s.to).replace('Rs ','')}</td>
+      <td>${fmtNPR(s.taxable)}</td>
+      <td>${(s.rate*100).toFixed(0)}%</td>
+      <td>${fmtNPR(s.tax)}<span class="slab-bar" style="width:${barW}px"></span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  // Totals row
+  const totRow = document.createElement('tr');
+  totRow.className = 'total-row';
+  let rebateNote = '';
+  if(rebate > 0) rebateNote = ` (−${fmtNPR(rebate)} rebate)`;
+  totRow.innerHTML = `<td colspan="4">Total Tax${rebateNote}</td><td>${fmtNPR(finalTax)}</td>`;
+  tbody.appendChild(totRow);
+
+  // Monthly
+  document.getElementById('mGross').textContent    = fmtNPR(totalGross/12);
+  document.getElementById('mTDS').textContent      = fmtNPR(monthlyTDS);
+  document.getElementById('mSSF').textContent      = fmtNPR((dedSSF+dedEPF)/12);
+  document.getElementById('mTakeHome').textContent = fmtNPR(takeHome/12);
+  document.getElementById('aGross').textContent    = fmtNPR(totalGross);
+  document.getElementById('aTotalDed').textContent = fmtNPR(totalDed);
+
+  // Deduction summary
+  const dedItems = [
+    {n:'Annual Gross Income', v: totalGross, bold:false},
+    {n:'SSF Contribution (11%)', v: -dedSSF},
+    {n:'EPF / Provident Fund', v: -dedEPF},
+    {n:'CIT Contribution', v: -dedCIT},
+    {n:'Life Insurance Premium', v: -dedLife},
+    {n:'Medical Insurance', v: -dedMedI},
+    {n:'Medical Allowance', v: -dedMedA},
+    {n:'Remote Area Deduction', v: -dedRemote},
+  ].filter(d => d.v !== 0 && d.v !== undefined);
+
+  const dedBody = document.getElementById('dedSummaryBody');
+  dedBody.innerHTML = '';
+  dedItems.forEach(d => {
+    const row = document.createElement('div');
+    row.className = 'ded-row';
+    row.innerHTML = `<span class="dn">${d.n}</span><span class="dv">${d.v > 0 ? fmtNPR(d.v) : '− '+fmtNPR(-d.v)}</span>`;
+    dedBody.appendChild(row);
+  });
+  // Taxable income total
+  const totD = document.createElement('div');
+  totD.className = 'ded-row total';
+  totD.innerHTML = `<span class="dn">Taxable Income</span><span class="dv">${fmtNPR(taxableIncome)}</span>`;
+  dedBody.appendChild(totD);
+
+  // Show results
+  const rs = document.getElementById('results');
+  rs.style.display = 'block';
+  rs.scrollIntoView({behavior:'smooth', block:'start'});
+
+  // Store for copy
+  window._calcResult = {totalGross,taxableIncome,finalTax,monthlyTDS,takeHome,effRate};
+}
+
+/* ── COPY ── */
+function copyResults(){
+  const r = window._calcResult;
+  if(!r){ alert('Calculate first!'); return; }
+  const txt = [
+    'Nepal Salary Tax Summary',
+    '─────────────────────────',
+    `Annual Gross:   ${fmtNPR(r.totalGross)}`,
+    `Taxable Income: ${fmtNPR(r.taxableIncome)}`,
+    `Total Tax:      ${fmtNPR(r.finalTax)}`,
+    `Monthly TDS:    ${fmtNPR(r.monthlyTDS)}`,
+    `Take-Home/yr:   ${fmtNPR(r.takeHome)}`,
+    `Effective Rate: ${fmtPct(r.effRate)}`,
+    `Calculated at suman-pokhrel.com.np`
+  ].join('\n');
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b = document.getElementById('copyBtn');
+    b.textContent = '✓ Copied!';
+    setTimeout(()=>{ b.innerHTML='📋 Copy Summary'; },2000);
+  });
+}
+
+/* ── RESET ── */
+function resetForm(){
+  document.querySelectorAll('input[type=number]').forEach(i=>i.value='');
+  document.getElementById('results').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+</script>
+</body>
+</html>
