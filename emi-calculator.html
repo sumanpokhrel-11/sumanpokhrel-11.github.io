@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ SEO ══ -->
+  <title>EMI Calculator Nepal – Home Loan, Car Loan, Personal Loan | Free 2082</title>
+  <meta name="description" content="Free EMI calculator Nepal. Calculate monthly EMI for home loan, car loan, personal loan, education loan. Get full amortization schedule, total interest, and repayment breakdown instantly." />
+  <meta name="keywords" content="emi calculator nepal, home loan emi calculator nepal, car loan calculator nepal, personal loan emi nepal, bank loan calculator nepal, loan calculator nepal 2082, emi calculator" />
+  <link rel="canonical" href="https://suman-pokhrel.com.np/emi-calculator.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="EMI Calculator Nepal – Home, Car & Personal Loans" />
+  <meta property="og:description" content="Calculate monthly loan EMI, total interest, and full repayment schedule for any Nepali bank loan. Free and instant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://suman-pokhrel.com.np/emi-calculator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ══ SCHEMA ══ -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication",
+     "name":"EMI Calculator Nepal",
+     "url":"https://suman-pokhrel.com.np/emi-calculator.html",
+     "description":"Free online EMI calculator for Nepal. Calculate monthly EMI, total interest payable, and full amortization schedule for home loans, car loans, and personal loans from Nepali banks.",
+     "applicationCategory":"FinanceApplication",
+     "operatingSystem":"Any",
+     "offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"},
+     "author":{"@type":"Person","name":"Suman Pokhrel","url":"https://suman-pokhrel.com.np"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is EMI?",
+       "acceptedAnswer":{"@type":"Answer","text":"EMI (Equated Monthly Installment) is the fixed monthly payment you make to repay a loan. It includes both the principal amount and the interest, calculated so the loan is fully repaid over the tenure."}},
+      {"@type":"Question","name":"What is the home loan interest rate in Nepal 2082?",
+       "acceptedAnswer":{"@type":"Answer","text":"Home loan interest rates in Nepal currently range from about 8.5% to 13% per annum depending on the bank, loan amount, and your credit profile. NRB sets the base rate that banks must follow."}},
+      {"@type":"Question","name":"How is EMI calculated?",
+       "acceptedAnswer":{"@type":"Answer","text":"EMI = [P × r × (1+r)^n] / [(1+r)^n - 1], where P is the principal loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the number of monthly installments."}},
+      {"@type":"Question","name":"What is the maximum home loan tenure in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Most Nepali banks offer home loans for up to 25 years (300 months). Some banks extend up to 30 years for younger borrowers. Car loans typically go up to 7 years and personal loans up to 5 years."}},
+      {"@type":"Question","name":"Which banks offer the lowest EMI in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Rastriya Banijya Bank (RBB) and Nepal Bank Limited (NBL) government banks often have slightly lower base rates. Commercial banks like Nabil, NIC Asia, Global IME and others are competitive. Always compare the effective interest rate (EIR) including processing fees."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://suman-pokhrel.com.np/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://suman-pokhrel.com.np/#tools"},
+      {"@type":"ListItem","position":3,"name":"EMI Calculator","item":"https://suman-pokhrel.com.np/emi-calculator.html"}
+    ]}
+  ]}
+  </script>
+
+  <!-- AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:       #08101e;
+      --surface:  #0e1b2e;
+      --card:     #132035;
+      --card2:    #182840;
+      --border:   #1e3050;
+      --border2:  #263d60;
+      --gold:     #d4a435;
+      --gold2:    #f0c060;
+      --teal:     #2dd4bf;
+      --blue:     #4a90d9;
+      --red:      #e05c5c;
+      --green:    #34d399;
+      --text:     #dce8f5;
+      --muted:    #5a7a9a;
+      --light:    #8baabf;
+      --mono:     'JetBrains Mono', monospace;
+      --serif:    'Cormorant Garamond', serif;
+      --sans:     'Outfit', sans-serif;
+      --r:        14px;
+      --rs:       9px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
+
+    /* Diagonal stripe texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(212,164,53,.03) 0px,
+        rgba(212,164,53,.03) 1px,
+        transparent 1px,
+        transparent 28px
+      );
+      pointer-events: none; z-index: 0;
+    }
+
+    .wrap { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 16px 80px; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── AD SLOTS ── */
+    .ad-slot {
+      background: var(--surface); border: 1px dashed var(--border2);
+      border-radius: var(--rs);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 11px; letter-spacing: .08em;
+      text-transform: uppercase; font-weight: 600;
+    }
+    .ad-leader  { min-height: 90px; margin: 14px 0; }
+    .ad-post    { min-height: 90px; margin: 24px 0; }
+    .ad-inline  { min-height: 90px; margin: 32px 0; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { padding: 18px 0 0; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); }
+
+    /* ── HERO ── */
+    .hero { padding: 36px 0 28px; text-align: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(212,164,53,.1); border: 1px solid rgba(212,164,53,.25);
+      color: var(--gold); font-size: 11px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 10px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold2); }
+    .hero p { font-size: 1rem; color: var(--light); max-width: 480px; margin: 0 auto; }
+
+    /* ── LOAN TYPE PRESETS ── */
+    .presets {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 28px;
+    }
+    .preset-btn {
+      padding: 8px 18px;
+      background: var(--card); border: 1.5px solid var(--border2);
+      border-radius: 100px; color: var(--light);
+      font-family: var(--sans); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      border-color: var(--gold); color: var(--gold2);
+      background: rgba(212,164,53,.1);
+      box-shadow: 0 0 20px rgba(212,164,53,.15);
+    }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    @media(max-width: 720px) { .main-grid { grid-template-columns: 1fr; } }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.4);
+    }
+
+    .card-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--gold); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .field:last-of-type { margin-bottom: 0; }
+    .field label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .field label .sub { font-weight: 400; color: var(--border2); text-transform: none; letter-spacing: 0; margin-left: 4px; }
+
+    .slider-wrap { position: relative; }
+    .field input[type=range] {
+      -webkit-appearance: none;
+      width: 100%; height: 5px;
+      background: var(--border2); border-radius: 100px;
+      outline: none; cursor: pointer; margin-top: 6px;
+    }
+    .field input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--bg);
+      box-shadow: 0 0 8px rgba(212,164,53,.5);
+      cursor: pointer; transition: transform .15s;
+    }
+    .field input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+    .range-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+    .value-display {
+      background: var(--card); border: 1.5px solid var(--border2);
+      border-radius: var(--rs); padding: 10px 14px;
+      font-family: var(--mono); font-size: 1.1rem; font-weight: 600;
+      color: var(--gold2); text-align: right; width: 100%;
+      margin-top: 8px; letter-spacing: .02em;
+    }
+
+    /* ── DONUT CHART CARD ── */
+    .chart-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.4);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: space-between;
+    }
+
+    .donut-wrap {
+      position: relative; width: 200px; height: 200px;
+      margin: 16px auto;
+    }
+    .donut-svg { transform: rotate(-90deg); }
+    .donut-center {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .donut-emi-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .donut-emi-value {
+      font-family: var(--serif); font-size: 1.55rem; font-weight: 700;
+      color: var(--gold2); line-height: 1.1;
+    }
+    .donut-emi-sub { font-size: 11px; color: var(--muted); }
+
+    .legend { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 8px; }
+    .legend-item {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px;
+    }
+    .legend-dot-wrap { display: flex; align-items: center; gap: 8px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .legend-key { color: var(--light); font-weight: 500; }
+    .legend-val { font-family: var(--mono); font-weight: 600; color: var(--text); font-size: 13px; }
+
+    /* ── SUMMARY ROW ── */
+    .summary-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin-bottom: 20px;
+    }
+    @media(max-width: 600px) { .summary-strip { grid-template-columns: 1fr 1fr; } }
+
+    .scard {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--rs); padding: 14px 16px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .scard::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .scard.emi::before { background: var(--gold); }
+    .scard.total::before { background: var(--teal); }
+    .scard.interest::before { background: var(--red); }
+    .scard.savings::before { background: var(--green); }
+    .scard .sc-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 5px; }
+    .scard .sc-value { font-family: var(--mono); font-size: 1.1rem; font-weight: 600; }
+    .scard.emi .sc-value { color: var(--gold2); }
+    .scard.total .sc-value { color: var(--teal); }
+    .scard.interest .sc-value { color: var(--red); }
+    .scard.savings .sc-value { color: var(--green); }
+
+    /* ── AMORTIZATION TABLE ── */
+    .amort-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r); overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .amort-header {
+      padding: 16px 20px; display: flex;
+      align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 10px;
+    }
+    .amort-title { font-size: 14px; font-weight: 700; color: var(--text); }
+    .view-toggle { display: flex; gap: 4px; }
+    .vtbtn {
+      padding: 6px 14px; border-radius: 6px;
+      background: transparent; border: 1px solid var(--border2);
+      color: var(--muted); font-family: var(--sans); font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: all .15s;
+    }
+    .vtbtn.active { background: rgba(212,164,53,.15); border-color: var(--gold); color: var(--gold2); }
+
+    .amort-table-wrap { overflow-x: auto; max-height: 360px; overflow-y: auto; }
+    .amort-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .amort-table th {
+      background: var(--card2); color: var(--muted); text-align: right;
+      padding: 10px 14px; font-size: 11px; text-transform: uppercase;
+      letter-spacing: .06em; font-weight: 700; position: sticky; top: 0; z-index: 2;
+    }
+    .amort-table th:first-child { text-align: left; }
+    .amort-table td {
+      padding: 9px 14px; border-bottom: 1px solid var(--border);
+      text-align: right; font-family: var(--mono); color: var(--light); font-size: 12px;
+    }
+    .amort-table td:first-child { text-align: left; font-family: var(--sans); font-weight: 600; color: var(--text); }
+    .amort-table tr:last-child td { border-bottom: none; }
+    .amort-table tr:hover td { background: rgba(212,164,53,.04); }
+    .amort-table .yr-row td { background: rgba(45,212,191,.05); color: var(--teal); font-weight: 600; }
+    .interest-cell { color: var(--red) !important; }
+    .principal-cell { color: var(--green) !important; }
+    .balance-cell { color: var(--light) !important; }
+
+    /* Progress bar inside table */
+    .prog-bar {
+      display: inline-block; height: 5px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      vertical-align: middle; margin-left: 6px;
+    }
+
+    /* ── ACTIONS ── */
+    .action-row { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+    .btn-action {
+      flex: 1; min-width: 130px; padding: 11px 16px;
+      border: 1.5px solid var(--border2); border-radius: var(--rs);
+      background: transparent; color: var(--light);
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;
+      transition: all .2s;
+    }
+    .btn-action:hover { border-color: var(--gold); color: var(--gold2); background: rgba(212,164,53,.07); }
+
+    /* ── CONTENT SECTIONS ── */
+    .content-section { margin: 44px 0; }
+    .section-title {
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 700;
+      color: #fff; margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border); position: relative;
+    }
+    .section-title::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 44px; height: 2px; background: var(--gold); }
+    .content-section p { color: var(--light); margin-bottom: 14px; line-height: 1.8; font-size: 15px; }
+    .content-section ul, .content-section ol { color: var(--light); padding-left: 20px; line-height: 1.9; font-size: 15px; }
+    .content-section li { margin-bottom: 6px; }
+    .content-section strong { color: var(--text); }
+
+    /* Bank rate table */
+    .rate-table-wrap { border: 1px solid var(--border); border-radius: var(--rs); overflow: hidden; overflow-x: auto; }
+    .rate-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .rate-table th { background: var(--card2); color: var(--muted); text-align: left; padding: 10px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+    .rate-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--light); }
+    .rate-table td:first-child { color: var(--text); font-weight: 600; }
+    .rate-table tr:last-child td { border-bottom: none; }
+    .rate-chip {
+      display: inline-block; padding: 2px 10px; border-radius: 100px;
+      font-size: 12px; font-weight: 700;
+      background: rgba(212,164,53,.12); color: var(--gold2);
+    }
+
+    /* Formula box */
+    .formula-box {
+      background: var(--card); border: 1px solid var(--border2);
+      border-radius: var(--rs); padding: 18px 20px; margin: 16px 0;
+      font-family: var(--mono); font-size: 14px; color: var(--teal);
+      letter-spacing: .02em; line-height: 1.9;
+    }
+    .formula-box .comment { color: var(--muted); font-size: 12px; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 3px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--rs); overflow: hidden; }
+    .faq-q {
+      width: 100%; background: var(--surface); border: none;
+      color: var(--text); font-family: var(--sans);
+      font-size: 15px; font-weight: 600; text-align: left;
+      padding: 14px 18px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      transition: background .15s;
+    }
+    .faq-q:hover { background: var(--card); }
+    .faq-arrow { transition: transform .25s; flex-shrink: 0; color: var(--muted); }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; background: var(--card); transition: max-height .3s ease, padding .3s ease; padding: 0 18px; }
+    .faq-item.open .faq-a { max-height: 300px; padding: 14px 18px; }
+    .faq-a p { color: var(--light); margin: 0; line-height: 1.75; }
+
+    /* Related tools */
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 10px; }
+    .tool-chip {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--rs);
+      padding: 13px 15px; display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 600; color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .tool-chip:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(212,164,53,.15); text-decoration: none; }
+
+    /* Sticky ad */
+    #adAnchor { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--border); padding: 6px 16px; display: flex; align-items: center; justify-content: space-between; z-index: 999; min-height: 60px; }
+    #adClose { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 4px 8px; }
+
+    /* Footer */
+    .page-footer { border-top: 1px solid var(--border); padding: 24px 0 0; margin-top: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 13px; }
+    .page-footer nav { display: flex; gap: 16px; }
+    .page-footer a { color: var(--muted); }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .ad-slot, .hero, .presets, .content-section, .tools-grid, .faq-list, #adAnchor, .breadcrumb { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a><span>›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a><span>›</span>
+    <span>EMI Calculator Nepal</span>
+  </nav>
+
+  <!-- AD 1 -->
+  <div class="ad-slot ad-leader">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    Advertisement · 728×90
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">🏦 Free · Instant · No Signup</div>
+    <h1>Loan <em>EMI</em> Calculator<br />Nepal</h1>
+    <p>Calculate monthly EMI, total interest, and full amortization schedule for any bank loan in Nepal.</p>
+  </header>
+
+  <!-- LOAN TYPE PRESETS -->
+  <div class="presets" id="presetRow">
+    <button class="preset-btn active" onclick="setPreset('home')"   id="p-home">🏠 Home Loan</button>
+    <button class="preset-btn"        onclick="setPreset('car')"    id="p-car">🚗 Car Loan</button>
+    <button class="preset-btn"        onclick="setPreset('personal')" id="p-personal">💳 Personal Loan</button>
+    <button class="preset-btn"        onclick="setPreset('education')" id="p-education">🎓 Education Loan</button>
+    <button class="preset-btn"        onclick="setPreset('business')" id="p-business">🏢 Business Loan</button>
+  </div>
+
+  <main>
+    <!-- MAIN GRID: Form + Donut -->
+    <div class="main-grid">
+
+      <!-- FORM -->
+      <div class="form-card">
+        <div class="card-label">Loan Details</div>
+
+        <div class="field">
+          <label for="loanAmount">Loan Amount <span class="sub">(NPR)</span></label>
+          <input type="range" id="loanAmountSlider" min="50000" max="50000000" step="50000" value="2000000" oninput="syncSlider('loanAmount','loanAmountSlider'); calc()" />
+          <div class="range-labels"><span>Rs 50K</span><span>Rs 5 Cr</span></div>
+          <input type="number" class="value-display" id="loanAmount" value="2000000" oninput="syncInput('loanAmount','loanAmountSlider'); calc()" placeholder="Enter amount" />
+        </div>
+
+        <div class="field">
+          <label for="interestRate">Annual Interest Rate <span class="sub">(%)</span></label>
+          <input type="range" id="interestRateSlider" min="1" max="30" step="0.25" value="10" oninput="syncSlider('interestRate','interestRateSlider'); calc()" />
+          <div class="range-labels"><span>1%</span><span>30%</span></div>
+          <input type="number" class="value-display" id="interestRate" value="10" step="0.25" oninput="syncInput('interestRate','interestRateSlider'); calc()" placeholder="Rate %" />
+        </div>
+
+        <div class="field">
+          <label for="tenure">Loan Tenure <span class="sub">(years)</span></label>
+          <input type="range" id="tenureSlider" min="1" max="30" step="1" value="20" oninput="syncSlider('tenure','tenureSlider'); calc()" />
+          <div class="range-labels"><span>1 yr</span><span>30 yrs</span></div>
+          <input type="number" class="value-display" id="tenure" value="20" oninput="syncInput('tenure','tenureSlider'); calc()" placeholder="Years" />
+        </div>
+      </div>
+
+      <!-- DONUT CHART -->
+      <div class="chart-card" id="chartCard">
+        <div class="card-label" style="width:100%;">Repayment Breakdown</div>
+
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="200" height="200" viewBox="0 0 200 200">
+            <circle id="donutBg" cx="100" cy="100" r="75" fill="none" stroke="var(--border)" stroke-width="28" />
+            <circle id="donutInterest" cx="100" cy="100" r="75" fill="none"
+              stroke="var(--red)" stroke-width="28"
+              stroke-dasharray="0 471" stroke-linecap="butt" />
+            <circle id="donutPrincipal" cx="100" cy="100" r="75" fill="none"
+              stroke="var(--teal)" stroke-width="28"
+              stroke-dasharray="0 471" stroke-linecap="butt" />
+          </svg>
+          <div class="donut-center">
+            <div class="donut-emi-label">Monthly EMI</div>
+            <div class="donut-emi-value" id="donutEMI">–</div>
+            <div class="donut-emi-sub">per month</div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot-wrap">
+              <div class="legend-dot" style="background:var(--teal)"></div>
+              <span class="legend-key">Principal Amount</span>
+            </div>
+            <span class="legend-val" id="lgPrincipal">–</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot-wrap">
+              <div class="legend-dot" style="background:var(--red)"></div>
+              <span class="legend-key">Total Interest</span>
+            </div>
+            <span class="legend-val" id="lgInterest">–</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot-wrap">
+              <div class="legend-dot" style="background:var(--gold)"></div>
+              <span class="legend-key">Total Payable</span>
+            </div>
+            <span class="legend-val" id="lgTotal">–</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-grid -->
+
+    <!-- AD 2: Post-result -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+      <div class="ad-slot" style="flex:1;min-width:280px;min-height:100px;border:1px dashed var(--border2);">
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto"></ins> -->
+        Advertisement · 300×250
+      </div>
+      <div style="flex:2;min-width:280px;">
+        <!-- SUMMARY STRIP -->
+        <div class="summary-strip">
+          <div class="scard emi">
+            <div class="sc-label">Monthly EMI</div>
+            <div class="sc-value" id="sEMI">–</div>
+          </div>
+          <div class="scard total">
+            <div class="sc-label">Total Payable</div>
+            <div class="sc-value" id="sTotal">–</div>
+          </div>
+          <div class="scard interest">
+            <div class="sc-label">Total Interest</div>
+            <div class="sc-value" id="sInterest">–</div>
+          </div>
+          <div class="scard savings">
+            <div class="sc-label">Interest %</div>
+            <div class="sc-value" id="sInterestPct">–</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTION ROW -->
+    <div class="action-row">
+      <button class="btn-action" onclick="window.print()">🖨️ Print Schedule</button>
+      <button class="btn-action" id="copyBtn" onclick="copySummary()">📋 Copy Summary</button>
+      <button class="btn-action" onclick="scrollToAmort()">📊 View Schedule</button>
+    </div>
+
+    <!-- AMORTIZATION TABLE -->
+    <div class="amort-card" id="amortSection">
+      <div class="amort-header">
+        <div class="amort-title">📋 Amortization Schedule</div>
+        <div class="view-toggle">
+          <button class="vtbtn active" id="vMonthly" onclick="setView('monthly')">Monthly</button>
+          <button class="vtbtn" id="vYearly" onclick="setView('yearly')">Yearly</button>
+        </div>
+      </div>
+      <div class="amort-table-wrap">
+        <table class="amort-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>EMI</th>
+              <th>Principal</th>
+              <th>Interest</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AD 3 -->
+    <div class="ad-slot ad-post">Advertisement · Responsive</div>
+
+    <!-- CONTENT: How EMI works -->
+    <section class="content-section" id="how-emi-works">
+      <h2 class="section-title">How EMI is Calculated</h2>
+      <p>EMI (Equated Monthly Installment) is calculated using the standard reducing balance formula. Every month, your payment goes toward both principal repayment and interest. In early months, more of your EMI pays interest. In later months, more goes toward principal — this is how amortization works.</p>
+      <div class="formula-box">
+        EMI = [P × r × (1+r)ⁿ] ÷ [(1+r)ⁿ – 1]<br/>
+        <span class="comment"><br/>Where:<br/>
+        P = Principal loan amount<br/>
+        r = Monthly interest rate (Annual Rate ÷ 12 ÷ 100)<br/>
+        n = Total number of monthly payments (Years × 12)</span>
+      </div>
+      <p><strong>Example:</strong> For a Rs 20 lakh home loan at 10% annual interest for 20 years: r = 10/12/100 = 0.00833, n = 240 months. EMI ≈ Rs 19,300/month, and you'd pay approximately Rs 26.3 lakh in total interest over 20 years.</p>
+    </section>
+
+    <!-- Bank rates -->
+    <section class="content-section">
+      <h2 class="section-title">Current Loan Interest Rates in Nepal (2082)</h2>
+      <p>Interest rates vary by bank, loan type, and your credit profile. These are approximate ranges based on publicly available data — always confirm with the bank directly.</p>
+      <div class="rate-table-wrap">
+        <table class="rate-table">
+          <thead><tr><th>Loan Type</th><th>Rate Range (Annual)</th><th>Max Tenure</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>🏠 Home Loan</td><td><span class="rate-chip">8.5% – 13%</span></td><td>25 years</td><td>Varies by bank & LTV ratio</td></tr>
+            <tr><td>🚗 Car Loan (New)</td><td><span class="rate-chip">9% – 13%</span></td><td>7 years</td><td>Up to 80% of vehicle value</td></tr>
+            <tr><td>🚗 Car Loan (Used)</td><td><span class="rate-chip">11% – 15%</span></td><td>5 years</td><td>Higher rate for older vehicles</td></tr>
+            <tr><td>💳 Personal Loan</td><td><span class="rate-chip">12% – 18%</span></td><td>5 years</td><td>No collateral; higher rate</td></tr>
+            <tr><td>🎓 Education Loan</td><td><span class="rate-chip">9% – 13%</span></td><td>10 years</td><td>Moratorium during study</td></tr>
+            <tr><td>🏢 Business Loan</td><td><span class="rate-chip">10% – 15%</span></td><td>10 years</td><td>Depends on business type</td></tr>
+            <tr><td>🌾 Agricultural Loan</td><td><span class="rate-chip">5% – 10%</span></td><td>10 years</td><td>Subsidized rates available</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px;font-size:13px;">Rates last updated April 2025. Nepal Rastra Bank (NRB) sets the base rate policy — check <a href="https://www.nrb.org.np" target="_blank" rel="noopener">nrb.org.np</a> for official guidance.</p>
+    </section>
+
+    <!-- AD 4 -->
+    <div class="ad-slot ad-inline">Advertisement · In-article</div>
+
+    <!-- Tips -->
+    <section class="content-section">
+      <h2 class="section-title">Tips to Reduce Your EMI in Nepal</h2>
+      <ul>
+        <li><strong>Make a larger down payment</strong> — Reducing the principal reduces both EMI and total interest significantly.</li>
+        <li><strong>Choose a shorter tenure wisely</strong> — Shorter tenure means higher EMI but far less total interest paid.</li>
+        <li><strong>Compare banks</strong> — Even 0.5% difference in rate saves lakhs over 20 years on a large home loan.</li>
+        <li><strong>Prepay when possible</strong> — Most Nepali banks allow partial prepayment; use bonuses or lump sums to reduce outstanding balance.</li>
+        <li><strong>Maintain good credit history</strong> — Banks offer lower rates to borrowers with clean loan repayment records.</li>
+        <li><strong>Check processing fees</strong> — Processing fee (typically 0.5–1% of loan) is an upfront cost that adds to the effective cost of the loan.</li>
+        <li><strong>Use NRB's base rate</strong> — Banks cannot lend below the NRB base rate. If rates are falling, consider refinancing at a better rate.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is EMI and how does it work?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>EMI (Equated Monthly Installment) is the fixed amount you pay your bank every month. It covers both principal repayment and interest. The ratio shifts over time — early payments are mostly interest, while later payments are mostly principal.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is the home loan interest rate in Nepal in 2082?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Home loan rates in Nepal currently range from approximately 8.5% to 13% per annum. Government banks (RBB, NBL) may offer slightly lower rates. Rates change based on NRB monetary policy, so always confirm with your bank before applying.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I prepay my loan in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Most Nepali banks allow partial and full prepayment. Some charge a prepayment penalty (typically 1–2% of outstanding amount) especially in the first few years. Always read your loan agreement. Prepaying even a small amount early can save significant interest over the tenure.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is EMI calculated on reducing balance or flat rate in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>All licensed Nepali banks (commercial, development, and finance companies) are required by NRB to calculate interest on the reducing balance method. This means interest is charged on the outstanding principal, not the original loan amount — making it cheaper than flat-rate loans.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How much home loan can I get in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>NRB regulations allow banks to lend up to 60% of the property value for home loans in Kathmandu Valley and up to 70% outside it. Most banks also cap your EMI at 50–60% of your monthly net income to ensure repayment capacity.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related tools -->
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+      <div class="tools-grid">
+        <a href="/salary-tax-calculator.html" class="tool-chip"><span>💰</span> Salary Tax Calculator</a>
+        <a href="/qr.html" class="tool-chip"><span>📲</span> Bank QR Generator</a>
+        <a href="/nepali-date-converter.html" class="tool-chip"><span>📅</span> Date Converter</a>
+        <a href="/nepse-calculator.html" class="tool-chip"><span>📈</span> NEPSE Calculator</a>
+        <a href="/ipo.html" class="tool-chip"><span>📊</span> IPO Result Checker</a>
+        <a href="/nrb-rate.html" class="tool-chip"><span>💱</span> NRB Exchange Rate</a>
+      </div>
+    </section>
+
+    <p style="color:var(--muted);font-size:12px;text-align:right;margin-top:16px;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> ·
+      <a href="https://suman-pokhrel.com.np">suman-pokhrel.com.np</a>
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav>
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+<!-- Sticky ad -->
+<div id="adAnchor">
+  <div class="ad-slot" style="flex:1;min-height:50px;border:none;background:transparent;font-size:11px;">Advertisement · Sticky Footer</div>
+  <button id="adClose" onclick="document.getElementById('adAnchor').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ══════════════════════════
+   LOAN PRESETS
+══════════════════════════ */
+const PRESETS = {
+  home:      { amount: 5000000,  rate: 10.5, tenure: 20 },
+  car:       { amount: 1500000,  rate: 12,   tenure: 7  },
+  personal:  { amount: 500000,   rate: 15,   tenure: 3  },
+  education: { amount: 1000000,  rate: 10,   tenure: 10 },
+  business:  { amount: 3000000,  rate: 12,   tenure: 10 },
+};
+
+let currentView = 'monthly';
+let scheduleData = [];
+
+function setPreset(type) {
+  const p = PRESETS[type];
+  document.getElementById('loanAmount').value = p.amount;
+  document.getElementById('loanAmountSlider').value = Math.min(p.amount, 50000000);
+  document.getElementById('interestRate').value = p.rate;
+  document.getElementById('interestRateSlider').value = p.rate;
+  document.getElementById('tenure').value = p.tenure;
+  document.getElementById('tenureSlider').value = p.tenure;
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('p-' + type).classList.add('active');
+  calc();
+}
+
+function syncSlider(inputId, sliderId) {
+  document.getElementById(inputId).value = document.getElementById(sliderId).value;
+}
+function syncInput(inputId, sliderId) {
+  const v = +document.getElementById(inputId).value;
+  const slider = document.getElementById(sliderId);
+  slider.value = Math.min(Math.max(v, +slider.min), +slider.max);
+}
+
+/* ══════════════════════════
+   FORMAT
+══════════════════════════ */
+function fmt(n) {
+  if (!n && n !== 0) return '–';
+  const abs = Math.abs(Math.round(n));
+  const s = abs.toLocaleString('en-IN');
+  return (n < 0 ? '−' : '') + 'Rs ' + s;
+}
+function fmtShort(n) {
+  if (n >= 10000000) return 'Rs ' + (n / 10000000).toFixed(2) + ' Cr';
+  if (n >= 100000)   return 'Rs ' + (n / 100000).toFixed(2) + ' L';
+  return fmt(n);
+}
+
+/* ══════════════════════════
+   MAIN CALCULATION
+══════════════════════════ */
+function calc() {
+  const P = +document.getElementById('loanAmount').value || 0;
+  const annualRate = +document.getElementById('interestRate').value || 0;
+  const years = +document.getElementById('tenure').value || 0;
+
+  if (!P || !annualRate || !years) return;
+
+  const r = annualRate / 12 / 100;
+  const n = years * 12;
+
+  // EMI formula
+  const emi = r === 0 ? P / n : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const totalPayable = emi * n;
+  const totalInterest = totalPayable - P;
+  const interestPct = (totalInterest / totalPayable * 100).toFixed(1);
+
+  // Update summary
+  document.getElementById('sEMI').textContent      = fmt(emi);
+  document.getElementById('sTotal').textContent    = fmtShort(totalPayable);
+  document.getElementById('sInterest').textContent = fmtShort(totalInterest);
+  document.getElementById('sInterestPct').textContent = interestPct + '%';
+  document.getElementById('donutEMI').textContent  = fmt(emi).replace('Rs ', 'Rs\u00A0');
+  document.getElementById('lgPrincipal').textContent = fmtShort(P);
+  document.getElementById('lgInterest').textContent  = fmtShort(totalInterest);
+  document.getElementById('lgTotal').textContent     = fmtShort(totalPayable);
+
+  // Donut chart
+  const circumference = 2 * Math.PI * 75; // ≈ 471
+  const principalDash = (P / totalPayable) * circumference;
+  const interestDash  = (totalInterest / totalPayable) * circumference;
+
+  const donutP = document.getElementById('donutPrincipal');
+  const donutI = document.getElementById('donutInterest');
+  donutP.style.strokeDasharray  = `${principalDash} ${circumference}`;
+  donutP.style.strokeDashoffset = '0';
+  donutI.style.strokeDasharray  = `${interestDash} ${circumference}`;
+  donutI.style.strokeDashoffset = `-${principalDash}`;
+  donutI.style.transition = 'stroke-dasharray .6s ease, stroke-dashoffset .6s ease';
+  donutP.style.transition = 'stroke-dasharray .6s ease';
+
+  // Build amortization schedule
+  scheduleData = [];
+  let balance = P;
+  for (let m = 1; m <= n; m++) {
+    const interestPart   = balance * r;
+    const principalPart  = emi - interestPart;
+    balance = Math.max(0, balance - principalPart);
+    scheduleData.push({ m, emi, principal: principalPart, interest: interestPart, balance });
+  }
+
+  renderSchedule();
+}
+
+/* ══════════════════════════
+   RENDER AMORTIZATION
+══════════════════════════ */
+function renderSchedule() {
+  const tbody = document.getElementById('amortBody');
+  tbody.innerHTML = '';
+  const isYearly = currentView === 'yearly';
+  const totalP = +document.getElementById('loanAmount').value || 1;
+
+  if (isYearly) {
+    // Aggregate by year
+    const years = Math.ceil(scheduleData.length / 12);
+    for (let y = 1; y <= years; y++) {
+      const slice = scheduleData.slice((y - 1) * 12, y * 12);
+      const yEmi      = slice.reduce((a, r) => a + r.emi, 0);
+      const yPrincipal= slice.reduce((a, r) => a + r.principal, 0);
+      const yInterest = slice.reduce((a, r) => a + r.interest, 0);
+      const yBalance  = slice[slice.length - 1].balance;
+      const paid = ((totalP - yBalance) / totalP * 100).toFixed(0);
+      const tr = document.createElement('tr');
+      tr.className = 'yr-row';
+      tr.innerHTML = `
+        <td>Year ${y}<span class="prog-bar" style="width:${Math.round(+paid * 0.8)}px"></span></td>
+        <td>${fmt(yEmi)}</td>
+        <td class="principal-cell">${fmt(yPrincipal)}</td>
+        <td class="interest-cell">${fmt(yInterest)}</td>
+        <td class="balance-cell">${fmt(yBalance)}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  } else {
+    scheduleData.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>Month ${row.m}</td>
+        <td>${fmt(row.emi)}</td>
+        <td class="principal-cell">${fmt(row.principal)}</td>
+        <td class="interest-cell">${fmt(row.interest)}</td>
+        <td class="balance-cell">${fmt(row.balance)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+}
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('vMonthly').classList.toggle('active', v === 'monthly');
+  document.getElementById('vYearly').classList.toggle('active', v === 'yearly');
+  renderSchedule();
+}
+
+function scrollToAmort() {
+  document.getElementById('amortSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ══════════════════════════
+   COPY
+══════════════════════════ */
+function copySummary() {
+  const P  = +document.getElementById('loanAmount').value || 0;
+  const r  = +document.getElementById('interestRate').value || 0;
+  const yr = +document.getElementById('tenure').value || 0;
+  const emi = document.getElementById('sEMI').textContent;
+  const total = document.getElementById('sTotal').textContent;
+  const interest = document.getElementById('sInterest').textContent;
+  const txt = [
+    'Nepal EMI Calculator Summary',
+    '──────────────────────────────',
+    `Loan Amount:    Rs ${P.toLocaleString('en-IN')}`,
+    `Interest Rate:  ${r}% per annum`,
+    `Tenure:         ${yr} years (${yr * 12} months)`,
+    `Monthly EMI:    ${emi}`,
+    `Total Payable:  ${total}`,
+    `Total Interest: ${interest}`,
+    `Calculated at suman-pokhrel.com.np/emi-calculator`
+  ].join('\n');
+  navigator.clipboard.writeText(txt).then(() => {
+    const b = document.getElementById('copyBtn');
+    b.textContent = '✓ Copied!';
+    setTimeout(() => { b.textContent = '📋 Copy Summary'; }, 2000);
+  });
+}
+
+/* ══════════════════════════
+   FAQ
+══════════════════════════ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+  });
+});
+
+/* ══ INIT ══ */
+calc();
+</script>
+</body>
+</html>
