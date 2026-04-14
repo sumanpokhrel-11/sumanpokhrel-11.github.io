@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>IPO Result Checker Nepal 2082 – CDSC BOID Check & Bulk CSV | Free Tool</title>
+  <meta name="description" content="Free IPO result checker Nepal 2082. Check IPO allotment result for any company using your BOID number. Bulk check multiple BOIDs via CSV upload. Tracks history. Links to CDSC official portal."/>
+  <meta name="keywords" content="ipo result nepal, ipo result check nepal, cdsc ipo result, iporesult.cdsc.com.np, ipo allotment check nepal, nepse ipo result 2082, boid ipo check, meroshare ipo result"/>
+  <link rel="canonical" href="https://suman-pokhrel.com.np/ipo-result.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="IPO Result Checker Nepal 2082 – BOID Check & Bulk CSV"/>
+  <meta property="og:description" content="Check your NEPSE IPO allotment result instantly. Bulk check multiple BOIDs using CSV. Free tool updated for 2082."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"IPO Result Checker Nepal 2082",
+     "url":"https://suman-pokhrel.com.np/ipo-result.html",
+     "description":"Free Nepal IPO result checker tool. Check allotment status using BOID for any NEPSE listed IPO. Supports bulk BOID checking via CSV. Saves check history locally.",
+     "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+     "offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"},
+     "author":{"@type":"Person","name":"Suman Pokhrel","url":"https://suman-pokhrel.com.np"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I check IPO result in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Visit iporesult.cdsc.com.np, select the company from the dropdown, enter your 16-digit BOID number, complete the captcha, and click View Result. This tool simplifies the process with quick links and bulk checking features."}},
+      {"@type":"Question","name":"What is BOID number in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"BOID (Beneficiary Owner Identification) is a unique 16-digit number assigned to your DEMAT account. You need it to check IPO results, apply for IPOs, and manage your shares in MeroShare."}},
+      {"@type":"Question","name":"How many shares are allotted in Nepal IPO?",
+       "acceptedAnswer":{"@type":"Answer","text":"In most Nepal IPOs, each allotted applicant receives a minimum of 10 kitta (shares) at Rs 100 face value = Rs 1,000 per application. For oversubscribed IPOs, allotment is done by lottery. High-value IPOs may allot different lot sizes."}},
+      {"@type":"Question","name":"How long does IPO result take in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"IPO allotment results in Nepal are typically published within 7–10 working days after the IPO application closing date. Refunds for unsuccessful applicants are processed within 15 working days."}},
+      {"@type":"Question","name":"Where can I check upcoming IPOs in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"You can check upcoming and open IPOs on SEBON's official website, CDSC's IPO portal, ShareSansar, Mero Lagani, or NepseSansar. This tool also lists recently active IPO companies."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://suman-pokhrel.com.np/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://suman-pokhrel.com.np/#tools"},
+      {"@type":"ListItem","position":3,"name":"IPO Result Checker","item":"https://suman-pokhrel.com.np/ipo-result.html"}
+    ]}
+  ]}
+  </script>
+
+  <!-- AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg:       #0f0f23;
+      --surface:  #16163a;
+      --card:     #1e1e4a;
+      --card2:    #252560;
+      --border:   #2a2a5a;
+      --border2:  #3535a0;
+      --indigo:   #6366f1;
+      --indigo2:  #818cf8;
+      --violet:   #8b5cf6;
+      --cyan:     #22d3ee;
+      --green:    #4ade80;
+      --red:      #f87171;
+      --amber:    #fbbf24;
+      --text:     #e2e8ff;
+      --muted:    #6b7280;
+      --light:    #9ca3af;
+      --mono:     'JetBrains Mono', monospace;
+      --sans:     'Lexend', sans-serif;
+      --r:        14px;
+      --rs:       9px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65;}
+
+    /* Star field bg */
+    body::before{
+      content:'';position:fixed;inset:0;
+      background:
+        radial-gradient(ellipse at 15% 25%, rgba(99,102,241,.12) 0%,transparent 55%),
+        radial-gradient(ellipse at 85% 75%, rgba(139,92,246,.10) 0%,transparent 55%),
+        radial-gradient(ellipse at 50% 10%, rgba(34,211,238,.06) 0%,transparent 40%);
+      pointer-events:none;z-index:0;
+    }
+
+    .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 16px 80px;}
+    a{color:var(--indigo2);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* AD SLOTS */
+    .ad-slot{background:var(--surface);border:1px dashed var(--border2);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+    .ad-leader{min-height:90px;margin:14px 0;}
+    .ad-post{min-height:90px;margin:24px 0;}
+    .ad-inline{min-height:90px;margin:32px 0;}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:18px 0 0;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+    .breadcrumb a{color:var(--muted);}
+
+    /* HERO */
+    .hero{padding:32px 0 24px;text-align:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:var(--indigo2);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+    .hero h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:10px;}
+    .hero h1 span{background:linear-gradient(135deg,var(--indigo2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero p{font-size:1rem;color:var(--light);max-width:500px;margin:0 auto;}
+
+    /* TABS */
+    .tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:4px;margin-bottom:20px;}
+    .tab{flex:1;padding:10px 14px;border:none;border-radius:10px;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;background:transparent;color:var(--muted);}
+    .tab.active{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;box-shadow:0 2px 16px rgba(99,102,241,.4);}
+    .tab:hover:not(.active){background:var(--card);color:var(--text);}
+
+    .panel{display:none;}
+    .panel.active{display:block;}
+
+    /* CARD */
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;box-shadow:0 8px 40px rgba(0,0,0,.4);margin-bottom:16px;}
+
+    /* FIELDS */
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .field label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);}
+    .field label .hint{font-weight:400;text-transform:none;color:var(--border2);letter-spacing:0;font-size:10px;margin-left:4px;}
+    .field input,.field select,.field textarea{
+      background:var(--card);border:1.5px solid var(--border2);border-radius:var(--rs);
+      color:var(--text);font-family:var(--sans);font-size:15px;font-weight:500;
+      padding:11px 14px;outline:none;transition:border-color .2s,box-shadow .2s;
+      -webkit-appearance:none;width:100%;
+    }
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(99,102,241,.18);}
+    .field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:.6;font-weight:400;}
+    .field textarea{resize:vertical;min-height:90px;font-size:13px;line-height:1.7;}
+    .select-wrap{position:relative;}
+    .select-wrap::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:11px;}
+    .select-wrap select{padding-right:32px;cursor:pointer;}
+
+    .fields-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    @media(max-width:540px){.fields-2{grid-template-columns:1fr;}}
+
+    /* BOID input with format hint */
+    .boid-wrap{position:relative;}
+    .boid-wrap input{letter-spacing:.08em;font-family:var(--mono);font-size:16px;}
+    .boid-count{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--muted);font-family:var(--mono);}
+
+    /* BTN */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:13px 24px;border:none;border-radius:var(--rs);
+      font-family:var(--sans);font-size:15px;font-weight:700;
+      cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--indigo),var(--violet));
+      color:#fff;box-shadow:0 4px 16px rgba(99,102,241,.35);width:100%;
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(99,102,241,.5);}
+    .btn-secondary{background:var(--card);border:1.5px solid var(--border2);color:var(--light);}
+    .btn-secondary:hover{border-color:var(--indigo2);color:var(--text);}
+    .btn-sm{padding:7px 14px;font-size:12px;}
+    .btn-green{background:rgba(74,222,128,.15);border:1px solid rgba(74,222,128,.3);color:var(--green);}
+    .btn-green:hover{background:rgba(74,222,128,.25);}
+
+    /* CDSC DIRECT LINK BUTTON — prominent */
+    .cdsc-btn{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(139,92,246,.15));
+      border:1px solid rgba(99,102,241,.35);
+      border-radius:var(--r);padding:16px 20px;margin-bottom:12px;
+      cursor:pointer;transition:all .2s;text-decoration:none;
+    }
+    .cdsc-btn:hover{border-color:var(--indigo2);background:linear-gradient(135deg,rgba(99,102,241,.25),rgba(139,92,246,.25));text-decoration:none;transform:translateY(-1px);}
+    .cdsc-btn-left{display:flex;align-items:center;gap:12px;}
+    .cdsc-btn-icon{font-size:24px;}
+    .cdsc-btn-text strong{display:block;font-size:15px;font-weight:700;color:var(--text);}
+    .cdsc-btn-text span{font-size:12px;color:var(--muted);}
+    .cdsc-btn-arrow{color:var(--indigo2);font-size:18px;}
+
+    /* RESULT DISPLAY */
+    .result-area{margin-top:16px;}
+    .result-item{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+      padding:18px 20px;margin-bottom:10px;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      animation:fadeUp .3s ease;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .result-item.allotted{border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.05);}
+    .result-item.not-allotted{border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.04);}
+    .result-item.pending{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.04);}
+
+    .ri-left{}
+    .ri-company{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;}
+    .ri-boid{font-family:var(--mono);font-size:12px;color:var(--muted);}
+    .ri-right{text-align:right;}
+    .ri-status{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:5px 14px;border-radius:100px;
+      font-size:13px;font-weight:700;
+    }
+    .status-allotted{background:rgba(74,222,128,.15);color:var(--green);}
+    .status-not{background:rgba(248,113,113,.15);color:var(--red);}
+    .status-pending{background:rgba(251,191,36,.15);color:var(--amber);}
+    .ri-kitta{font-size:12px;color:var(--muted);margin-top:3px;}
+
+    /* BULK TABLE */
+    .bulk-table-wrap{overflow-x:auto;border-radius:var(--rs);border:1px solid var(--border);margin-top:12px;}
+    .bulk-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .bulk-table th{background:var(--card2);color:var(--muted);text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+    .bulk-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--light);}
+    .bulk-table td:first-child{color:var(--text);font-weight:600;font-family:var(--mono);}
+    .bulk-table tr:last-child td{border-bottom:none;}
+    .bulk-table tr.row-allotted td{background:rgba(74,222,128,.04);}
+    .bulk-table tr.row-not td{background:rgba(248,113,113,.03);}
+
+    /* PROGRESS BAR (bulk) */
+    .bulk-progress{
+      background:var(--border);border-radius:100px;height:8px;
+      margin:12px 0 8px;overflow:hidden;
+    }
+    .bulk-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--indigo),var(--cyan));transition:width .4s ease;}
+
+    /* STATS BAR */
+    .stats-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+    .stat-chip{
+      flex:1;min-width:100px;
+      background:var(--card);border:1px solid var(--border);border-radius:var(--rs);
+      padding:12px 14px;text-align:center;
+    }
+    .stat-chip .sc-n{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px;}
+    .stat-chip .sc-v{font-family:var(--mono);font-size:1.3rem;font-weight:700;}
+    .sc-v.green{color:var(--green);}
+    .sc-v.red{color:var(--red);}
+    .sc-v.amber{color:var(--amber);}
+    .sc-v.cyan{color:var(--cyan);}
+
+    /* HISTORY */
+    .history-item{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--rs);
+      padding:12px 16px;margin-bottom:8px;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    }
+    .hist-left{display:flex;flex-direction:column;gap:3px;}
+    .hist-company{font-size:14px;font-weight:700;color:var(--text);}
+    .hist-meta{font-size:12px;color:var(--muted);}
+    .hist-boid{font-family:var(--mono);font-size:12px;}
+    .del-hist{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:4px 6px;}
+    .del-hist:hover{color:var(--red);}
+
+    /* CSV DROP ZONE */
+    .drop-zone{
+      border:2px dashed var(--border2);border-radius:var(--r);
+      padding:32px 20px;text-align:center;
+      transition:border-color .2s,background .2s;cursor:pointer;
+      margin-bottom:16px;
+    }
+    .drop-zone:hover,.drop-zone.drag-over{border-color:var(--indigo);background:rgba(99,102,241,.06);}
+    .drop-zone-icon{font-size:36px;margin-bottom:10px;}
+    .drop-zone-text{font-size:14px;color:var(--light);}
+    .drop-zone-text strong{color:var(--text);}
+    .drop-zone-hint{font-size:12px;color:var(--muted);margin-top:6px;}
+    #csvFileInput{display:none;}
+
+    /* SAMPLE CSV */
+    .sample-csv{
+      background:var(--card2);border:1px solid var(--border2);border-radius:var(--rs);
+      padding:12px 14px;margin-bottom:14px;font-family:var(--mono);font-size:12px;
+      color:var(--cyan);line-height:1.8;
+    }
+
+    /* CONTENT */
+    .content-section{margin:44px 0;}
+    .section-title{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);position:relative;}
+    .section-title::after{content:'';position:absolute;bottom:-1px;left:0;width:44px;height:2px;background:var(--indigo2);}
+    .content-section p{color:var(--light);margin-bottom:14px;line-height:1.8;font-size:15px;}
+    .content-section ul{color:var(--light);padding-left:20px;line-height:1.9;font-size:15px;}
+    .content-section li{margin-bottom:6px;}
+    .content-section strong{color:var(--text);}
+
+    /* IPO Step Guide */
+    .steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+    @media(max-width:560px){.steps-grid{grid-template-columns:1fr;}}
+    .step-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;}
+    .step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--violet));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;}
+    .step-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;}
+    .step-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+    /* IPO info table */
+    .ipo-table-wrap{border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;overflow-x:auto;}
+    .ipo-table{width:100%;border-collapse:collapse;font-size:14px;}
+    .ipo-table th{background:var(--card2);color:var(--muted);text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+    .ipo-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--light);}
+    .ipo-table td:first-child{color:var(--text);font-weight:700;}
+    .ipo-table tr:last-child td{border-bottom:none;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:3px;}
+    .faq-item{border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;}
+    .faq-q{width:100%;background:var(--surface);border:none;color:var(--text);font-family:var(--sans);font-size:15px;font-weight:600;text-align:left;padding:13px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .15s;}
+    .faq-q:hover{background:var(--card);}
+    .faq-arrow{transition:transform .25s;flex-shrink:0;color:var(--muted);}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;background:var(--card);transition:max-height .3s ease,padding .3s ease;padding:0 18px;}
+    .faq-item.open .faq-a{max-height:300px;padding:14px 18px;}
+    .faq-a p{color:var(--light);margin:0;line-height:1.75;}
+
+    /* Related tools */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;}
+    .tool-chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:13px 15px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--text);transition:border-color .2s,box-shadow .2s;}
+    .tool-chip:hover{border-color:var(--indigo2);box-shadow:0 4px 16px rgba(99,102,241,.2);text-decoration:none;}
+
+    /* Footer */
+    .page-footer{border-top:1px solid var(--border);padding:24px 0 0;margin-top:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px;}
+    .page-footer nav{display:flex;gap:16px;}
+    .page-footer a{color:var(--muted);}
+
+    #adAnchor{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;justify-content:space-between;z-index:999;min-height:60px;}
+    #adClose{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px 8px;}
+
+    .empty-state{text-align:center;padding:32px;color:var(--muted);}
+    .empty-state-icon{font-size:40px;margin-bottom:10px;}
+    .tag{display:inline-block;padding:2px 9px;border-radius:100px;font-size:11px;font-weight:700;}
+    .tag-green{background:rgba(74,222,128,.15);color:var(--green);}
+    .tag-red{background:rgba(248,113,113,.15);color:var(--red);}
+    .tag-amber{background:rgba(251,191,36,.15);color:var(--amber);}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a><span>›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a><span>›</span>
+    <span>IPO Result Checker</span>
+  </nav>
+
+  <div class="ad-slot ad-leader">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    Advertisement · 728×90
+  </div>
+
+  <header class="hero">
+    <div class="hero-badge">📊 Nepal IPO Result 2082</div>
+    <h1>IPO Result<br/><span>Checker Nepal</span></h1>
+    <p>Check your NEPSE IPO allotment status using your BOID. Bulk check multiple BOIDs from CSV. Saves your check history.</p>
+  </header>
+
+  <main>
+    <!-- TABS -->
+    <div class="tabs" role="tablist">
+      <button class="tab active" onclick="showTab('single')" id="t-single">🔍 Single Check</button>
+      <button class="tab" onclick="showTab('bulk')" id="t-bulk">📋 Bulk CSV Check</button>
+      <button class="tab" onclick="showTab('history')" id="t-history">🕐 History</button>
+    </div>
+
+    <!-- ════ SINGLE CHECK ════ -->
+    <div id="panel-single" class="panel active">
+
+      <!-- CDSC Official Link (primary CTA) -->
+      <a href="https://iporesult.cdsc.com.np/" target="_blank" rel="noopener" class="cdsc-btn" id="cdscLink">
+        <div class="cdsc-btn-left">
+          <span class="cdsc-btn-icon">🏛️</span>
+          <div class="cdsc-btn-text">
+            <strong>Check on CDSC Official Portal</strong>
+            <span>iporesult.cdsc.com.np — The only official source for Nepal IPO results</span>
+          </div>
+        </div>
+        <span class="cdsc-btn-arrow">→</span>
+      </a>
+
+      <div class="card">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:16px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:var(--rs);padding:10px 12px;">
+          💡 This tool saves your BOID & company selection so you can quickly navigate to CDSC for results. The CDSC portal requires a captcha, which is why results are verified on their official site.
+        </div>
+
+        <div class="fields-2">
+          <div class="field">
+            <label for="company">IPO Company <span class="hint">(select or type)</span></label>
+            <div class="select-wrap">
+              <select id="company">
+                <option value="">— Select Company —</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="boid">Your BOID Number <span class="hint">(16 digits)</span></label>
+            <div class="boid-wrap">
+              <input type="text" id="boid" placeholder="1234567890123456" maxlength="16" inputmode="numeric"
+                oninput="updateBoidCount()" autocomplete="off"/>
+              <span class="boid-count" id="boidCount">0/16</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="applicantName">Applicant Name <span class="hint">(optional, for records)</span></label>
+          <input type="text" id="applicantName" placeholder="e.g. Ram Bahadur Shrestha"/>
+        </div>
+
+        <button class="btn btn-primary" onclick="doSingleCheck()">
+          🔍 Check IPO Result on CDSC
+        </button>
+      </div>
+
+      <!-- AD 2 beside results -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+        <div class="ad-slot" style="flex:1;min-width:240px;min-height:180px;border:1px dashed var(--border2);">Advertisement · 300×250</div>
+        <div style="flex:2;min-width:260px;">
+          <div class="result-area" id="single-result-area">
+            <div class="empty-state">
+              <div class="empty-state-icon">🔍</div>
+              <div>Enter your BOID and company,<br/>then click Check to open CDSC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick BOID guide -->
+      <div class="card" style="margin-top:4px;">
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;">📌 Where to find your BOID?</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
+          <div style="background:var(--card2);border-radius:var(--rs);padding:12px;">
+            <div style="font-size:18px;margin-bottom:6px;">📱</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;">MeroShare App</div>
+            <div style="font-size:12px;color:var(--muted);">Login → My Profile → BOID shown at top</div>
+          </div>
+          <div style="background:var(--card2);border-radius:var(--rs);padding:12px;">
+            <div style="font-size:18px;margin-bottom:6px;">🏦</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;">Your Bank</div>
+            <div style="font-size:12px;color:var(--muted);">DEMAT account letter or net banking portal</div>
+          </div>
+          <div style="background:var(--card2);border-radius:var(--rs);padding:12px;">
+            <div style="font-size:18px;margin-bottom:6px;">📄</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;">DEMAT Certificate</div>
+            <div style="font-size:12px;color:var(--muted);">Physical certificate from your DP (broker/bank)</div>
+          </div>
+          <div style="background:var(--card2);border-radius:var(--rs);padding:12px;">
+            <div style="font-size:18px;margin-bottom:6px;">💻</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;">MeroShare Web</div>
+            <div style="font-size:12px;color:var(--muted);">meroshare.cdsc.com.np → My Details</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ BULK CSV CHECK ════ -->
+    <div id="panel-bulk" class="panel">
+      <div class="card">
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;">📋 Bulk IPO Result Checker</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+          Upload a CSV file or paste BOID numbers (one per line or comma-separated) to check multiple accounts at once.
+          Each BOID will open the CDSC portal in sequence, or you can export the list for manual checking.
+        </p>
+
+        <!-- CSV Format -->
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">CSV Format (Required columns):</div>
+        <div class="sample-csv">
+boid,name,company<br/>
+1234567890123456,Ram Shrestha,Nabil Laghubitta<br/>
+9876543210987654,Sita Sharma,Himalayan Power<br/>
+1111222233334444,Hari Thapa,NIC Asia Bank
+        </div>
+
+        <!-- Drop zone -->
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('csvFileInput').click()" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="handleDrop(event)">
+          <div class="drop-zone-icon">📂</div>
+          <div class="drop-zone-text"><strong>Click to upload CSV</strong> or drag & drop here</div>
+          <div class="drop-zone-hint">Supports .csv files · Max 500 BOIDs</div>
+        </div>
+        <input type="file" id="csvFileInput" accept=".csv,.txt" onchange="handleCSVFile(this)"/>
+
+        <!-- OR paste -->
+        <div style="text-align:center;font-size:12px;color:var(--muted);margin:8px 0;">— OR paste BOIDs manually —</div>
+
+        <div class="field">
+          <label for="pasteCompany">Select Company for All Entries</label>
+          <div class="select-wrap">
+            <select id="pasteCompany">
+              <option value="">— Select Company —</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="pasteBoids">Paste BOID Numbers <span class="hint">(one per line or comma-separated)</span></label>
+          <textarea id="pasteBoids" placeholder="1234567890123456&#10;9876543210987654&#10;1111222233334444"></textarea>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-primary" style="flex:2;" onclick="processBulk()">⚡ Process Bulk Check</button>
+          <button class="btn btn-secondary btn-sm" style="flex:1;" onclick="clearBulk()">✕ Clear</button>
+        </div>
+      </div>
+
+      <!-- Bulk Results -->
+      <div id="bulk-results" style="display:none;">
+        <div class="stats-bar" id="bulk-stats"></div>
+        <div class="bulk-progress"><div class="bulk-fill" id="bulkFill" style="width:0%"></div></div>
+        <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+          <button class="btn btn-secondary btn-sm" onclick="exportBulkCSV()">📥 Export Results CSV</button>
+          <button class="btn btn-secondary btn-sm" onclick="openAllCDSC()">🌐 Open All on CDSC</button>
+          <button class="btn btn-green btn-sm" onclick="copyBulkSummary()">📋 Copy Summary</button>
+        </div>
+        <div class="bulk-table-wrap">
+          <table class="bulk-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>BOID</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bulkTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ HISTORY ════ -->
+    <div id="panel-history" class="panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <div style="font-size:14px;font-weight:700;color:var(--text);">📜 Your Check History</div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-secondary btn-sm" onclick="exportHistoryCSV()">📥 Export</button>
+          <button class="btn btn-secondary btn-sm" onclick="clearHistory()">🗑️ Clear All</button>
+        </div>
+      </div>
+      <div id="historyList"></div>
+    </div>
+
+    <div class="ad-slot ad-post">Advertisement · Responsive</div>
+
+    <!-- CONTENT: How to check -->
+    <section class="content-section" id="how-to-check">
+      <h2 class="section-title">How to Check IPO Result in Nepal (Step by Step)</h2>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">1</div><div class="step-title">Find Your BOID</div><div class="step-desc">Your 16-digit BOID is in MeroShare app, your bank's DEMAT portal, or on your DEMAT certificate.</div></div>
+        <div class="step-card"><div class="step-num">2</div><div class="step-title">Visit CDSC Portal</div><div class="step-desc">Go to iporesult.cdsc.com.np — the official and only authoritative source for Nepal IPO allotment results.</div></div>
+        <div class="step-card"><div class="step-num">3</div><div class="step-title">Select Company</div><div class="step-desc">Choose the company whose IPO you applied for from the dropdown. Results are only available after CDSC publishes them.</div></div>
+        <div class="step-card"><div class="step-num">4</div><div class="step-title">Enter BOID & Check</div><div class="step-desc">Enter your 16-digit BOID, complete the captcha, and click View Result. You'll see allotted or not allotted status.</div></div>
+      </div>
+    </section>
+
+    <!-- CONTENT: IPO info -->
+    <section class="content-section">
+      <h2 class="section-title">Understanding Nepal IPO Allotment Process</h2>
+      <p>Nepal's IPO (Initial Public Offering) system is regulated by SEBON and operated through CDSC's C-ASBA platform. All applications go through MeroShare and are processed digitally.</p>
+      <div class="ipo-table-wrap">
+        <table class="ipo-table">
+          <thead><tr><th>Topic</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Minimum Application</td><td>10 kitta (shares) at Rs 100 face value = Rs 1,000 minimum</td></tr>
+            <tr><td>Allotment Method</td><td>Computerized lottery when oversubscribed; all get shares if undersubscribed</td></tr>
+            <tr><td>Result Timeline</td><td>7–10 working days after IPO closing date</td></tr>
+            <tr><td>Refund Timeline</td><td>Within 15 working days for unsuccessful applicants</td></tr>
+            <tr><td>Kitta per Applicant</td><td>Minimum 10 kitta per successful applicant in lottery</td></tr>
+            <tr><td>Where to Check</td><td>iporesult.cdsc.com.np or MeroShare portal</td></tr>
+            <tr><td>What You Need</td><td>16-digit BOID number (from your DEMAT/MeroShare account)</td></tr>
+            <tr><td>Common Rejection Reasons</td><td>Multiple applications from same PAN, insufficient funds, wrong details</td></tr>
+            <tr><td>CDSC Annual Fee</td><td>Rs 50/year — ensure it's paid or your DEMAT may be inactive</td></tr>
+            <tr><td>After Allotment</td><td>Shares credited to DEMAT, listed on NEPSE after 7–10 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-inline">Advertisement · In-article</div>
+
+    <!-- FAQ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What does "allotted" mean in IPO result?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Allotted means you won the lottery and shares have been assigned to your DEMAT account. The amount is debited from your bank. You'll receive at least 10 kitta. Not allotted means you were not selected in the lottery and your money will be refunded.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I check IPO result without MeroShare login?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes! Just go to iporesult.cdsc.com.np, select the company, enter your 16-digit BOID, and complete the captcha. No MeroShare login is required for basic result checking. MeroShare login is needed for full application history and portfolio management.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Why isn't my company showing on iporesult.cdsc.com.np?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>The company only appears on CDSC after results are officially published (7–10 working days after IPO close). If you applied through a registrar other than CDSC, results may be on the registrar's own website instead. Check the IPO prospectus for the designated registrar.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How can I check multiple BOIDs (bulk check)?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Use the Bulk CSV Check tab on this tool. Upload a CSV with BOID numbers and names, or paste them manually. The tool generates individual CDSC check links for each BOID, which you can open one by one. You can also export the list as CSV.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">When will my refund arrive if not allotted?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Refunds are processed within 15 working days of result publication, directly to the bank account you used for ASBA. Check your bank statement or ASBA portal. If you don't receive the refund within this window, contact your bank or the IPO's issue manager.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+<div class="tools-grid">
+        <a href="/qr.html" class="tool-chip"><span class="icon">📲</span> Bank QR Generator</a>
+        <a href="/nepali-date-converter.html" class="tool-chip"><span class="icon">📊</span> IPO Result Checker</a>
+        <a href="/emi-calculator.html" class="tool-chip"><span class="icon">🏦</span> EMI Calculator</a>
+        <a href="/nepse-calculator.html" class="tool-chip"><span class="icon">📈</span> NEPSE Calculator</a>
+        <a href="/salary-tax-calculator.html" class="tool-chip"><span class="icon">🧾</span> Salary Tax Calculator</a>
+        <a href="/nrb-exchange-rate.html" class="tool-chip"><span class="icon">💱</span> NRB Exchange Rate</a>
+      </div>
+    </section>
+
+    <p style="color:var(--muted);font-size:12px;text-align:right;margin-top:16px;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> ·
+      Official results only at <a href="https://iporesult.cdsc.com.np/" target="_blank" rel="noopener">iporesult.cdsc.com.np</a>
+    </p>
+    <p style="color:var(--muted);font-size:11px;margin-top:4px;text-align:right;">
+      ⚠️ This tool saves data locally on your device only. Always verify results on the official CDSC portal.
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav>
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+<div id="adAnchor">
+  <div class="ad-slot" style="flex:1;min-height:50px;border:none;background:transparent;font-size:11px;">Advertisement · Sticky Footer</div>
+  <button id="adClose" onclick="document.getElementById('adAnchor').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   COMPANY LIST — fetched from CDSC API
+   Falls back to recent known companies
+═══════════════════════════════════════ */
+const FALLBACK_COMPANIES = [
+  "Nabil Laghubitta Bittiya Sanstha Ltd","Himalayan Power Partner Ltd",
+  "NIC Asia Bank Limited","Global IME Bank Limited",
+  "Nepal Infrastructure Bank Ltd","Rastriya Banijya Bank",
+  "Sanima Bank Limited","Kumari Bank Limited",
+  "Laxmi Sunrise Bank Limited","Siddhartha Bank Limited",
+  "Prabhu Bank Limited","Civil Bank Limited",
+  "Muktinath Bikas Bank Limited","Century Commercial Bank Ltd",
+  "Nepal Investment Mega Bank Ltd","Prabhu Multipurpose Finance Ltd",
+  "Shikhar Insurance Company Ltd","Nepal Life Insurance Company Ltd",
+  "Surya Life Insurance Co. Ltd","NLG Insurance Company Limited",
+  "NIFRA Nepal Infrastructure Dev & Finance Co","Chilime Hydropower Company Ltd",
+  "Upper Tamakoshi Hydropower Ltd","Butwal Power Company Ltd",
+  "Sanima Reliance Life Insurance Ltd","Everest Bank Limited",
+  "Standard Chartered Bank Nepal Ltd","Nepal SBI Bank Limited",
+  "Machhapuchchhre Bank Limited","NMB Bank Limited",
+  "Dipshikha Laghubitta Bittiya Sanstha Ltd","Namuna Laghubitta Bittiya Sanstha Ltd",
+  "Mero Microfinance Laghubitta Bittiya Sanstha Ltd",
+];
+
+let companyList = [];
+let bulkData    = [];
+let checkHistory = JSON.parse(localStorage.getItem('ipoHistory') || '[]');
+
+/* ── INIT ── */
+async function init() {
+  // Try fetching company list from CDSC (may be CORS-blocked)
+  try {
+    const r = await fetch('https://iporesult.cdsc.com.np/result/companyShares/fileUploaded', {
+      method:'GET', headers:{'Accept':'application/json'}, mode:'cors', signal: AbortSignal.timeout(4000)
+    });
+    if (r.ok) {
+      const data = await r.json();
+      if (Array.isArray(data) && data.length > 0) {
+        companyList = data.map(d => d.scrip || d.company || d.name || d).filter(Boolean);
+      }
+    }
+  } catch(e) {
+    // CORS blocked — use fallback
+  }
+  if (companyList.length === 0) companyList = [...FALLBACK_COMPANIES];
+
+  populateCompanySelects();
+  renderHistory();
+}
+
+function populateCompanySelects() {
+  ['company','pasteCompany'].forEach(id => {
+    const sel = document.getElementById(id);
+    const current = sel.value;
+    // Keep first option
+    while (sel.options.length > 1) sel.remove(1);
+    companyList.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = opt.textContent = c;
+      sel.appendChild(opt);
+    });
+    if (current) sel.value = current;
+  });
+}
+
+/* ── BOID COUNT ── */
+function updateBoidCount() {
+  const v = document.getElementById('boid').value.replace(/\D/g,'');
+  document.getElementById('boid').value = v;
+  const el = document.getElementById('boidCount');
+  el.textContent = v.length + '/16';
+  el.style.color = v.length === 16 ? 'var(--green)' : 'var(--muted)';
+}
+
+/* ── TABS ── */
+function showTab(t) {
+  ['single','bulk','history'].forEach(id => {
+    document.getElementById('panel-'+id).classList.toggle('active', id===t);
+    document.getElementById('t-'+id).classList.toggle('active', id===t);
+  });
+  if (t === 'history') renderHistory();
+}
+
+/* ════════════════════════════
+   SINGLE CHECK
+════════════════════════════ */
+function doSingleCheck() {
+  const boid    = document.getElementById('boid').value.trim();
+  const company = document.getElementById('company').value;
+  const name    = document.getElementById('applicantName').value.trim();
+
+  if (!boid) { alert('Please enter your BOID number.'); return; }
+  if (boid.length !== 16) { alert('BOID must be exactly 16 digits.'); return; }
+  if (!/^\d{16}$/.test(boid)) { alert('BOID must contain only digits.'); return; }
+  if (!company) { alert('Please select the IPO company.'); return; }
+
+  // Build CDSC URL
+  const cdscURL = `https://iporesult.cdsc.com.np/`;
+
+  // Save to history
+  saveHistory({ boid, company, name, checkedAt: new Date().toISOString(), url: cdscURL });
+
+  // Show result card with CDSC link
+  const area = document.getElementById('single-result-area');
+  area.innerHTML = `
+    <div class="result-item pending">
+      <div class="ri-left">
+        <div class="ri-company">📊 ${company}</div>
+        <div class="ri-boid">BOID: ${boid}${name ? ' · ' + name : ''}</div>
+        <div class="ri-kitta" style="margin-top:6px;color:var(--muted);font-size:12px;">Saved to history · Opens CDSC to verify</div>
+      </div>
+      <div class="ri-right">
+        <span class="ri-status status-pending">⏳ Verify on CDSC</span>
+        <div class="ri-kitta" style="margin-top:8px;">
+          <a href="${cdscURL}" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;padding:8px 16px;border-radius:var(--rs);font-size:13px;font-weight:700;text-decoration:none;">
+            🔍 Check on CDSC →
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:var(--rs);padding:12px 14px;font-size:13px;color:var(--amber);">
+      <strong>📋 Instructions:</strong> When CDSC opens — (1) Select <strong>"${company}"</strong> from dropdown, (2) Enter BOID <strong style="font-family:var(--mono)">${boid}</strong>, (3) Complete captcha, (4) Click View Result.
+    </div>
+  `;
+
+  // Open CDSC in new tab
+  window.open(cdscURL, '_blank', 'noopener');
+}
+
+/* ════════════════════════════
+   BULK CHECK
+════════════════════════════ */
+function parseBOIDs(text) {
+  return text.split(/[\n,;]+/).map(b => b.trim()).filter(b => /^\d{16}$/.test(b));
+}
+
+function handleCSVFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => parseCSVContent(e.target.result);
+  reader.readAsText(file);
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('dropZone').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => parseCSVContent(ev.target.result);
+  reader.readAsText(file);
+}
+
+function dragOver(e) { e.preventDefault(); document.getElementById('dropZone').classList.add('drag-over'); }
+function dragLeave(e) { document.getElementById('dropZone').classList.remove('drag-over'); }
+
+function parseCSVContent(content) {
+  const lines = content.split('\n').map(l => l.trim()).filter(Boolean);
+  // Detect header
+  const hasHeader = lines[0] && (lines[0].toLowerCase().includes('boid') || lines[0].toLowerCase().includes('name'));
+  const dataLines = hasHeader ? lines.slice(1) : lines;
+
+  bulkData = [];
+  dataLines.forEach(line => {
+    const parts = line.split(',').map(p => p.trim().replace(/^"|"$/g,''));
+    const boid  = parts.find(p => /^\d{16}$/.test(p)) || '';
+    if (!boid) return;
+    const name    = parts.find((p, i) => p && !/^\d{16}$/.test(p) && i > 0 && i < 3) || '';
+    const company = parts.find((p, i) => p && !/^\d{16}$/.test(p) && i >= 2) || '';
+    bulkData.push({ boid, name, company, status: 'pending' });
+  });
+
+  if (bulkData.length > 0) {
+    // Pre-fill paste area
+    document.getElementById('pasteBoids').value = bulkData.map(d=>d.boid).join('\n');
+    alert(`✅ Loaded ${bulkData.length} BOIDs from CSV.`);
+  } else {
+    alert('⚠️ No valid 16-digit BOIDs found. Check your CSV format.');
+  }
+}
+
+function processBulk() {
+  const company = document.getElementById('pasteCompany').value;
+  const pasteText = document.getElementById('pasteBoids').value;
+
+  // Parse paste if no CSV loaded or merge
+  if (pasteText.trim()) {
+    const boids = parseBOIDs(pasteText);
+    if (boids.length === 0 && bulkData.length === 0) {
+      alert('No valid 16-digit BOIDs found.'); return;
+    }
+    if (boids.length > 0) {
+      // Merge with existing bulkData
+      boids.forEach(boid => {
+        if (!bulkData.find(d => d.boid === boid)) {
+          bulkData.push({ boid, name: '', company: company || '', status: 'pending' });
+        }
+      });
+    }
+  }
+
+  if (bulkData.length === 0) { alert('No BOIDs to process.'); return; }
+  if (bulkData.length > 500) { alert('Maximum 500 BOIDs allowed per batch.'); return; }
+
+  // Apply company to entries without one
+  if (company) {
+    bulkData = bulkData.map(d => ({ ...d, company: d.company || company }));
+  }
+
+  renderBulkTable();
+}
+
+function renderBulkTable() {
+  const total   = bulkData.length;
+  const cdscURL = 'https://iporesult.cdsc.com.np/';
+
+  // Stats
+  const statsEl = document.getElementById('bulk-stats');
+  statsEl.innerHTML = `
+    <div class="stat-chip"><div class="sc-n">Total BOIDs</div><div class="sc-v cyan">${total}</div></div>
+    <div class="stat-chip"><div class="sc-n">Unique Companies</div><div class="sc-v amber">${[...new Set(bulkData.map(d=>d.company).filter(Boolean))].length}</div></div>
+    <div class="stat-chip"><div class="sc-n">CDSC Links</div><div class="sc-v green">${total}</div></div>
+  `;
+  document.getElementById('bulkFill').style.width = '100%';
+
+  // Table
+  const tbody = document.getElementById('bulkTableBody');
+  tbody.innerHTML = '';
+  bulkData.forEach((row, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="color:var(--muted)">${i+1}</td>
+      <td>${row.boid}</td>
+      <td>${row.name || '—'}</td>
+      <td>${row.company || '—'}</td>
+      <td>
+        <a href="${cdscURL}" target="_blank" rel="noopener"
+           class="btn btn-secondary btn-sm" style="text-decoration:none;font-size:11px;">
+          🔍 Check on CDSC
+        </a>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Save to history
+  bulkData.forEach(row => {
+    if (row.boid && row.company) saveHistory({ boid: row.boid, company: row.company, name: row.name, checkedAt: new Date().toISOString(), bulk: true });
+  });
+
+  document.getElementById('bulk-results').style.display = 'block';
+}
+
+function openAllCDSC() {
+  if (bulkData.length > 10) {
+    if (!confirm(`This will open ${bulkData.length} tabs. Your browser may block popup windows. Continue with first 10?`)) return;
+    bulkData.slice(0, 10).forEach((_, i) => {
+      setTimeout(() => window.open('https://iporesult.cdsc.com.np/', '_blank', 'noopener'), i * 600);
+    });
+  } else {
+    bulkData.forEach((_, i) => {
+      setTimeout(() => window.open('https://iporesult.cdsc.com.np/', '_blank', 'noopener'), i * 600);
+    });
+  }
+}
+
+function exportBulkCSV() {
+  if (bulkData.length === 0) return;
+  const header = 'No,BOID,Name,Company,CDSC Check URL\n';
+  const rows = bulkData.map((d,i) =>
+    `${i+1},"${d.boid}","${d.name||''}","${d.company||''}","https://iporesult.cdsc.com.np/"`
+  ).join('\n');
+  downloadFile('ipo_bulk_check.csv', 'text/csv', header + rows);
+}
+
+function copyBulkSummary() {
+  const lines = [`IPO Bulk Check Summary — ${new Date().toLocaleDateString()}`, `Total BOIDs: ${bulkData.length}`, ''];
+  bulkData.forEach((d,i) => lines.push(`${i+1}. ${d.boid} — ${d.company||'?'} — ${d.name||''}`));
+  lines.push('', 'Check at: https://iporesult.cdsc.com.np/');
+  navigator.clipboard.writeText(lines.join('\n')).then(() => alert('✅ Copied to clipboard!'));
+}
+
+function clearBulk() {
+  bulkData = [];
+  document.getElementById('pasteBoids').value = '';
+  document.getElementById('csvFileInput').value = '';
+  document.getElementById('bulk-results').style.display = 'none';
+}
+
+/* ════════════════════════════
+   HISTORY
+════════════════════════════ */
+function saveHistory(entry) {
+  // Dedupe by boid+company
+  const key = entry.boid + '|' + entry.company;
+  checkHistory = checkHistory.filter(h => (h.boid+'|'+h.company) !== key);
+  checkHistory.unshift(entry);
+  if (checkHistory.length > 200) checkHistory = checkHistory.slice(0, 200);
+  localStorage.setItem('ipoHistory', JSON.stringify(checkHistory));
+}
+
+function renderHistory() {
+  const el = document.getElementById('historyList');
+  if (checkHistory.length === 0) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📭</div><div>No history yet.<br/>Check some IPO results first.</div></div>`;
+    return;
+  }
+  el.innerHTML = checkHistory.map((h, i) => `
+    <div class="history-item">
+      <div class="hist-left">
+        <div class="hist-company">${h.company || 'Unknown Company'}</div>
+        <div class="hist-meta">
+          BOID: <span class="hist-boid">${h.boid}</span>
+          ${h.name ? ' · ' + h.name : ''}
+          ${h.bulk ? ' · <span style="color:var(--cyan);font-size:11px;">Bulk</span>' : ''}
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">${new Date(h.checkedAt).toLocaleString()}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="https://iporesult.cdsc.com.np/" target="_blank" rel="noopener"
+           style="font-size:12px;font-weight:700;color:var(--indigo2);white-space:nowrap;">🔍 CDSC →</a>
+        <button class="del-hist" onclick="deleteHistory(${i})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function deleteHistory(i) {
+  checkHistory.splice(i, 1);
+  localStorage.setItem('ipoHistory', JSON.stringify(checkHistory));
+  renderHistory();
+}
+
+function clearHistory() {
+  if (!confirm('Clear all history?')) return;
+  checkHistory = [];
+  localStorage.setItem('ipoHistory', '[]');
+  renderHistory();
+}
+
+function exportHistoryCSV() {
+  if (checkHistory.length === 0) return;
+  const header = 'BOID,Name,Company,Checked At\n';
+  const rows = checkHistory.map(h =>
+    `"${h.boid}","${h.name||''}","${h.company||''}","${new Date(h.checkedAt).toLocaleString()}"`
+  ).join('\n');
+  downloadFile('ipo_history.csv', 'text/csv', header + rows);
+}
+
+/* ── UTIL ── */
+function downloadFile(filename, type, content) {
+  const blob = new Blob([content], { type });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* ── INIT ── */
+init();
+</script>
+</body>
+</html>
