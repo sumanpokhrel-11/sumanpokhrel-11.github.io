@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>NEPSE Share Calculator Nepal 2082 – Buy Sell CGT Bonus Dividend WACC | Free Tool</title>
+  <meta name="description" content="Free NEPSE share calculator Nepal 2082. Calculate buy/sell cost with broker commission, SEBON fee, DP charge, capital gains tax (CGT), bonus share WACC, right share, dividend, and price adjustment. Updated with Jestha 2081 rates."/>
+  <meta name="keywords" content="nepse calculator, nepse share calculator nepal, buy sell share calculator nepal, broker commission calculator nepal, capital gains tax nepse, bonus share calculator nepal, wacc calculator nepse, sebon fee calculator"/>
+  <link rel="canonical" href="https://suman-pokhrel.com.np/nepse-calculator.html"/>
+  <meta property="og:title" content="NEPSE Share Calculator Nepal 2082 – Complete Tool"/>
+  <meta property="og:description" content="Calculate NEPSE buy/sell cost, CGT, bonus shares, WACC, right shares and dividends. Free & accurate for FY 2082/83."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"NEPSE Share Calculator Nepal 2082",
+     "url":"https://suman-pokhrel.com.np/nepse-calculator.html",
+     "description":"Comprehensive NEPSE share calculator for Nepal. Includes buy/sell cost with broker commission, SEBON fee, DP charge, capital gains tax, bonus share WACC, right share calculation, dividend calculator, price adjustment. Updated for FY 2082/83.",
+     "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+     "offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"},
+     "author":{"@type":"Person","name":"Suman Pokhrel","url":"https://suman-pokhrel.com.np"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is the broker commission rate in NEPSE 2081/82?",
+       "acceptedAnswer":{"@type":"Answer","text":"Broker commission rates updated from Jestha 2081: ≤Rs 50,000: 0.36%; Rs 50,001–5,00,000: 0.33%; Rs 5,00,001–20,00,000: 0.31%; Rs 20,00,001–1,00,00,000: 0.27%; above Rs 1 Crore: 0.24%. SEBON fee is 0.015% additionally."}},
+      {"@type":"Question","name":"What is the capital gains tax (CGT) rate in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"CGT for individuals: 7.5% for short-term (held less than 365 days) and 5% for long-term (held 365+ days). For institutions/companies: 10% flat rate. CGT is calculated on net profit (sell amount minus buy cost)."}},
+      {"@type":"Question","name":"How do bonus shares affect WACC in Nepal?",
+       "acceptedAnswer":{"@type":"Answer","text":"Bonus shares are free shares. When you receive bonus shares, your total cost stays the same but kitta increases. WACC = Total Cost ÷ (Original Kitta + Bonus Kitta). Bonus kitta = Original Kitta × Bonus% ÷ 100."}},
+      {"@type":"Question","name":"What is the price adjustment formula for bonus shares in NEPSE?",
+       "acceptedAnswer":{"@type":"Answer","text":"Adjusted LTP after bonus = LTP × 100 ÷ (100 + Bonus%). For right shares: Adjusted LTP = (LTP × Old Kitta + 100 × Right Kitta) ÷ (Old Kitta + Right Kitta)."}}
+    ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://suman-pokhrel.com.np/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://suman-pokhrel.com.np/#tools"},
+      {"@type":"ListItem","position":3,"name":"NEPSE Calculator","item":"https://suman-pokhrel.com.np/nepse-calculator.html"}
+    ]}
+  ]}
+  </script>
+
+  <!-- AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg:      #ecfdf5;
+      --surface: #f0fdf4;
+      --card:    #ffffff;
+      --border:  #d1fae5;
+      --border2: #a7f3d0;
+      --green:   #059669;
+      --green2:  #10b981;
+      --green3:  #d1fae5;
+      --red:     #dc2626;
+      --red2:    #fef2f2;
+      --amber:   #d97706;
+      --amber2:  #fef3c7;
+      --blue:    #2563eb;
+      --blue2:   #eff6ff;
+      --purple:  #7c3aed;
+      --text:    #064e3b;
+      --muted:   #6b7280;
+      --light:   #9ca3af;
+      --mono:    'JetBrains Mono', monospace;
+      --sans:    'Plus Jakarta Sans', sans-serif;
+      --r:       14px;
+      --rs:      9px;
+      --shadow:  0 2px 12px rgba(5,150,105,.08);
+      --shadow2: 0 6px 32px rgba(5,150,105,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65;}
+
+    /* Subtle wave pattern */
+    body::before{
+      content:'';position:fixed;inset:0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(16,185,129,.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(5,150,105,.04) 0%, transparent 60%);
+      pointer-events:none;z-index:0;
+    }
+
+    .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 16px 80px;}
+    a{color:var(--green);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* AD SLOTS */
+    .ad-slot{background:var(--surface);border:1px dashed var(--border2);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;color:var(--light);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+    .ad-leader{min-height:90px;margin:14px 0;}
+    .ad-post{min-height:90px;margin:24px 0;}
+    .ad-inline{min-height:90px;margin:32px 0;}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:18px 0 0;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+    .breadcrumb a{color:var(--muted);}
+
+    /* HERO */
+    .hero{padding:28px 0 20px;text-align:center;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.2);color:var(--green);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+    .hero h1{font-size:clamp(1.8rem,5vw,2.7rem);font-weight:800;line-height:1.1;color:var(--text);margin-bottom:10px;}
+    .hero h1 span{color:var(--green);}
+    .hero p{font-size:1rem;color:var(--muted);max-width:540px;margin:0 auto 14px;}
+    .rate-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;}
+    .rate-badge{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--green);}
+
+    /* TAB NAV */
+    .tab-nav{
+      display:flex;gap:4px;flex-wrap:wrap;
+      background:var(--card);border:1px solid var(--border2);
+      border-radius:var(--r);padding:4px;margin-bottom:20px;
+    }
+    .tnav{
+      flex:1;min-width:100px;padding:9px 12px;border:none;border-radius:10px;
+      font-family:var(--sans);font-size:13px;font-weight:700;
+      cursor:pointer;transition:all .18s;background:transparent;color:var(--muted);
+      white-space:nowrap;
+    }
+    .tnav.active{background:var(--green);color:#fff;box-shadow:0 2px 12px rgba(5,150,105,.3);}
+    .tnav:hover:not(.active){background:var(--green3);color:var(--text);}
+
+    /* PANEL */
+    .panel{display:none;}
+    .panel.active{display:block;}
+
+    /* CARD */
+    .calc-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:28px;box-shadow:var(--shadow2);margin-bottom:16px;}
+
+    /* SECTION LABEL */
+    .sec-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+    .sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+    /* FIELDS */
+    .fields-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+    .fields-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+    .fields-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+    @media(max-width:600px){.fields-3,.fields-4{grid-template-columns:1fr 1fr;}.fields-2{grid-template-columns:1fr;}}
+    @media(max-width:380px){.fields-3,.fields-4,.fields-2{grid-template-columns:1fr;}}
+
+    .field{display:flex;flex-direction:column;gap:5px;}
+    .field label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+    .field label .hint{font-weight:400;text-transform:none;color:var(--light);letter-spacing:0;font-size:10px;margin-left:4px;}
+
+    .field input,.field select{
+      background:var(--surface);border:1.5px solid var(--border2);
+      border-radius:var(--rs);color:var(--text);
+      font-family:var(--sans);font-size:15px;font-weight:600;
+      padding:11px 14px;outline:none;
+      transition:border-color .2s,box-shadow .2s;
+      -webkit-appearance:none;width:100%;
+    }
+    .field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(5,150,105,.12);}
+    .field input::placeholder{color:var(--light);opacity:.7;font-weight:400;}
+
+    .select-wrap{position:relative;}
+    .select-wrap::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:11px;}
+    .select-wrap select{padding-right:32px;cursor:pointer;}
+
+    /* WACC rows */
+    .wacc-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
+    .wacc-row{
+      display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:10px;
+      align-items:center;background:var(--surface);
+      border:1px solid var(--border);border-radius:var(--rs);padding:10px 12px;
+    }
+    @media(max-width:540px){.wacc-row{grid-template-columns:1fr 1fr;gap:8px;}}
+    .wacc-row .row-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+    .wacc-row input{background:var(--card);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text);outline:none;width:100%;}
+    .wacc-row input:focus{border-color:var(--green);}
+    .wacc-row input:disabled{background:var(--green3);color:var(--green);font-weight:700;}
+    .del-btn{background:none;border:1px solid #fca5a5;border-radius:6px;color:#dc2626;cursor:pointer;padding:5px 8px;font-size:14px;transition:background .15s;flex-shrink:0;}
+    .del-btn:hover{background:#fee2e2;}
+    .add-row-btn{display:inline-flex;align-items:center;gap:6px;background:var(--green3);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 16px;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--green);cursor:pointer;transition:background .15s;}
+    .add-row-btn:hover{background:var(--border2);}
+
+    /* CALC BUTTON */
+    .btn-calc{
+      width:100%;padding:15px;
+      background:linear-gradient(135deg,var(--green) 0%,var(--green2) 100%);
+      color:#fff;border:none;border-radius:var(--rs);
+      font-family:var(--sans);font-size:16px;font-weight:800;
+      cursor:pointer;box-shadow:0 4px 16px rgba(5,150,105,.3);
+      transition:transform .15s,box-shadow .15s;
+    }
+    .btn-calc:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(5,150,105,.45);}
+    .btn-calc:active{transform:translateY(0);}
+
+    /* RESULTS */
+    .result-block{display:none;animation:fadeUp .35s ease;margin-top:16px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Summary strip */
+    .res-strip{display:grid;gap:10px;margin-bottom:16px;}
+    .res-strip.cols-2{grid-template-columns:1fr 1fr;}
+    .res-strip.cols-3{grid-template-columns:1fr 1fr 1fr;}
+    .res-strip.cols-4{grid-template-columns:1fr 1fr 1fr 1fr;}
+    @media(max-width:600px){.res-strip.cols-4,.res-strip.cols-3{grid-template-columns:1fr 1fr;}}
+
+    .res-card{
+      border-radius:var(--rs);padding:14px 16px;
+      border-left:3px solid transparent;
+    }
+    .res-card .rc-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px;}
+    .res-card .rc-value{font-family:var(--mono);font-size:1.1rem;font-weight:600;}
+    .res-card.green{background:var(--green3);border-color:var(--green);}
+    .res-card.green .rc-value{color:var(--green);}
+    .res-card.red{background:var(--red2);border-color:var(--red);}
+    .res-card.red .rc-value{color:var(--red);}
+    .res-card.amber{background:var(--amber2);border-color:var(--amber);}
+    .res-card.amber .rc-value{color:var(--amber);}
+    .res-card.blue{background:var(--blue2);border-color:var(--blue);}
+    .res-card.blue .rc-value{color:var(--blue);}
+    .res-card.neutral{background:var(--surface);border-color:var(--border2);}
+    .res-card.neutral .rc-value{color:var(--text);}
+
+    /* Breakdown table */
+    .breakdown{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;margin-top:12px;}
+    .bdrow{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid var(--border);font-size:14px;}
+    .bdrow:last-child{border-bottom:none;font-weight:800;background:var(--card);padding-top:12px;}
+    .bdrow .bdn{color:var(--muted);}
+    .bdrow .bdv{font-family:var(--mono);font-weight:600;color:var(--text);}
+    .bdrow .bdv.green{color:var(--green);}
+    .bdrow .bdv.red{color:var(--red);}
+    .bdrow .bdv.amber{color:var(--amber);}
+    .bdrow.profit-row .bdn,.bdrow.profit-row .bdv{font-weight:800;font-size:15px;}
+
+    /* Profit/loss pill */
+    .pl-pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 16px;border-radius:100px;
+      font-weight:800;font-size:14px;margin-bottom:12px;
+    }
+    .pl-pill.profit{background:var(--green3);color:var(--green);}
+    .pl-pill.loss{background:var(--red2);color:var(--red);}
+
+    /* Progress bar for charges */
+    .charge-bar-wrap{margin:14px 0 8px;}
+    .charge-bar-label{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;}
+    .charge-bar-track{height:10px;background:var(--border);border-radius:100px;overflow:hidden;}
+    .charge-bar-fill{height:100%;border-radius:100px;transition:width .6s ease;}
+
+    /* Copy btn */
+    .btn-copy{
+      display:inline-flex;align-items:center;gap:6px;
+      background:var(--surface);border:1.5px solid var(--border2);
+      border-radius:var(--rs);padding:9px 16px;
+      font-family:var(--sans);font-size:13px;font-weight:700;color:var(--muted);
+      cursor:pointer;transition:all .15s;margin-top:12px;
+    }
+    .btn-copy:hover{border-color:var(--green);color:var(--green);}
+    .btn-copy.copied{background:var(--green3);border-color:var(--green);color:var(--green);}
+
+    /* CONTENT */
+    .content-section{margin:44px 0;}
+    .section-title{font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);position:relative;}
+    .section-title::after{content:'';position:absolute;bottom:-2px;left:0;width:44px;height:2px;background:var(--green);}
+    .content-section p{color:var(--muted);margin-bottom:14px;line-height:1.8;font-size:15px;}
+    .content-section ul{color:var(--muted);padding-left:20px;line-height:1.9;font-size:15px;}
+    .content-section li{margin-bottom:6px;}
+    .content-section strong{color:var(--text);}
+
+    /* Rate reference table */
+    .ref-table-wrap{border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;overflow-x:auto;}
+    .ref-table{width:100%;border-collapse:collapse;font-size:14px;}
+    .ref-table th{background:var(--green3);color:var(--green);text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;}
+    .ref-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted);}
+    .ref-table td:first-child{color:var(--text);font-weight:700;}
+    .ref-table td:last-child{font-family:var(--mono);font-weight:600;color:var(--green);}
+    .ref-table tr:last-child td{border-bottom:none;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:3px;}
+    .faq-item{border:1px solid var(--border2);border-radius:var(--rs);overflow:hidden;}
+    .faq-q{width:100%;background:var(--surface);border:none;color:var(--text);font-family:var(--sans);font-size:15px;font-weight:700;text-align:left;padding:13px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .15s;}
+    .faq-q:hover{background:var(--green3);}
+    .faq-arrow{transition:transform .25s;flex-shrink:0;color:var(--muted);}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;background:var(--card);transition:max-height .3s ease,padding .3s ease;padding:0 18px;}
+    .faq-item.open .faq-a{max-height:300px;padding:14px 18px;}
+    .faq-a p{color:var(--muted);margin:0;line-height:1.75;}
+
+    /* Related tools */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;}
+    .tool-chip{background:var(--card);border:1px solid var(--border2);border-radius:var(--rs);padding:13px 15px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--text);transition:border-color .2s,box-shadow .2s;}
+    .tool-chip:hover{border-color:var(--green);box-shadow:var(--shadow);text-decoration:none;}
+
+    /* Footer */
+    .page-footer{border-top:1px solid var(--border);padding:24px 0 0;margin-top:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px;}
+    .page-footer nav{display:flex;gap:16px;}
+    .page-footer a{color:var(--muted);}
+
+    #adAnchor{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;justify-content:space-between;z-index:999;min-height:60px;}
+    #adClose{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px 8px;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="breadcrumb">
+    <a href="https://suman-pokhrel.com.np/">Home</a><span>›</span>
+    <a href="https://suman-pokhrel.com.np/#tools">Tools</a><span>›</span>
+    <span>NEPSE Calculator</span>
+  </nav>
+
+  <div class="ad-slot ad-leader">
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    Advertisement · 728×90
+  </div>
+
+  <header class="hero">
+    <div class="hero-eyebrow">📈 Updated for 2081/82 · Free Tool</div>
+    <h1>NEPSE Share<br /><span>Calculator Nepal</span></h1>
+    <p>Complete NEPSE calculator — buy/sell cost, broker charges, capital gains tax, bonus shares, WACC, right shares, dividends, and more. All rates updated for Jestha 2081.</p>
+    <div class="rate-badges">
+      <div class="rate-badge">Broker: 0.24–0.36%</div>
+      <div class="rate-badge">SEBON: 0.015%</div>
+      <div class="rate-badge">DP: Rs 25</div>
+      <div class="rate-badge">CGT Short: 7.5%</div>
+      <div class="rate-badge">CGT Long: 5%</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- TABS -->
+    <nav class="tab-nav" role="tablist">
+      <button class="tnav active" onclick="showTab('buysell')" id="t-buysell">💹 Buy &amp; Sell</button>
+      <button class="tnav" onclick="showTab('wacc')" id="t-wacc">⚖️ WACC</button>
+      <button class="tnav" onclick="showTab('bonus')" id="t-bonus">🎁 Bonus / Right</button>
+      <button class="tnav" onclick="showTab('dividend')" id="t-dividend">💰 Dividend</button>
+      <button class="tnav" onclick="showTab('breakeven')" id="t-breakeven">🎯 Break Even</button>
+    </nav>
+
+    <!-- ════════════════════════════
+         TAB 1: BUY & SELL
+    ════════════════════════════ -->
+    <div id="panel-buysell" class="panel active">
+
+      <!-- AD beside form -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:0;">
+        <div class="ad-slot" style="flex:1;min-width:240px;min-height:200px;align-self:start;border:1px dashed var(--border2);">Advertisement · 300×250</div>
+        <div style="flex:3;min-width:280px;">
+
+          <div class="calc-card">
+            <div class="sec-label">Transaction Details</div>
+
+            <div class="fields-3">
+              <div class="field">
+                <label for="bs-kitta">Kitta (Shares)</label>
+                <input type="number" id="bs-kitta" placeholder="e.g. 100" min="1"/>
+              </div>
+              <div class="field">
+                <label for="bs-buy">Buy Price / Share <span class="hint">(NPR)</span></label>
+                <input type="number" id="bs-buy" placeholder="e.g. 500" min="0"/>
+              </div>
+              <div class="field">
+                <label for="bs-sell">Sell Price / Share <span class="hint">(NPR)</span></label>
+                <input type="number" id="bs-sell" placeholder="e.g. 650" min="0"/>
+              </div>
+            </div>
+
+            <div class="fields-3">
+              <div class="field">
+                <label for="bs-type">Security Type</label>
+                <div class="select-wrap">
+                  <select id="bs-type">
+                    <option value="equity">Equity Shares</option>
+                    <option value="mutual">Mutual Fund</option>
+                    <option value="bond">Govt / Corp Bond</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bs-cgt">CGT Category</label>
+                <div class="select-wrap">
+                  <select id="bs-cgt">
+                    <option value="short">Short-term (< 365 days) — 7.5%</option>
+                    <option value="long">Long-term (≥ 365 days) — 5%</option>
+                    <option value="inst">Institutional — 10%</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bs-dp-buy">DP Charge on Buy</label>
+                <div class="select-wrap">
+                  <select id="bs-dp-buy">
+                    <option value="25">Include Rs 25</option>
+                    <option value="0">Exclude (IPO/FPO)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-calc" onclick="calcBuySell()">⚡ Calculate</button>
+          </div>
+
+          <div class="result-block" id="res-buysell">
+            <div id="bs-pl-pill"></div>
+            <div class="res-strip cols-4" id="bs-summary"></div>
+            <div class="breakdown" id="bs-breakdown"></div>
+            <button class="btn-copy" id="bs-copy-btn" onclick="copyResult('bs')">📋 Copy Result</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════
+         TAB 2: WACC
+    ════════════════════════════ -->
+    <div id="panel-wacc" class="panel">
+      <div class="calc-card">
+        <div class="sec-label">Share Purchase Entries</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Add all your purchase transactions. Broker fee + SEBON + DP are automatically included. Bonus and Right shares auto-fill at Rs 10 (face value).</p>
+
+        <div class="wacc-rows" id="wacc-rows">
+          <!-- rows injected by JS -->
+        </div>
+        <button class="add-row-btn" onclick="addWACCRow()">＋ Add Purchase</button>
+        <div style="margin-top:16px;">
+          <button class="btn-calc" onclick="calcWACC()">⚡ Calculate WACC</button>
+        </div>
+      </div>
+
+      <div class="result-block" id="res-wacc">
+        <div class="res-strip cols-3" id="wacc-summary"></div>
+        <div class="breakdown" id="wacc-breakdown"></div>
+        <div style="margin-top:12px;background:rgba(5,150,105,.07);border:1px solid var(--border2);border-radius:var(--rs);padding:12px 14px;font-size:13px;color:var(--green);">
+          💡 <strong>MeroShare Tip:</strong> Use this WACC value in MeroShare → My Purchase Source → Update WACC to ensure correct CGT calculation when selling.
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════
+         TAB 3: BONUS / RIGHT SHARE
+    ════════════════════════════ -->
+    <div id="panel-bonus" class="panel">
+      <div class="calc-card">
+        <div class="sec-label">Your Current Position</div>
+        <div class="fields-3">
+          <div class="field">
+            <label for="bon-kitta">Your Current Kitta</label>
+            <input type="number" id="bon-kitta" placeholder="e.g. 200" min="1"/>
+          </div>
+          <div class="field">
+            <label for="bon-ltp">Current LTP <span class="hint">(NPR)</span></label>
+            <input type="number" id="bon-ltp" placeholder="e.g. 400" min="0"/>
+          </div>
+          <div class="field">
+            <label for="bon-wacc">Your Buy Price / WACC <span class="hint">(NPR)</span></label>
+            <input type="number" id="bon-wacc" placeholder="e.g. 350" min="0"/>
+          </div>
+        </div>
+
+        <div class="sec-label" style="margin-top:4px;">Corporate Action</div>
+        <div class="fields-3">
+          <div class="field">
+            <label for="bon-bonus">Bonus Share % <span class="hint">(0 if none)</span></label>
+            <input type="number" id="bon-bonus" placeholder="e.g. 15" min="0" value="0"/>
+          </div>
+          <div class="field">
+            <label for="bon-right">Right Share % <span class="hint">(0 if none)</span></label>
+            <input type="number" id="bon-right" placeholder="e.g. 10" min="0" value="0"/>
+          </div>
+          <div class="field">
+            <label for="bon-cash-div">Cash Dividend % <span class="hint">(0 if none)</span></label>
+            <input type="number" id="bon-cash-div" placeholder="e.g. 5" min="0" value="0"/>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calcBonus()">⚡ Calculate</button>
+      </div>
+
+      <div class="result-block" id="res-bonus">
+        <div class="res-strip cols-4" id="bon-summary"></div>
+        <div class="breakdown" id="bon-breakdown"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════
+         TAB 4: DIVIDEND
+    ════════════════════════════ -->
+    <div id="panel-dividend" class="panel">
+      <div class="calc-card">
+        <div class="sec-label">Dividend Details</div>
+        <div class="fields-3">
+          <div class="field">
+            <label for="div-kitta">Your Kitta</label>
+            <input type="number" id="div-kitta" placeholder="e.g. 500" min="1"/>
+          </div>
+          <div class="field">
+            <label for="div-cash">Cash Dividend %</label>
+            <input type="number" id="div-cash" placeholder="e.g. 12.5" min="0" value="0"/>
+          </div>
+          <div class="field">
+            <label for="div-bonus">Bonus Dividend %</label>
+            <input type="number" id="div-bonus-pct" placeholder="e.g. 10" min="0" value="0"/>
+          </div>
+        </div>
+        <div class="fields-2">
+          <div class="field">
+            <label for="div-face">Face Value <span class="hint">(usually Rs 100)</span></label>
+            <input type="number" id="div-face" value="100" min="1"/>
+          </div>
+          <div class="field">
+            <label for="div-ltp">Current LTP <span class="hint">(for total value)</span></label>
+            <input type="number" id="div-ltp" placeholder="e.g. 450" min="0"/>
+          </div>
+        </div>
+        <button class="btn-calc" onclick="calcDividend()">⚡ Calculate Dividend</button>
+      </div>
+
+      <div class="result-block" id="res-dividend">
+        <div class="res-strip cols-4" id="div-summary"></div>
+        <div class="breakdown" id="div-breakdown"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════
+         TAB 5: BREAK EVEN / STOP LOSS
+    ════════════════════════════ -->
+    <div id="panel-breakeven" class="panel">
+      <div class="calc-card">
+        <div class="sec-label">Break Even Calculator</div>
+        <div class="fields-3">
+          <div class="field">
+            <label for="be-kitta">Kitta</label>
+            <input type="number" id="be-kitta" placeholder="e.g. 100" min="1"/>
+          </div>
+          <div class="field">
+            <label for="be-buy">Buy Price / Share <span class="hint">(NPR)</span></label>
+            <input type="number" id="be-buy" placeholder="e.g. 500" min="0"/>
+          </div>
+          <div class="field">
+            <label for="be-cgt">CGT Type</label>
+            <div class="select-wrap">
+              <select id="be-cgt">
+                <option value="short">Short-term (7.5%)</option>
+                <option value="long">Long-term (5%)</option>
+                <option value="inst">Institutional (10%)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="btn-calc" onclick="calcBreakEven()">⚡ Calculate Break Even</button>
+      </div>
+
+      <div class="result-block" id="res-breakeven">
+        <div class="res-strip cols-3" id="be-summary"></div>
+        <div class="breakdown" id="be-breakdown"></div>
+
+        <div class="calc-card" style="margin-top:16px;">
+          <div class="sec-label">Stop Loss & Target Calculator</div>
+          <div class="fields-3">
+            <div class="field">
+              <label for="sl-price">Current / Buy Price <span class="hint">(NPR)</span></label>
+              <input type="number" id="sl-price" placeholder="e.g. 500" min="0" oninput="calcSL()"/>
+            </div>
+            <div class="field">
+              <label for="sl-pct">Stop Loss %</label>
+              <input type="number" id="sl-pct" value="5" min="0" max="100" step="0.5" oninput="calcSL()"/>
+            </div>
+            <div class="field">
+              <label for="sl-target">Target %</label>
+              <input type="number" id="sl-target" value="15" min="0" max="1000" step="0.5" oninput="calcSL()"/>
+            </div>
+          </div>
+          <div id="sl-result" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot ad-post">Advertisement · Responsive</div>
+
+    <!-- CONTENT: Charges explained -->
+    <section class="content-section" id="charges">
+      <h2 class="section-title">NEPSE Charges & Commission Rates (Updated 2081)</h2>
+      <p>Every NEPSE transaction involves three charges besides the share price: broker commission, SEBON fee, and DP charge. Capital gains tax applies only when selling at a profit.</p>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Charge</th><th>Description</th><th>Applies On</th><th>Rate / Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Broker Commission</td><td>≤ Rs 50,000</td><td>Buy + Sell</td><td>0.36%</td></tr>
+            <tr><td>Broker Commission</td><td>Rs 50,001 – Rs 5,00,000</td><td>Buy + Sell</td><td>0.33%</td></tr>
+            <tr><td>Broker Commission</td><td>Rs 5,00,001 – Rs 20,00,000</td><td>Buy + Sell</td><td>0.31%</td></tr>
+            <tr><td>Broker Commission</td><td>Rs 20,00,001 – Rs 1 Crore</td><td>Buy + Sell</td><td>0.27%</td></tr>
+            <tr><td>Broker Commission</td><td>Above Rs 1 Crore</td><td>Buy + Sell</td><td>0.24%</td></tr>
+            <tr><td>SEBON Fee</td><td>Securities Board regulatory fee</td><td>Buy + Sell</td><td>0.015%</td></tr>
+            <tr><td>DP Charge</td><td>Depository Participant settlement</td><td>Buy + Sell</td><td>Rs 25 flat</td></tr>
+            <tr><td>CGT (Short-term)</td><td>Held &lt; 365 days</td><td>Sell (profit only)</td><td>7.5% of profit</td></tr>
+            <tr><td>CGT (Long-term)</td><td>Held ≥ 365 days</td><td>Sell (profit only)</td><td>5% of profit</td></tr>
+            <tr><td>CGT (Institutional)</td><td>Companies/institutions</td><td>Sell (profit only)</td><td>10% of profit</td></tr>
+            <tr><td>Cash Dividend TDS</td><td>Tax Deducted at Source</td><td>Dividend received</td><td>5% of dividend</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px;font-size:13px;color:var(--muted);">⚠️ Broker commission was reduced by 10% effective Jestha 1, 2081 BS by SEBON. The 0.015% SEBON fee is separate from the commission. These rates are for equity shares; mutual funds and bonds have different structures.</p>
+    </section>
+
+    <div class="ad-slot ad-inline">Advertisement · In-article</div>
+
+    <!-- CONTENT: WACC guide -->
+    <section class="content-section">
+      <h2 class="section-title">Understanding WACC for NEPSE Investors</h2>
+      <p><strong>WACC (Weighted Average Cost of Capital)</strong> in NEPSE context means the average price you effectively paid for each share, including all buy-side charges. It's critical for two reasons:</p>
+      <ul>
+        <li><strong>CGT calculation</strong> — When you sell, CGT is calculated on profit = Sell Price − WACC. An inaccurate WACC means you either overpay or underpay tax.</li>
+        <li><strong>MeroShare compliance</strong> — NRB mandates that investors update their WACC in MeroShare's "My Purchase Source" section for correct CGT calculation by CDS.</li>
+        <li><strong>Bonus shares reduce WACC</strong> — When you receive bonus shares, your total cost stays the same but kitta increases. This lowers your WACC automatically.</li>
+        <li><strong>Right shares at face value</strong> — Right shares are bought at Rs 100 (face value). The cost of right shares adds to your total cost pool.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What broker commission rate applies in NEPSE in 2081/82?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>From Jestha 2081, SEBON reduced broker commissions by 10%. Current rates: 0.36% for ≤Rs 50K; 0.33% for Rs 50K–5L; 0.31% for Rs 5L–20L; 0.27% for Rs 20L–1Cr; 0.24% above Rs 1 Crore. Plus 0.015% SEBON fee and Rs 25 DP charge per transaction.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I pay CGT when selling bonus shares?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Yes. When you sell bonus shares, CGT applies on profit = Sell Price − WACC. Since bonus shares come free, they lower your WACC below your original buy price. The profit on selling bonus shares is typically larger in percentage terms. The same 7.5%/5% rates apply based on holding period.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is the price adjustment formula after bonus shares?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Adjusted LTP = LTP × 100 ÷ (100 + Bonus%). For example, if LTP = Rs 400 and bonus is 20%, adjusted price = 400 × 100 ÷ 120 = Rs 333.33. Your total portfolio value stays the same on ex-date — you just hold more shares at a lower price each.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What is the break-even price in NEPSE?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Break-even price is the minimum sell price at which you neither profit nor lose after all charges (buy broker commission + DP + SEBON + sell charges + CGT). This is always higher than your buy price. This tool calculates it exactly so you never sell below break-even accidentally.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is CGT 5% or 7.5% in Nepal?
+            <svg class="faq-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-a"><p>Both rates exist depending on holding period. For individual investors: 7.5% on profit if shares held less than 365 days (short-term), and 5% if held 365 days or more (long-term). Institutions pay 10% flat. CGT applies only on profits, not on the total transaction amount.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 class="section-title">More Free Nepal Tools</h2>
+      <div class="tools-grid">
+        <a href="/salary-tax-calculator.html" class="tool-chip">💰 Salary Tax Calculator</a>
+        <a href="/emi-calculator.html" class="tool-chip">🏦 EMI Calculator</a>
+        <a href="/nrb-rate.html" class="tool-chip">💱 NRB Exchange Rate</a>
+        <a href="/nepali-date-converter.html" class="tool-chip">📅 Date Converter</a>
+        <a href="/qr.html" class="tool-chip">📲 Bank QR Generator</a>
+        <a href="/ipo.html" class="tool-chip">📊 IPO Checker</a>
+      </div>
+    </section>
+
+    <p style="color:var(--muted);font-size:12px;text-align:right;margin-top:16px;">
+      Last updated: <time datetime="2025-04-14">April 14, 2025</time> ·
+      Rates: SEBON / NEPSE / NRB ·
+      <a href="https://suman-pokhrel.com.np">suman-pokhrel.com.np</a>
+    </p>
+    <p style="color:var(--light);font-size:11px;margin-top:4px;text-align:right;">
+      ⚠️ For informational purposes only. Verify with your broker and MeroShare before any transaction.
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <span>© 2025 <a href="https://suman-pokhrel.com.np">Suman Pokhrel</a> · Free Nepal Tools</span>
+    <nav>
+      <a href="https://suman-pokhrel.com.np/">Home</a>
+      <a href="https://suman-pokhrel.com.np/#contact">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+<div id="adAnchor">
+  <div class="ad-slot" style="flex:1;min-height:50px;border:none;background:transparent;font-size:11px;">Advertisement · Sticky Footer</div>
+  <button id="adClose" onclick="document.getElementById('adAnchor').style.display='none'" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   CHARGE RATES (Jestha 2081 update)
+══════════════════════════════════════ */
+const BROKER_SLABS = [
+  { limit: 50000,    rate: 0.0036 },
+  { limit: 500000,   rate: 0.0033 },
+  { limit: 2000000,  rate: 0.0031 },
+  { limit: 10000000, rate: 0.0027 },
+  { limit: Infinity, rate: 0.0024 },
+];
+const SEBON_RATE = 0.00015;
+const DP_CHARGE  = 25;
+const CGT = { short: 0.075, long: 0.05, inst: 0.10 };
+const FACE_VALUE = 100;
+
+/* ══════════ HELPERS ══════════ */
+function fmt(n, dec=0) {
+  if (n === null || n === undefined || isNaN(n)) return '–';
+  const abs = Math.abs(n);
+  const s   = abs.toLocaleString('en-IN', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  return (n < 0 ? '−' : '') + 'Rs ' + s;
+}
+function fmtN(n, dec=2) {
+  return n.toLocaleString('en-IN', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+}
+function pct(n) { return (n * 100).toFixed(2) + '%'; }
+
+function brokerFee(amount) {
+  for (const s of BROKER_SLABS) {
+    if (amount <= s.limit) return amount * s.rate;
+  }
+  return amount * 0.0024;
+}
+
+function buyCost(kitta, price, dpBuy = DP_CHARGE) {
+  const txn     = kitta * price;
+  const broker  = brokerFee(txn);
+  const sebon   = txn * SEBON_RATE;
+  const dp      = dpBuy;
+  return { txn, broker, sebon, dp, total: txn + broker + sebon + dp };
+}
+
+function sellCost(kitta, sellPrice, buyPrice, cgtType) {
+  const txn       = kitta * sellPrice;
+  const broker    = brokerFee(txn);
+  const sebon     = txn * SEBON_RATE;
+  const dp        = DP_CHARGE;
+  const grossProfit = txn - kitta * buyPrice;
+  const cgtAmount = grossProfit > 0 ? grossProfit * CGT[cgtType] : 0;
+  const netReceive  = txn - broker - sebon - dp - cgtAmount;
+  return { txn, broker, sebon, dp, grossProfit, cgtAmount, netReceive };
+}
+
+/* ══════════ TABS ══════════ */
+function showTab(t) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tnav').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + t).classList.add('active');
+  document.getElementById('t-' + t).classList.add('active');
+}
+
+/* ══════════════════════════════════
+   TAB 1: BUY & SELL
+══════════════════════════════════ */
+function calcBuySell() {
+  const kitta  = +document.getElementById('bs-kitta').value || 0;
+  const buy    = +document.getElementById('bs-buy').value   || 0;
+  const sell   = +document.getElementById('bs-sell').value  || 0;
+  const cgtType= document.getElementById('bs-cgt').value;
+  const dpBuyVal = +document.getElementById('bs-dp-buy').value;
+
+  if (!kitta || !buy) { alert('Please enter kitta and buy price.'); return; }
+
+  const B = buyCost(kitta, buy, dpBuyVal);
+  const hasSell = sell > 0;
+  const S = hasSell ? sellCost(kitta, sell, buy, cgtType) : null;
+
+  const profit  = hasSell ? S.netReceive - B.total : null;
+  const profitPct = hasSell && B.total > 0 ? (profit / B.total * 100) : null;
+
+  /* Pill */
+  const pillEl = document.getElementById('bs-pl-pill');
+  if (hasSell) {
+    const isProfit = profit >= 0;
+    pillEl.innerHTML = `<div class="pl-pill ${isProfit ? 'profit' : 'loss'}">
+      ${isProfit ? '📈' : '📉'} ${isProfit ? 'Profit' : 'Loss'}: ${fmt(Math.abs(profit))} (${Math.abs(profitPct).toFixed(2)}%)
+    </div>`;
+  } else { pillEl.innerHTML = ''; }
+
+  /* Summary cards */
+  const sc = document.getElementById('bs-summary');
+  sc.innerHTML = `
+    <div class="res-card neutral"><div class="rc-label">Total Buy Cost</div><div class="rc-value">${fmt(B.total)}</div></div>
+    <div class="res-card neutral"><div class="rc-label">Cost / Share</div><div class="rc-value">${fmt(B.total / kitta, 2)}</div></div>
+    ${hasSell ? `
+    <div class="res-card ${S.netReceive >= 0 ? 'green' : 'red'}"><div class="rc-label">Net Receive</div><div class="rc-value">${fmt(S.netReceive)}</div></div>
+    <div class="res-card ${profit >= 0 ? 'green' : 'red'}"><div class="rc-label">Net P&L</div><div class="rc-value">${fmt(profit)}</div></div>
+    ` : ''}
+  `;
+
+  /* Breakdown */
+  const bd = document.getElementById('bs-breakdown');
+  let html = `
+    <div class="bdrow"><span class="bdn">📥 Buy Transaction (${kitta} × Rs ${buy})</span><span class="bdv">${fmt(B.txn)}</span></div>
+    <div class="bdrow"><span class="bdn">Broker Commission (Buy)</span><span class="bdv red">${fmt(B.broker)} <small style="color:var(--muted)">(${pct(B.broker/B.txn)})</small></span></div>
+    <div class="bdrow"><span class="bdn">SEBON Fee (Buy) 0.015%</span><span class="bdv red">${fmt(B.sebon)}</span></div>
+    <div class="bdrow"><span class="bdn">DP Charge (Buy)</span><span class="bdv red">${fmt(B.dp)}</span></div>
+    <div class="bdrow profit-row"><span class="bdn">✅ Total Buy Cost</span><span class="bdv">${fmt(B.total)}</span></div>
+  `;
+  if (hasSell) {
+    html += `
+      <div class="bdrow" style="background:rgba(0,0,0,.02)"><span class="bdn">📤 Sell Transaction (${kitta} × Rs ${sell})</span><span class="bdv">${fmt(S.txn)}</span></div>
+      <div class="bdrow"><span class="bdn">Broker Commission (Sell)</span><span class="bdv red">−${fmt(S.broker)}</span></div>
+      <div class="bdrow"><span class="bdn">SEBON Fee (Sell)</span><span class="bdv red">−${fmt(S.sebon)}</span></div>
+      <div class="bdrow"><span class="bdn">DP Charge (Sell)</span><span class="bdv red">−${fmt(S.dp)}</span></div>
+      <div class="bdrow"><span class="bdn">Capital Gains Tax (${cgtType==='short'?'7.5%':cgtType==='long'?'5%':'10%'})</span><span class="bdv red">−${fmt(S.cgtAmount)}</span></div>
+      <div class="bdrow profit-row"><span class="bdn">${profit >= 0 ? '💚' : '❌'} Net Receive (after all charges)</span><span class="bdv ${profit>=0?'green':'red'}">${fmt(S.netReceive)}</span></div>
+    `;
+  }
+  bd.innerHTML = html;
+
+  window._lastBS = { kitta, buy, sell, B, S, profit, profitPct, cgtType };
+  document.getElementById('res-buysell').style.display = 'block';
+}
+
+/* ══════════════════════════════════
+   TAB 2: WACC
+══════════════════════════════════ */
+let waccRows = [];
+const WACC_TYPES = { secondary:'Secondary Market', ipo:'IPO', fpo:'FPO', right:'Right Share (Rs 100)', bonus:'Bonus Share (Rs 10)', auction:'Auction' };
+
+function addWACCRow(type='secondary', kitta=0, price=0) {
+  waccRows.push({ type, kitta, price });
+  renderWACCRows();
+}
+
+function renderWACCRows() {
+  const container = document.getElementById('wacc-rows');
+  container.innerHTML = '';
+  waccRows.forEach((row, i) => {
+    const isFree  = row.type === 'bonus';
+    const isRight = row.type === 'right';
+    const autoPrice = isFree ? 10 : (isRight ? 100 : 0);
+    const div = document.createElement('div');
+    div.className = 'wacc-row';
+    div.innerHTML = `
+      <div>
+        <div class="row-label" style="margin-bottom:4px;">Type</div>
+        <select style="width:100%;background:var(--card);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--text);outline:none;-webkit-appearance:none;" onchange="waccRows[${i}].type=this.value; waccRows[${i}].price=(this.value==='bonus'?10:this.value==='right'?100:waccRows[${i}].price); renderWACCRows();">
+          ${Object.entries(WACC_TYPES).map(([k,v])=>`<option value="${k}" ${k===row.type?'selected':''}>${v}</option>`).join('')}
+        </select>
+      </div>
+      <div>
+        <div class="row-label" style="margin-bottom:4px;">Kitta</div>
+        <input type="number" value="${row.kitta||''}" placeholder="Kitta" min="1" onchange="waccRows[${i}].kitta=+this.value"/>
+      </div>
+      <div>
+        <div class="row-label" style="margin-bottom:4px;">Price / Share</div>
+        <input type="number" value="${isFree||isRight ? autoPrice : (row.price||'')}" placeholder="Price" min="0"
+          ${isFree||isRight ? 'disabled' : ''}
+          onchange="waccRows[${i}].price=+this.value"/>
+      </div>
+      <button class="del-btn" onclick="waccRows.splice(${i},1);renderWACCRows()">🗑</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// Initial 2 rows
+addWACCRow('secondary');
+
+function calcWACC() {
+  if (waccRows.length === 0) { alert('Add at least one purchase row.'); return; }
+
+  let totalCost = 0, totalKitta = 0;
+  const details = [];
+
+  waccRows.forEach(row => {
+    if (!row.kitta) return;
+    const k = row.kitta;
+    const p = row.price || (row.type==='bonus' ? 10 : row.type==='right' ? 100 : 0);
+    const isFree  = row.type === 'bonus';
+    const txn     = k * p;
+    const broker  = isFree ? 0 : brokerFee(txn);
+    const sebon   = isFree ? 0 : txn * SEBON_RATE;
+    const dp      = isFree ? 0 : DP_CHARGE;
+    const cost    = txn + broker + sebon + dp;
+    totalCost  += cost;
+    totalKitta += k;
+    details.push({ type: WACC_TYPES[row.type], kitta: k, price: p, broker, sebon, dp, cost });
+  });
+
+  const wacc = totalKitta > 0 ? totalCost / totalKitta : 0;
+
+  const sm = document.getElementById('wacc-summary');
+  sm.innerHTML = `
+    <div class="res-card blue"><div class="rc-label">Total Kitta</div><div class="rc-value">${totalKitta.toLocaleString()}</div></div>
+    <div class="res-card amber"><div class="rc-label">Total Investment</div><div class="rc-value">${fmt(totalCost)}</div></div>
+    <div class="res-card green"><div class="rc-label">WACC (per share)</div><div class="rc-value">${fmt(wacc, 2)}</div></div>
+  `;
+
+  let bdHtml = '';
+  details.forEach(d => {
+    bdHtml += `
+      <div class="bdrow"><span class="bdn">${d.type} — ${d.kitta} kitta @ ${fmt(d.price, 2)}</span><span class="bdv">${fmt(d.cost)}</span></div>
+    `;
+  });
+  bdHtml += `<div class="bdrow profit-row"><span class="bdn">WACC (Total ${totalKitta} kitta)</span><span class="bdv green">${fmt(wacc, 2)} / share</span></div>`;
+  document.getElementById('wacc-breakdown').innerHTML = bdHtml;
+  document.getElementById('res-wacc').style.display = 'block';
+}
+
+/* ══════════════════════════════════
+   TAB 3: BONUS / RIGHT
+══════════════════════════════════ */
+function calcBonus() {
+  const kitta     = +document.getElementById('bon-kitta').value || 0;
+  const ltp       = +document.getElementById('bon-ltp').value   || 0;
+  const wacc      = +document.getElementById('bon-wacc').value  || 0;
+  const bonusPct  = +document.getElementById('bon-bonus').value || 0;
+  const rightPct  = +document.getElementById('bon-right').value || 0;
+  const cashDivPct= +document.getElementById('bon-cash-div').value || 0;
+
+  if (!kitta || !ltp) { alert('Enter kitta and current LTP.'); return; }
+
+  const bonusKitta  = Math.floor(kitta * bonusPct / 100);
+  const rightKitta  = Math.floor(kitta * rightPct / 100);
+  const cashDiv     = (kitta * FACE_VALUE * cashDivPct / 100);
+  const cashDivNet  = cashDiv * 0.95; // 5% TDS
+
+  const totalKitta  = kitta + bonusKitta + rightKitta;
+  const rightCost   = rightKitta * FACE_VALUE; // Rs 100 each
+
+  // Adjusted price after bonus
+  const adjLTPBonus = bonusPct > 0 ? ltp * 100 / (100 + bonusPct) : ltp;
+  // Adjusted price after right
+  const adjLTPRight = rightPct > 0 ? (ltp * kitta + FACE_VALUE * rightKitta) / (kitta + rightKitta) : adjLTPBonus;
+  const adjLTPFinal = adjLTPRight;
+
+  // New WACC after corporate actions
+  const origCost    = kitta * wacc;
+  const newTotalCost= origCost + rightCost;
+  const newWACC     = totalKitta > 0 ? newTotalCost / totalKitta : 0;
+
+  const portfolioOld = kitta * ltp;
+  const portfolioNew = totalKitta * adjLTPFinal;
+
+  const sm = document.getElementById('bon-summary');
+  sm.innerHTML = `
+    <div class="res-card blue"><div class="rc-label">Bonus Kitta</div><div class="rc-value">+${bonusKitta}</div></div>
+    <div class="res-card amber"><div class="rc-label">Right Kitta</div><div class="rc-value">+${rightKitta}</div></div>
+    <div class="res-card green"><div class="rc-label">Total Kitta</div><div class="rc-value">${totalKitta}</div></div>
+    <div class="res-card neutral"><div class="rc-label">New WACC</div><div class="rc-value">${fmt(newWACC, 2)}</div></div>
+  `;
+
+  const bd = document.getElementById('bon-breakdown');
+  bd.innerHTML = `
+    <div class="bdrow"><span class="bdn">Current Kitta</span><span class="bdv">${kitta}</span></div>
+    <div class="bdrow"><span class="bdn">Bonus Shares Received (${bonusPct}%)</span><span class="bdv green">+${bonusKitta} kitta</span></div>
+    <div class="bdrow"><span class="bdn">Right Shares (${rightPct}% @ Rs 100)</span><span class="bdv amber">+${rightKitta} kitta (cost: ${fmt(rightCost)})</span></div>
+    <div class="bdrow"><span class="bdn">New Total Kitta</span><span class="bdv blue">${totalKitta}</span></div>
+    <div class="bdrow"><span class="bdn">Adjusted LTP after Bonus/Right</span><span class="bdv">${fmt(adjLTPFinal, 2)}</span></div>
+    <div class="bdrow"><span class="bdn">Portfolio Before</span><span class="bdv">${fmt(portfolioOld)}</span></div>
+    <div class="bdrow"><span class="bdn">Portfolio After (theoretical)</span><span class="bdv">${fmt(portfolioNew)}</span></div>
+    ${wacc > 0 ? `<div class="bdrow"><span class="bdn">Old WACC</span><span class="bdv">${fmt(wacc, 2)}</span></div>
+    <div class="bdrow profit-row"><span class="bdn">New WACC (after corporate actions)</span><span class="bdv green">${fmt(newWACC, 2)}</span></div>` : ''}
+    ${cashDivPct > 0 ? `<div class="bdrow"><span class="bdn">Gross Cash Dividend (${cashDivPct}%)</span><span class="bdv">${fmt(cashDiv)}</span></div>
+    <div class="bdrow"><span class="bdn">Cash Dividend after 5% TDS</span><span class="bdv green">${fmt(cashDivNet)}</span></div>` : ''}
+  `;
+
+  document.getElementById('res-bonus').style.display = 'block';
+}
+
+/* ══════════════════════════════════
+   TAB 4: DIVIDEND
+══════════════════════════════════ */
+function calcDividend() {
+  const kitta    = +document.getElementById('div-kitta').value      || 0;
+  const cashPct  = +document.getElementById('div-cash').value       || 0;
+  const bonusPct = +document.getElementById('div-bonus-pct').value  || 0;
+  const face     = +document.getElementById('div-face').value       || 100;
+  const ltp      = +document.getElementById('div-ltp').value        || 0;
+
+  if (!kitta) { alert('Enter your kitta.'); return; }
+
+  const grossCash   = kitta * face * cashPct / 100;
+  const netCash     = grossCash * 0.95;    // 5% TDS
+  const tds         = grossCash * 0.05;
+  const bonusKitta  = Math.floor(kitta * bonusPct / 100);
+  const bonusValue  = bonusKitta * (ltp || face);
+  const totalValue  = netCash + bonusValue;
+
+  const sm = document.getElementById('div-summary');
+  sm.innerHTML = `
+    <div class="res-card amber"><div class="rc-label">Gross Cash Div</div><div class="rc-value">${fmt(grossCash)}</div></div>
+    <div class="res-card green"><div class="rc-label">Net Cash (after TDS)</div><div class="rc-value">${fmt(netCash)}</div></div>
+    <div class="res-card blue"><div class="rc-label">Bonus Kitta</div><div class="rc-value">${bonusKitta}</div></div>
+    <div class="res-card green"><div class="rc-label">Total Benefit</div><div class="rc-value">${fmt(totalValue)}</div></div>
+  `;
+
+  document.getElementById('div-breakdown').innerHTML = `
+    <div class="bdrow"><span class="bdn">Kitta × Face Value (${kitta} × Rs ${face})</span><span class="bdv">${fmt(kitta*face)}</span></div>
+    <div class="bdrow"><span class="bdn">Cash Dividend @ ${cashPct}%</span><span class="bdv">${fmt(grossCash)}</span></div>
+    <div class="bdrow"><span class="bdn">TDS Deducted (5%)</span><span class="bdv red">−${fmt(tds)}</span></div>
+    <div class="bdrow"><span class="bdn">Net Cash Dividend Received</span><span class="bdv green">${fmt(netCash)}</span></div>
+    <div class="bdrow"><span class="bdn">Bonus Shares @ ${bonusPct}%</span><span class="bdv blue">+${bonusKitta} kitta</span></div>
+    ${ltp > 0 ? `<div class="bdrow"><span class="bdn">Bonus Kitta Value (@ LTP ${ltp})</span><span class="bdv">${fmt(bonusValue)}</span></div>` : ''}
+    <div class="bdrow profit-row"><span class="bdn">Total Estimated Benefit</span><span class="bdv green">${fmt(totalValue)}</span></div>
+  `;
+
+  document.getElementById('res-dividend').style.display = 'block';
+}
+
+/* ══════════════════════════════════
+   TAB 5: BREAK EVEN
+══════════════════════════════════ */
+function calcBreakEven() {
+  const kitta   = +document.getElementById('be-kitta').value || 0;
+  const buy     = +document.getElementById('be-buy').value   || 0;
+  const cgtType = document.getElementById('be-cgt').value;
+
+  if (!kitta || !buy) { alert('Enter kitta and buy price.'); return; }
+
+  const B = buyCost(kitta, buy);
+  const costPerShare = B.total / kitta;
+
+  // Binary search for break-even sell price
+  // At break-even: netReceive == totalBuyCost
+  // netReceive = sellTxn - sellBroker - sellSEBON - dpSell - CGT
+  // CGT = max(0, (sellTxn - kitta*buy) * cgtRate)
+  let lo = buy, hi = buy * 5;
+  for (let iter = 0; iter < 60; iter++) {
+    const mid = (lo + hi) / 2;
+    const S   = sellCost(kitta, mid, buy, cgtType);
+    if (S.netReceive < B.total) lo = mid;
+    else hi = mid;
+  }
+  const bePrice = (lo + hi) / 2;
+
+  // 5% loss stop
+  const stopLoss5  = buy * 0.95;
+  const stopLoss10 = buy * 0.90;
+
+  const sm = document.getElementById('be-summary');
+  sm.innerHTML = `
+    <div class="res-card amber"><div class="rc-label">Total Buy Cost</div><div class="rc-value">${fmt(B.total)}</div></div>
+    <div class="res-card amber"><div class="rc-label">Buy Price/Share</div><div class="rc-value">${fmt(costPerShare, 2)}</div></div>
+    <div class="res-card green"><div class="rc-label">Break-Even Sell Price</div><div class="rc-value">${fmt(bePrice, 2)}</div></div>
+  `;
+
+  const S_be = sellCost(kitta, bePrice, buy, cgtType);
+  document.getElementById('be-breakdown').innerHTML = `
+    <div class="bdrow"><span class="bdn">Buy Price / Share</span><span class="bdv">${fmt(buy, 2)}</span></div>
+    <div class="bdrow"><span class="bdn">Total Buy Cost (incl. all charges)</span><span class="bdv red">${fmt(B.total)}</span></div>
+    <div class="bdrow"><span class="bdn">Effective Cost / Share</span><span class="bdv amber">${fmt(costPerShare, 2)}</span></div>
+    <div class="bdrow"><span class="bdn">Break-Even Sell Price (${cgtType==='short'?'7.5% CGT':cgtType==='long'?'5% CGT':'10% CGT'})</span><span class="bdv green">${fmt(bePrice, 2)}</span></div>
+    <div class="bdrow"><span class="bdn">Upside needed to break even</span><span class="bdv amber">+${((bePrice-buy)/buy*100).toFixed(2)}%</span></div>
+    <div class="bdrow profit-row"><span class="bdn">Net receive at break-even (should ≈ buy cost)</span><span class="bdv">${fmt(S_be.netReceive)}</span></div>
+  `;
+
+  document.getElementById('res-breakeven').style.display = 'block';
+  calcSL();
+}
+
+function calcSL() {
+  const price  = +document.getElementById('sl-price').value  || 0;
+  const slPct  = +document.getElementById('sl-pct').value    || 5;
+  const tgtPct = +document.getElementById('sl-target').value || 15;
+  if (!price) return;
+
+  const sl  = price * (1 - slPct / 100);
+  const tgt = price * (1 + tgtPct / 100);
+  const rr  = tgtPct / slPct;
+
+  document.getElementById('sl-result').innerHTML = `
+    <div class="res-card red" style="flex:1;min-width:140px;"><div class="rc-label">Stop Loss (−${slPct}%)</div><div class="rc-value">${fmt(sl, 2)}</div></div>
+    <div class="res-card green" style="flex:1;min-width:140px;"><div class="rc-label">Target (+${tgtPct}%)</div><div class="rc-value">${fmt(tgt, 2)}</div></div>
+    <div class="res-card blue" style="flex:1;min-width:140px;"><div class="rc-label">Risk:Reward</div><div class="rc-value">1 : ${rr.toFixed(2)}</div></div>
+  `;
+}
+
+/* ══════════════════════════════════
+   COPY
+══════════════════════════════════ */
+function copyResult(tab) {
+  let txt = '';
+  if (tab === 'bs' && window._lastBS) {
+    const d = window._lastBS;
+    txt = `NEPSE Buy/Sell Calculator\n${d.kitta} kitta @ Rs ${d.buy} buy\nTotal Buy Cost: ${fmt(d.B.total)}\n` +
+      (d.sell ? `Sell @ Rs ${d.sell}\nNet Receive: ${fmt(d.S.netReceive)}\nProfit/Loss: ${fmt(d.profit)}\n` : '') +
+      `suman-pokhrel.com.np/nepse-calculator`;
+  }
+  if (!txt) { txt = document.getElementById('res-'+tab).innerText.slice(0,400); }
+  navigator.clipboard.writeText(txt).then(() => {
+    const b = document.getElementById(`${tab}-copy-btn`);
+    if (b) { b.textContent = '✓ Copied!'; b.classList.add('copied'); setTimeout(()=>{ b.textContent='📋 Copy Result'; b.classList.remove('copied'); }, 2000); }
+  });
+}
+
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+</script>
+</body>
+</html>
