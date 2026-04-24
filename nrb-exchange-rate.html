@@ -653,7 +653,7 @@ async function fetchNRB() {
       tbody.appendChild(tr);
     });
 
-    document.getElementById('intlUSDNPR').textContent = `Rs ${((forexRates.USD?.buy||0+forexRates.USD?.sell||0)/2||usdNPR).toFixed(2)}`;
+    document.getElementById('intlUSDNPR').textContent = `Rs ${usdNPR.toFixed(2)}`;
     buildConverterSelects();
 
   } catch(e) {
@@ -663,18 +663,19 @@ async function fetchNRB() {
 }
 
 /* ═══════════════════════════════════
-   FETCH METALS (metals.live — free, no key)
+   FETCH METALS (Coinbase public API — no key required)
+   GET /v2/exchange-rates?currency=XAU
+   rates.USD  = gold price per troy oz in USD
+   rates.XAG  = oz of silver per oz of gold (gold/silver ratio)
 ═══════════════════════════════════ */
 async function fetchMetals() {
   try {
-    const r = await fetch('https://api.metals.live/v1/spot');
+    const r = await fetch('https://api.coinbase.com/v2/exchange-rates?currency=XAU');
     const data = await r.json();
-    // Response: [{gold: X}, {silver: Y}, ...]
-    let goldUSD = 0, silverUSD = 0;
-    data.forEach(item => {
-      if (item.gold   !== undefined) goldUSD   = item.gold;
-      if (item.silver !== undefined) silverUSD = item.silver;
-    });
+    const rates = data?.data?.rates;
+    if (!rates || !rates.USD) throw new Error('no rates');
+    const goldUSD   = parseFloat(rates.USD);
+    const silverUSD = goldUSD / parseFloat(rates.XAG);
 
     // Convert per troy oz USD → per tola NPR
     // Hallmark = 24K (spot price)
