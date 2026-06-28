@@ -224,27 +224,75 @@
     .status-live { display: inline-flex; align-items: center; gap: 5px; font-size: .7rem; font-weight: 700; color: var(--green); }
     .status-live .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 1s infinite; }
 
-    /* ── Bracket ── */
-    .bracket-note {
-      background: var(--blue-bg); border: 1px solid rgba(59,130,246,.25);
-      border-radius: var(--rs); padding: 14px 18px; font-size: .85rem; color: var(--blue); margin-bottom: 24px;
+    /* ── Scorer extras ── */
+    .scorer-stats { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+    .scorer-stat-pill {
+      font-size: .68rem; font-weight: 600; color: var(--muted);
+      background: rgba(255,255,255,.05); border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 8px;
     }
-    .bracket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .bracket-match {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--rs);
-      overflow: hidden;
+    .scorer-opponents { font-size: .7rem; color: var(--light); margin-top: 4px; line-height: 1.5; }
+
+    /* ── Bracket visual tree ── */
+    .bracket-scroll { overflow-x: auto; padding-bottom: 20px; }
+    .bracket-tree {
+      display: flex; align-items: center;
+      gap: 0; min-width: 1100px; padding: 20px 0;
     }
-    .bracket-header { background: var(--card2); border-bottom: 1px solid var(--border); padding: 8px 14px; font-size: .7rem; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
-    .bracket-team {
-      display: flex; align-items: center; gap: 10px; padding: 11px 14px;
-      border-bottom: 1px solid var(--border); font-weight: 600; font-size: .88rem;
+    .bracket-col {
+      display: flex; flex-direction: column;
+      justify-content: space-around; flex: 1;
     }
-    .bracket-team:last-child { border-bottom: none; }
-    .bracket-team .bflag { font-size: 1.3rem; }
-    .bracket-team .bname { flex: 1; }
-    .bracket-team .bscore { font-family: var(--mono); font-weight: 800; font-size: 1rem; color: var(--gold2); }
-    .bracket-team.winner .bname { color: var(--gold2); }
-    .bracket-team.tbd .bname { color: var(--light); font-style: italic; }
+    .bracket-col.final-col { flex: 0 0 200px; }
+    .b-slot {
+      display: flex; flex-direction: column; align-items: stretch;
+      margin: 6px 4px; position: relative;
+    }
+    .b-match {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--rs); overflow: hidden; font-size: .78rem;
+      box-shadow: var(--shadow); min-width: 150px;
+    }
+    .b-match-header {
+      background: var(--card2); border-bottom: 1px solid var(--border);
+      padding: 3px 8px; font-size: .6rem; font-weight: 700;
+      color: var(--muted); letter-spacing: .07em; text-transform: uppercase;
+    }
+    .b-team {
+      display: flex; align-items: center; gap: 6px; padding: 7px 8px;
+      border-bottom: 1px solid rgba(255,255,255,.04); font-weight: 600;
+    }
+    .b-team:last-child { border-bottom: none; }
+    .b-team.tbd { color: var(--light); font-style: italic; }
+    .b-team.winner { background: rgba(245,158,11,.07); }
+    .b-team.winner .b-name { color: var(--gold2); }
+    .b-name { flex: 1; font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .b-score { font-family: var(--mono); font-weight: 800; font-size: .85rem; color: var(--gold2); min-width: 16px; text-align: right; }
+    /* connector lines */
+    .b-conn-right {
+      position: absolute; right: -12px; top: 50%;
+      width: 12px; height: 1px; background: var(--border);
+    }
+    .b-conn-left {
+      position: absolute; left: -12px; top: 50%;
+      width: 12px; height: 1px; background: var(--border);
+    }
+    /* round labels */
+    .bracket-round-label {
+      text-align: center; font-size: .65rem; font-weight: 700;
+      letter-spacing: .09em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 10px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    /* final card bigger */
+    .final-col .b-match { min-width: 180px; font-size: .85rem; border-color: rgba(245,158,11,.4); }
+    .final-col .b-team { padding: 10px 12px; }
+    .final-col .b-name { font-size: .85rem; }
+    .final-col .b-score { font-size: 1.1rem; }
+    .bracket-trophy {
+      text-align: center; font-size: 2.2rem; margin-bottom: 6px;
+      filter: drop-shadow(0 0 8px rgba(245,158,11,.5));
+    }
 
     /* ── Footer ── */
     .footer {
@@ -303,7 +351,7 @@
     <div id="filter-bar" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;">
       <button class="tab-btn active" data-filter="all" style="padding:6px 14px;font-size:.78rem;">All</button>
       <button class="tab-btn" data-filter="live" style="padding:6px 14px;font-size:.78rem;">🟢 Live</button>
-      <button class="tab-btn" data-filter="done" style="padding:6px 14px;font-size:.78rem;">✅ Finished</button>
+      <button class="tab-btn" data-filter="finished" style="padding:6px 14px;font-size:.78rem;">✅ Finished</button>
       <button class="tab-btn" data-filter="upcoming" style="padding:6px 14px;font-size:.78rem;">🕐 Upcoming</button>
     </div>
 
@@ -332,10 +380,11 @@
   <div class="tab-panel" id="tab-bracket">
     <div class="section-head">
       <h2>Knockout Bracket</h2>
-      <p>Round of 32 onwards. Teams TBD are pending group stage completion.</p>
+      <p>Visual bracket tree. Scroll horizontally on mobile. Winner highlighted in gold.</p>
     </div>
-    <div class="bracket-note">ℹ️ Bracket updates as group stage results come in. Check back after all group games are played.</div>
-    <div class="bracket-grid" id="bracket-container"></div>
+    <div class="bracket-scroll">
+      <div id="bracket-container"></div>
+    </div>
   </div>
 
 </main>
@@ -412,58 +461,137 @@ function isKO(stage) {
 let ALL_MATCHES = [];
 let CURRENT_FILTER = 'all';
 
+function matchCard(m) {
+  const live = m.status === 'live';
+  const done = m.status === 'finished';
+  const scoreClass = live ? 'live' : done ? 'done' : 'upcoming';
+  const stg = stageLabel(m.stageNormalized || m.stage);
+  const ko  = isKO(m.stageNormalized || m.stage);
+  const homeTeam = m.homeTeam || m.homeRef || 'TBD';
+  const awayTeam = m.awayTeam || m.awayRef || 'TBD';
+  const homeKnown = !!m.homeTeam, awayKnown = !!m.awayTeam;
+
+  // Split goals by team side
+  const homeGoals = (m.goals || []).filter(g => g.team === 'home');
+  const awayGoals = (m.goals || []).filter(g => g.team === 'away');
+  const goalLine = (goals) => goals.length
+    ? goals.map(g => `⚽ <b>${g.scorer}</b> <span style="color:var(--light);font-size:.68rem">${g.minute}'</span>`).join('<br>')
+    : '';
+
+  const liveTag = live
+    ? `<span class="status-live" style="margin-left:6px;"><span class="dot"></span>${m.liveMinute ? m.liveMinute+"'" : 'LIVE'}</span>`
+    : '';
+
+  const centerContent = (done || live)
+    ? `<div class="match-score ${scoreClass}" style="font-size:2rem;padding:10px 28px;min-width:110px;">
+         ${m.homeScore} <span style="font-size:1.2rem;color:var(--muted)">–</span> ${m.awayScore}
+       </div>`
+    : `<div style="text-align:center;">
+         <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px;">${m.kickoff || 'TBD'}</div>
+         <div style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--light)">vs</div>
+       </div>`;
+
+  return `
+  <div class="match-card" style="flex-direction:column;align-items:stretch;padding:0;overflow:hidden;">
+    <!-- top bar -->
+    <div style="display:flex;align-items:center;gap:8px;padding:10px 18px 8px;border-bottom:1px solid rgba(255,255,255,.05);">
+      <div class="group-tag ${ko ? 'ko' : ''}">${stg}</div>
+      <span style="font-size:.75rem;color:var(--muted);">${m.kickoff || ''}</span>
+      ${liveTag}
+      <span style="margin-left:auto;font-size:.7rem;color:var(--light);">${m.city || ''}</span>
+    </div>
+    <!-- main row: home | score | away -->
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:18px 20px;">
+      <!-- home -->
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          ${homeKnown ? flagImg(homeTeam, 26) : ''}
+          <span style="font-weight:800;font-size:1.05rem;${!homeKnown ? 'color:var(--muted);font-style:italic;' : ''}">${homeTeam}</span>
+        </div>
+        ${done && homeGoals.length ? `<div style="font-size:.78rem;color:var(--muted);line-height:1.6;padding-left:2px;">${goalLine(homeGoals)}</div>` : ''}
+      </div>
+      <!-- score -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        ${centerContent}
+      </div>
+      <!-- away -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;flex-direction:row-reverse;">
+          ${awayKnown ? flagImg(awayTeam, 26) : ''}
+          <span style="font-weight:800;font-size:1.05rem;${!awayKnown ? 'color:var(--muted);font-style:italic;' : ''}">${awayTeam}</span>
+        </div>
+        ${done && awayGoals.length ? `<div style="font-size:.78rem;color:var(--muted);line-height:1.6;text-align:right;padding-right:2px;">${goalLine(awayGoals)}</div>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function groupByDate(list) {
+  const map = new Map();
+  list.forEach(m => {
+    if (!map.has(m.date)) map.set(m.date, []);
+    map.get(m.date).push(m);
+  });
+  return map;
+}
+
 function renderMatches(filter) {
   CURRENT_FILTER = filter || CURRENT_FILTER;
   const c = document.getElementById('matches-container');
-  const list = CURRENT_FILTER === 'all'
+  const all = CURRENT_FILTER === 'all'
     ? ALL_MATCHES
     : ALL_MATCHES.filter(m => m.status === CURRENT_FILTER);
 
-  if (!list.length) {
+  if (!all.length) {
     c.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">No matches found.</p>';
     return;
   }
 
-  // Group by date
-  const byDate = {};
-  list.forEach(m => { (byDate[m.date] = byDate[m.date] || []).push(m); });
+  if (CURRENT_FILTER !== 'all') {
+    // Single-filter view: just sort and render
+    const sorted = [...all].sort((a, b) => {
+      const dir = a.status === 'upcoming' ? 1 : -1;
+      return dir * (new Date(a.kickoffUtc) - new Date(b.kickoffUtc));
+    });
+    const byDate = groupByDate(sorted);
+    c.innerHTML = [...byDate.entries()].map(([date, ms]) => `
+      <div style="margin-bottom:20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding-left:4px;">${date}</div>
+        ${ms.map(matchCard).join('')}
+      </div>`).join('');
+    return;
+  }
 
-  c.innerHTML = Object.entries(byDate).map(([date, ms]) => `
+  // "All" view: finished/live section first, then upcoming section below a divider
+  const played = [...all]
+    .filter(m => m.status === 'live' || m.status === 'finished')
+    .sort((a, b) => {
+      if (a.status === 'live' && b.status !== 'live') return -1;
+      if (b.status === 'live' && a.status !== 'live') return  1;
+      return new Date(b.kickoffUtc) - new Date(a.kickoffUtc); // newest first
+    });
+  const upcoming = [...all]
+    .filter(m => m.status === 'upcoming')
+    .sort((a, b) => new Date(a.kickoffUtc) - new Date(b.kickoffUtc)); // oldest first
+
+  const playedByDate   = groupByDate(played);
+  const upcomingByDate = groupByDate(upcoming);
+
+  const renderSection = (map) => [...map.entries()].map(([date, ms]) => `
     <div style="margin-bottom:20px;">
       <div style="font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding-left:4px;">${date}</div>
-      ${ms.map(m => {
-        const live = m.status === 'live';
-        const done = m.status === 'finished';
-        const scoreClass = live ? 'live' : done ? 'done' : 'upcoming';
-        const scoreText = (done || live) ? `${m.homeScore} – ${m.awayScore}` : m.kickoff || 'TBD';
-        const liveTag = live ? `<div class="status-live"><span class="dot"></span>${m.liveMinute ? m.liveMinute+"'" : 'LIVE'}</div>` : '';
-        const stg = stageLabel(m.stage);
-        const ko = isKO(m.stage);
-        return `
-        <div class="match-card">
-          <div class="match-meta">
-            <div class="date" style="font-size:.8rem;color:var(--muted);">${m.kickoff || ''}</div>
-            <div class="group-tag ${ko ? 'ko' : ''}">${stg}</div>
-            ${liveTag}
-          </div>
-          <div class="match-teams">
-            <div class="match-team">
-              ${flagImg(m.homeTeam, 22)}
-              <span class="tname" style="margin-left:6px;">${m.homeTeam}</span>
-            </div>
-            <div class="match-score ${scoreClass}">${scoreText}</div>
-            <div class="match-team right">
-              <span class="tname" style="margin-right:6px;">${m.awayTeam}</span>
-              ${flagImg(m.awayTeam, 22)}
-            </div>
-          </div>
-          ${done && m.goals && m.goals.length ? `
-          <div style="font-size:.72rem;color:var(--muted);margin-top:6px;padding-left:110px;">
-            ⚽ ${m.goals.map(g=>`${g.scorer} ${g.minute}'`).join(' &nbsp;·&nbsp; ')}
-          </div>` : ''}
-        </div>`;
-      }).join('')}
+      ${ms.map(matchCard).join('')}
     </div>`).join('');
+
+  const upcomingSection = upcomingByDate.size ? `
+    <div style="margin:28px 0 16px;display:flex;align-items:center;gap:12px;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Upcoming Fixtures</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+    </div>
+    ${renderSection(upcomingByDate)}` : '';
+
+  c.innerHTML = renderSection(playedByDate) + upcomingSection;
 }
 
 // ─────────────────────────────────────────────
@@ -512,15 +640,21 @@ function buildScorers() {
   const map = {};
   ALL_MATCHES.forEach(m => {
     if (!m.goals) return;
-    const teamOf = (side) => side === 'home' ? m.homeTeam : m.awayTeam;
+    const teamOf  = side => side === 'home' ? m.homeTeam : m.awayTeam;
+    const oppOf   = side => side === 'home' ? m.awayTeam : m.homeTeam;
     m.goals.forEach(g => {
       if (!g.scorer || g.scorer === 'OG') return;
       const key = g.scorer;
-      if (!map[key]) map[key] = { name: g.scorer, team: teamOf(g.team), goals: 0 };
+      if (!map[key]) map[key] = { name: g.scorer, team: teamOf(g.team), goals: 0, matchIds: new Set(), opponents: new Set() };
       map[key].goals++;
+      map[key].matchIds.add(m.id);
+      map[key].opponents.add(oppOf(g.team));
     });
   });
-  return Object.values(map).sort((a,b) => b.goals - a.goals).slice(0, 20);
+  return Object.values(map)
+    .map(s => ({ ...s, matchesScored: s.matchIds.size, opponentList: [...s.opponents] }))
+    .sort((a, b) => b.goals - a.goals)
+    .slice(0, 10);
 }
 
 function renderScorers() {
@@ -533,17 +667,31 @@ function renderScorers() {
   const max = scorers[0].goals;
   const medals = ['🥇','🥈','🥉'];
   c.innerHTML = scorers.map((s, i) => `
-    <div class="scorer-row">
-      <div class="scorer-rank ${i<3?'top':''}">${i<3 ? medals[i] : i+1}</div>
-      <div class="scorer-flag">${flagImg(s.team, 28)}</div>
-      <div class="scorer-info">
-        <div class="name">${s.name}</div>
-        <div class="nat">${s.team}</div>
-        <div class="bar-wrap"><div class="bar-fill" style="width:${Math.round(s.goals/max*100)}%"></div></div>
+    <div class="scorer-row" style="flex-direction:column;align-items:stretch;gap:0;padding:16px 18px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="scorer-rank ${i<3?'top':''}">${i<3 ? medals[i] : i+1}</div>
+        <div class="scorer-flag">${flagImg(s.team, 30)}</div>
+        <div class="scorer-info" style="flex:1;">
+          <div class="name">${s.name}</div>
+          <div class="nat">${s.team}</div>
+          <div class="bar-wrap" style="width:100%;max-width:200px;">
+            <div class="bar-fill" style="width:${Math.round(s.goals/max*100)}%"></div>
+          </div>
+        </div>
+        <div class="scorer-goals">
+          <div class="g">${s.goals}</div>
+          <div class="gl">Goals</div>
+        </div>
       </div>
-      <div class="scorer-goals">
-        <div class="g">${s.goals}</div>
-        <div class="gl">Goals</div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05);">
+        <div class="scorer-stats">
+          <span class="scorer-stat-pill">⚽ ${s.goals} goal${s.goals>1?'s':''}</span>
+          <span class="scorer-stat-pill">🎯 ${s.matchesScored} match${s.matchesScored>1?'es':''} scored</span>
+          <span class="scorer-stat-pill">📅 ${s.matchIds.size} game${s.matchIds.size>1?'s':''} played</span>
+        </div>
+        <div class="scorer-opponents">
+          Scored vs: ${s.opponentList.map(o => `<span style="display:inline-flex;align-items:center;gap:3px;margin-right:6px;">${flagImg(o,14)} ${o}</span>`).join('')}
+        </div>
       </div>
     </div>`).join('');
 }
@@ -553,46 +701,96 @@ function renderScorers() {
 // ─────────────────────────────────────────────
 let BRACKET_DATA = {};
 
+function bMatchCard(m, size='sm') {
+  if (!m) return `<div class="b-match"><div class="b-team tbd"><span class="b-name">TBD</span></div><div class="b-team tbd"><span class="b-name">TBD</span></div></div>`;
+  const hasScore = m.homeScore !== null && m.awayScore !== null;
+  const win1 = hasScore && m.winner === m.home;
+  const win2 = hasScore && m.winner === m.away;
+  const t1 = m.home || m.homeRef || 'TBD';
+  const t2 = m.away || m.awayRef || 'TBD';
+  const tbd1 = !m.home, tbd2 = !m.away;
+  return `
+  <div class="b-match">
+    <div class="b-match-header">#${m.matchNo} · ${m.city||''}</div>
+    <div class="b-team ${tbd1?'tbd':''} ${win1?'winner':''}">
+      ${tbd1?'':flagImg(t1,14)}
+      <span class="b-name" style="margin-left:4px;">${t1}</span>
+      <span class="b-score">${hasScore?m.homeScore:''}</span>
+    </div>
+    <div class="b-team ${tbd2?'tbd':''} ${win2?'winner':''}">
+      ${tbd2?'':flagImg(t2,14)}
+      <span class="b-name" style="margin-left:4px;">${t2}</span>
+      <span class="b-score">${hasScore?m.awayScore:''}</span>
+    </div>
+  </div>`;
+}
+
 function renderBracket() {
   const c = document.getElementById('bracket-container');
-  const stageOrder = ['round_of_32','round_of_16','quarter_final','semi_final','third_place','final'];
-  const stageNames = {
-    round_of_32:'Round of 32', round_of_16:'Round of 16',
-    quarter_final:'Quarter-Finals', semi_final:'Semi-Finals',
-    third_place:'3rd Place Play-off', final:'🏆 Final'
-  };
-  const entries = stageOrder.filter(s => BRACKET_DATA[s] && BRACKET_DATA[s].length);
-  if (!entries.length) { c.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">Bracket data loading…</p>'; return; }
+  const r32  = BRACKET_DATA['round_of_32']    || [];
+  const r16  = BRACKET_DATA['round_of_16']    || [];
+  const qf   = BRACKET_DATA['quarter_final']  || [];
+  const sf   = BRACKET_DATA['semi_final']     || [];
+  const fin  = BRACKET_DATA['final']          || [];
+  const tp   = BRACKET_DATA['third_place']    || [];
 
-  c.innerHTML = entries.map(stage => {
-    const matches = BRACKET_DATA[stage];
-    return `
-    <div style="grid-column:1/-1;margin-top:16px;">
-      <div style="font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">${stageNames[stage]}</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;">
-        ${matches.map(m => {
-          const hasScore = m.homeScore !== null && m.awayScore !== null;
-          const win1 = hasScore && m.winner === m.home;
-          const win2 = hasScore && m.winner === m.away;
-          const tbd1 = !m.home, tbd2 = !m.away;
-          return `
-          <div class="bracket-match">
-            <div class="bracket-header">${m.city || ''} · Match #${m.matchNo}</div>
-            <div class="bracket-team ${tbd1?'tbd':''} ${win1?'winner':''}">
-              ${tbd1 ? '' : flagImg(m.home,18)}
-              <span class="bname" style="margin-left:6px;">${m.home || m.homeRef || 'TBD'}</span>
-              <span class="bscore">${hasScore ? m.homeScore : ''}</span>
-            </div>
-            <div class="bracket-team ${tbd2?'tbd':''} ${win2?'winner':''}">
-              ${tbd2 ? '' : flagImg(m.away,18)}
-              <span class="bname" style="margin-left:6px;">${m.away || m.awayRef || 'TBD'}</span>
-              <span class="bscore">${hasScore ? m.awayScore : ''}</span>
-            </div>
-          </div>`;
-        }).join('')}
-      </div>
+  if (!r32.length && !r16.length) {
+    c.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0">Bracket not yet available.</p>';
+    return;
+  }
+
+  // Split R32 into left (first 8) and right (last 8)
+  const r32L = r32.slice(0, 8), r32R = r32.slice(8, 16);
+  const r16L = r16.slice(0, 4), r16R = r16.slice(4, 8);
+  const qfL  = qf.slice(0, 2),  qfR  = qf.slice(2, 4);
+  const sfL  = sf.slice(0, 1),  sfR  = sf.slice(1, 2);
+
+  function col(matches, label, extraClass='') {
+    const slots = matches.map(m => `<div class="b-slot">${bMatchCard(m)}<div class="b-conn-right"></div></div>`).join('');
+    return `<div class="bracket-col ${extraClass}">
+      <div class="bracket-round-label">${label}</div>
+      ${slots}
     </div>`;
-  }).join('');
+  }
+  function colNoConn(matches, label, extraClass='') {
+    const slots = matches.map(m => `<div class="b-slot">${bMatchCard(m)}</div>`).join('');
+    return `<div class="bracket-col ${extraClass}">
+      <div class="bracket-round-label">${label}</div>
+      ${slots}
+    </div>`;
+  }
+
+  // Vertical line connectors between columns
+  const vconn = `<div style="width:24px;flex-shrink:0;position:relative;align-self:stretch;">
+    <svg width="24" height="100%" style="position:absolute;inset:0;" preserveAspectRatio="none">
+      <line x1="0" y1="25%" x2="12" y2="25%" stroke="var(--border)" stroke-width="1"/>
+      <line x1="12" y1="25%" x2="12" y2="75%" stroke="var(--border)" stroke-width="1"/>
+      <line x1="12" y1="75%" x2="0" y2="75%" stroke="var(--border)" stroke-width="1"/>
+      <line x1="12" y1="50%" x2="24" y2="50%" stroke="var(--border)" stroke-width="1"/>
+    </svg>
+  </div>`;
+
+  const finalCard = fin[0] ? bMatchCard(fin[0]) : `<div class="b-match"><div class="b-team tbd"><span class="b-name">TBD</span></div><div class="b-team tbd"><span class="b-name">TBD</span></div></div>`;
+  const tpCard    = tp[0]  ? bMatchCard(tp[0])  : '';
+
+  c.innerHTML = `
+  <div class="bracket-tree">
+    ${r32L.length ? col(r32L, 'Round of 32') + vconn : ''}
+    ${r16L.length ? col(r16L, 'Round of 16') + vconn : ''}
+    ${qfL.length  ? col(qfL,  'Quarter-Finals') + vconn : ''}
+    ${sfL.length  ? col(sfL,  'Semi-Finals') + vconn : ''}
+
+    <div class="bracket-col final-col" style="flex:0 0 200px;">
+      <div class="bracket-round-label" style="color:var(--gold2);">🏆 Final</div>
+      <div class="b-slot">${finalCard}</div>
+      ${tpCard ? `<div style="margin-top:20px;"><div class="bracket-round-label" style="color:var(--muted);">3rd Place</div><div class="b-slot">${tpCard}</div></div>` : ''}
+    </div>
+
+    ${sfR.length  ? vconn + colNoConn(sfR,  'Semi-Finals') : ''}
+    ${qfR.length  ? vconn + colNoConn(qfR,  'Quarter-Finals') : ''}
+    ${r16R.length ? vconn + colNoConn(r16R, 'Round of 16') : ''}
+    ${r32R.length ? vconn + colNoConn(r32R, 'Round of 32') : ''}
+  </div>`;
 }
 
 // ─────────────────────────────────────────────
