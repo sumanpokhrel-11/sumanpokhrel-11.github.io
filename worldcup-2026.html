@@ -349,32 +349,16 @@
 <script>
 // ─────────────────────────────────────────────
 //  CONFIG
+//  API key lives only in GitHub Secrets — the browser never calls the API.
+//  GitHub Actions fetches data every 3h and saves it as static JSON files.
 // ─────────────────────────────────────────────
-const API_KEY    = 'zwc_free_6821b9149bcfa769c6d9e38a';
-const BASE_URL   = 'https://api.zafronix.com/fifa/worldcup/v1';
-const YEAR       = 2026;
-const STATIC_BASE = '/data';          // committed JSON refreshed by GitHub Actions
-const STALE_HOURS = 4;                // fall back to live API only if static file is >4 h old
+const STATIC_BASE = '/data';
 
 async function fetchStatic(file) {
-  const res = await fetch(`${STATIC_BASE}/${file}?_=${Math.floor(Date.now()/3600000)}`);
-  if (!res.ok) throw new Error(`Static ${file} not found`);
+  // Cache-bust once per hour so browsers pick up refreshed files
+  const res = await fetch(`${STATIC_BASE}/${file}?_=${Math.floor(Date.now()/3_600_000)}`);
+  if (!res.ok) throw new Error(`Could not load ${file} (${res.status})`);
   return res.json();
-}
-
-async function apiFetch(path) {
-  const res = await fetch(`${BASE_URL}${path}`, { headers: { 'X-API-Key': API_KEY } });
-  if (!res.ok) throw new Error(`API ${res.status}`);
-  return res.json();
-}
-
-// Returns true if the committed data is fresh enough to use
-async function staticIsFresh() {
-  try {
-    const meta = await fetch(`${STATIC_BASE}/wc-meta.json`).then(r => r.json());
-    const age = (Date.now() - new Date(meta.fetchedAt).getTime()) / 3_600_000;
-    return age < STALE_HOURS;
-  } catch { return false; }
 }
 
 // ── Flag helper (using flagcdn via ISO country code from team name) ──
@@ -636,18 +620,11 @@ async function loadAll() {
   showLoading('bracket-container','Loading bracket…');
 
   try {
-    const fresh = await staticIsFresh();
-    const [matchData, standData, bracketData] = fresh
-      ? await Promise.all([
-          fetchStatic('wc-matches.json'),
-          fetchStatic('wc-standings.json'),
-          fetchStatic('wc-bracket.json'),
-        ])
-      : await Promise.all([
-          apiFetch(`/matches?year=${YEAR}`),
-          apiFetch(`/standings?year=${YEAR}`),
-          apiFetch(`/bracket?year=${YEAR}`),
-        ]);
+    const [matchData, standData, bracketData] = await Promise.all([
+      fetchStatic('wc-matches.json'),
+      fetchStatic('wc-standings.json'),
+      fetchStatic('wc-bracket.json'),
+    ]);
 
     // Show data freshness in footer
     try {
