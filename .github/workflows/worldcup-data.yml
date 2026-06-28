@@ -1,0 +1,48 @@
+name: Refresh World Cup Data
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'    # every 3 hours
+  workflow_dispatch:           # allow manual trigger from GitHub UI
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch World Cup data from API
+        env:
+          API_KEY: ${{ secrets.WORLDCUP_API_KEY }}
+        run: |
+          BASE="https://api.zafronix.com/fifa/worldcup/v1"
+          YEAR=2026
+
+          echo "Fetching matches..."
+          curl -sf -H "X-API-Key: $API_KEY" "$BASE/matches?year=$YEAR" -o data/wc-matches.json
+
+          echo "Fetching standings..."
+          curl -sf -H "X-API-Key: $API_KEY" "$BASE/standings?year=$YEAR" -o data/wc-standings.json
+
+          echo "Fetching bracket..."
+          curl -sf -H "X-API-Key: $API_KEY" "$BASE/bracket?year=$YEAR" -o data/wc-bracket.json
+
+          # Write a meta file so the page knows when data was last updated
+          echo "{\"fetchedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"year\":$YEAR}" > data/wc-meta.json
+
+          echo "Done. Files written to data/"
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/wc-matches.json data/wc-standings.json data/wc-bracket.json data/wc-meta.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh World Cup 2026 data [skip ci]"
+            git push
+          fi
