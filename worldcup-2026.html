@@ -636,12 +636,76 @@ function renderGroups() {
 // ─────────────────────────────────────────────
 //  RENDER — TOP SCORERS  (derived from matches)
 // ─────────────────────────────────────────────
-// Collapses name variants like "Mbappé" / "K. Mbappe" into one scorer key.
+// The API sometimes leaks "34' og" / "90+7 pen" annotations into the scorer
+// string itself. Strip those and flag own goals so they don't get counted
+// as the "scorer"'s goal.
+function parseScorer(raw) {
+  const m = raw.trim().match(/^(.*?)\s+\d+(?:\+\d+)?'?\s*(pen|o\.?g\.?)\s*$/i);
+  if (!m) return { name: raw.trim(), isOwnGoal: false };
+  return { name: m[1].trim(), isOwnGoal: /^o\.?g\.?$/i.test(m[2]) };
+}
+
+// Collapses name variants ("Mbappé" / "K. Mbappe" / "Ismaïla Sarr" / "I. Sarr")
+// down to a shared key by matching on surname, accent- and case-folded.
 function normalizeScorerName(name) {
-  return name
-    .normalize('NFD').replace(/[̀-ͯ]/g, '') // strip accents
-    .replace(/^[A-Za-z]\.\s*/, '')                     // strip leading initial ("K. ")
-    .toLowerCase().trim();
+  const folded = name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  const words = folded.split(/\s+/);
+  return words[words.length - 1];
+}
+
+// Prefer the fullest available display name (more name parts, no "X." initial).
+function nameQuality(name) {
+  let score = name.split(/\s+/).length;
+  if (/^[A-Za-z]\.\s/.test(name)) score -= 2;
+  return score;
+}
+
+// Total matches played per player (starting XI + subs actually brought on),
+// keyed the same way as scorers so the two datasets line up.
+function buildAppearances() {
+  const appearances = {};
+  const add = (name, matchId) => {
+    const key = normalizeScorerName(name);
+    if (!appearances[key]) appearances[key] = new Set();
+    appearances[key].add(matchId);
+  };
+  ALL_MATCHES.forEach(m => {
+    if (m.lineups) {
+      ['home', 'away'].forEach(side => {
+        (m.lineups[side] || []).forEach(p => { if (p.starter) add(p.player, m.id); });
+      });
+    }
+    (m.substitutions || []).forEach(s => { if (s.on) add(s.on, m.id); });
+  });
+  return appearances;
+}
+
+// Assist counts keyed by the same normalized surname, so they attach to
+// whichever scorer entry the assist was provided to.
+function buildAssists() {
+  const assists = {};
+  ALL_MATCHES.forEach(m => {
+    (m.goals || []).forEach(g => {
+      if (!g.assist) return;
+      const key = normalizeScorerName(parseScorer(g.assist).name);
+      assists[key] = (assists[key] || 0) + 1;
+    });
+  });
+  return assists;
+}
+
+// The API only reports "assist" for a small fraction of goals so far. Showing
+// "0" for everyone else would look like a confirmed zero, so we hide assist
+// stats entirely until the API's coverage is reliable enough to trust.
+function isAssistDataReliable() {
+  let goalCount = 0, assistCount = 0;
+  ALL_MATCHES.forEach(m => (m.goals || []).forEach(g => {
+    if (!g.scorer || g.scorer === 'OG') return;
+    if (parseScorer(g.scorer).isOwnGoal) return;
+    goalCount++;
+    if (g.assist) assistCount++;
+  }));
+  return goalCount > 0 && (assistCount / goalCount) >= 0.5;
 }
 
 function buildScorers() {
@@ -652,19 +716,31 @@ function buildScorers() {
     const oppOf   = side => side === 'home' ? m.awayTeam : m.homeTeam;
     m.goals.forEach(g => {
       if (!g.scorer || g.scorer === 'OG') return;
-      const key = normalizeScorerName(g.scorer);
-      if (!map[key]) map[key] = { name: g.scorer, team: teamOf(g.team), goals: 0, matchIds: new Set(), opponents: new Set() };
-      // Prefer the fuller display name over an abbreviated one (e.g. "Mbappé" over "K. Mbappe")
-      if (/^[A-Za-z]\.\s/.test(map[key].name) && !/^[A-Za-z]\.\s/.test(g.scorer)) {
-        map[key].name = g.scorer;
-      }
+      const { name: cleanName, isOwnGoal } = parseScorer(g.scorer);
+      if (!cleanName || isOwnGoal) return;
+      const key = normalizeScorerName(cleanName);
+      if (!map[key]) map[key] = { name: cleanName, team: teamOf(g.team), goals: 0, matchIds: new Set(), opponents: new Set() };
+      if (nameQuality(cleanName) > nameQuality(map[key].name)) map[key].name = cleanName;
       map[key].goals++;
       map[key].matchIds.add(m.id);
       map[key].opponents.add(oppOf(g.team));
     });
   });
+  const appearancesMap = buildAppearances();
+  const assistsMap = buildAssists();
   return Object.values(map)
-    .map(s => ({ ...s, matchesScored: s.matchIds.size, opponentList: [...s.opponents] }))
+    .map(s => {
+      const key = normalizeScorerName(s.name);
+      const assists = assistsMap[key] || 0;
+      return {
+        ...s,
+        matchesScored: s.matchIds.size,
+        matchesPlayed: (appearancesMap[key] || s.matchIds).size,
+        assists,
+        ga: s.goals + assists,
+        opponentList: [...s.opponents],
+      };
+    })
     .sort((a, b) => b.goals - a.goals)
     .slice(0, 10);
 }
@@ -678,6 +754,7 @@ function renderScorers() {
   }
   const max = scorers[0].goals;
   const medals = ['🥇','🥈','🥉'];
+  const showAssists = isAssistDataReliable();
   c.innerHTML = scorers.map((s, i) => `
     <div class="scorer-row" style="flex-direction:column;align-items:stretch;gap:0;padding:16px 18px;">
       <div style="display:flex;align-items:center;gap:14px;">
@@ -694,12 +771,20 @@ function renderScorers() {
           <div class="g">${s.goals}</div>
           <div class="gl">Goals</div>
         </div>
+        ${showAssists ? `
+        <div class="scorer-assists">
+          <div class="a">${s.assists}</div>
+          <div class="al">Assists</div>
+        </div>` : ''}
       </div>
       <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05);">
         <div class="scorer-stats">
           <span class="scorer-stat-pill">⚽ ${s.goals} goal${s.goals>1?'s':''}</span>
+          ${showAssists ? `
+          <span class="scorer-stat-pill">🅰️ ${s.assists} assist${s.assists!==1?'s':''}</span>
+          <span class="scorer-stat-pill">🔥 ${s.ga} G/A</span>` : ''}
           <span class="scorer-stat-pill">🎯 ${s.matchesScored} match${s.matchesScored>1?'es':''} scored</span>
-          <span class="scorer-stat-pill">📅 ${s.matchIds.size} game${s.matchIds.size>1?'s':''} played</span>
+          <span class="scorer-stat-pill">📅 ${s.matchesPlayed} game${s.matchesPlayed>1?'s':''} played</span>
         </div>
         <div class="scorer-opponents">
           Scored vs: ${s.opponentList.map(o => `<span style="display:inline-flex;align-items:center;gap:3px;margin-right:6px;">${flagImg(o,14)} ${o}</span>`).join('')}
