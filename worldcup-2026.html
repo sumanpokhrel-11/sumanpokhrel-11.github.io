@@ -636,6 +636,14 @@ function renderGroups() {
 // ─────────────────────────────────────────────
 //  RENDER — TOP SCORERS  (derived from matches)
 // ─────────────────────────────────────────────
+// Collapses name variants like "Mbappé" / "K. Mbappe" into one scorer key.
+function normalizeScorerName(name) {
+  return name
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // strip accents
+    .replace(/^[A-Za-z]\.\s*/, '')                     // strip leading initial ("K. ")
+    .toLowerCase().trim();
+}
+
 function buildScorers() {
   const map = {};
   ALL_MATCHES.forEach(m => {
@@ -644,8 +652,12 @@ function buildScorers() {
     const oppOf   = side => side === 'home' ? m.awayTeam : m.homeTeam;
     m.goals.forEach(g => {
       if (!g.scorer || g.scorer === 'OG') return;
-      const key = g.scorer;
+      const key = normalizeScorerName(g.scorer);
       if (!map[key]) map[key] = { name: g.scorer, team: teamOf(g.team), goals: 0, matchIds: new Set(), opponents: new Set() };
+      // Prefer the fuller display name over an abbreviated one (e.g. "Mbappé" over "K. Mbappe")
+      if (/^[A-Za-z]\.\s/.test(map[key].name) && !/^[A-Za-z]\.\s/.test(g.scorer)) {
+        map[key].name = g.scorer;
+      }
       map[key].goals++;
       map[key].matchIds.add(m.id);
       map[key].opponents.add(oppOf(g.team));
