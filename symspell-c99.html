@@ -93,6 +93,11 @@
         </div>
 
         <p><strong>GitHub Repository:</strong> <a href="https://github.com/sumanpokhrel-11/symspell-c99" target="_blank">github.com/sumanpokhrel-11/symspell-c99</a></p>
+
+        <div class="highlight-box">
+            <p><strong>🔄 Update - v1.1.0 (July 2026):</strong></p>
+            <p>The lookup path has been rewritten around a reusable, generation-stamped scratch buffer instead of allocating a fresh hash set on every call. The result: average lookup time dropped from ~30µs to <strong>~3µs (~10x faster)</strong>, and dictionary load time nearly halved, from ~1040ms to <strong>~500ms</strong>. Benchmarked head-to-head against the reference C# implementation, this C99 port now loads faster and edges out the reference on lookup speed too. Accuracy is unchanged at 84%. I also fixed a bug where empty or whitespace-only input would return bogus suggestions. Full details in the <a href="https://github.com/sumanpokhrel-11/symspell-c99/releases/tag/v1.1.0" target="_blank">v1.1.0 release notes</a>. The numbers below this point describe the original v1.0 release and are kept for historical context; see the <a href="#performance">Performance Benchmarks</a> section for a v1.1.0 callout with current figures.</p>
+        </div>
     </section>
 
     <section id="what-is-symspell">
@@ -388,7 +393,19 @@ __asm__ volatile (
     <section id="performance">
         <h2>Performance Benchmarks: Numbers that Matter</h2>
 
-        <h3>Lookup Time Breakdown</h3>
+        <div class="highlight-box">
+            <p><strong>🔄 v1.1.0 update:</strong></p>
+            <ul>
+                <li>⚡ Average lookup time: <strong>~3µs</strong> (was ~5µs real-world average / ~30µs worst case)</li>
+                <li>📦 Dictionary load time: <strong>~500ms</strong> (was ~1040ms)</li>
+                <li>🏁 Benchmarked head-to-head against the reference C# SymSpell on the same dataset: this C99 port now loads faster (~500ms vs ~820ms) and edges out the reference on lookup speed too (~3.2µs vs ~3.5µs average)</li>
+                <li>🎯 Accuracy unchanged: 84.0% on the Wikipedia misspelling benchmark</li>
+            </ul>
+        </div>
+
+        <p>The tables and platform breakdowns below describe the original v1.0 release. They're kept as-is for historical context; the callout above reflects the current v1.1.0 numbers.</p>
+
+        <h3>Lookup Time Breakdown (v1.0, historical)</h3>
 
         <table>
             <thead>
